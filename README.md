@@ -1,6 +1,7 @@
 # FCC-Training
 FCC Challenges
 
-// Setup Accounts & Add first file
+// TASKS
 
-FCC Challenges ReactJS
+1. Setup Accounts & Add first file
+2. Add FCC Challenges ReactJS
