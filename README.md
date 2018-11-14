@@ -8,14 +8,14 @@ FCC Challenges
 3. Create some folders
     - Projects
         - Responsive Web Design
-            - Tribute
-            - Survey Form
-            - Product Landing Page
+            - Tribute - Done
+            - Survey Form - Done
+            - Product Landing Page - Done
             - Technical Documentation Page
             - Personal Portfolio Webpage
         - Front End Libraries
-            - Random Quote Machine
-            - Markdown Previewer
+            - Random Quote Machine - Done
+            - Markdown Previewer - Done
             - Drum Machine
             - JS Calculator
             - Pomodoro Clock
