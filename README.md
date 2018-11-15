@@ -19,3 +19,4 @@ FCC Challenges
             - Drum Machine
             - JS Calculator
             - Pomodoro Clock
+4. Update README
