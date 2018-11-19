@@ -8,105 +8,194 @@
     <title>Survey Form</title>
 </head>
 <body>
-    <h1 id="title">SURVEY Form</h1>
+    <h1 id="title">DISCOVERY APPLICATION</h1>
     <div id="form">
-        <p id="description">Let us know how to improve your marketing?</p>
-        <form id="survey-form" methode="GET" action="#">
-            <div class="rowEntry">
-                <div class="leftLabel">
-                        <label id="name-label" for="name">* Name: </label>
-                </div>
-                <div class="rightForm">
-                        <input autofocus="" type="text" name="name" id="name" class="input-field" placeholder="Enter your name" required="">
-                </div>
+      <p id="description">OUR IN-HOUSE SEARCH ENGINE OPTIMISATION ISN’T FOR EVERY COMPANY.</p>
+      <div class="application">
+        <p >We would like to assist every company that has requested our know-how. However we select our clients very carefully with a reasonable set of criteria that needs to be met in order for us to proceed. We only work with a limited number of clients, to guarantee the highest focus to detail as well as your company’s greatest success.</p>
+        <p>1. Our services are for companies that are up and running already and simply want to move a lot faster and a lot farther.</p>
+        <p style="padding-left: 5%"><u>We do not work with:</u></p>
+          <ul style="padding-left: 5%">
+            <li>Get Rich Quick Schemes</li>
+            <li>MLM Companies</li>
+            <li>Affiliate Programs</li>
+            <li>Adult Theme Material</li>
+          </ul>
+        <p>2. A steady flow of customers. You’re running ads, you’re promoting, and/or you’re selling your services. You don’t have to be a household name …You just need to be PRESENT in your market.</p>
+        <p>3. A good, solid product and a good reputation. Everything we do together will not only be bringing you more sales and profits, but we’ll be doing it in a way that creates MASSIVE goodwill in your market.</p>
+        <p style="text-align: justify"><b>That’s it! Those are all our requirements.</b> If you meet the criteria above and would like to speak with us personally about getting you incredible results, then we will happily set aside some time for you. Here’s how the process works: First, you’ll need to fill out the discovery form below.
+            Don’t worry, it’s simple and discreet. We just need to know what you’re selling, getting an idea of what you want to accomplish. We’ll carefully study your goals and your offers. Afterwards we’ll deliver a custom plan how to grow your revenues. 
+            Please fill-in the application form as much as possible and send it back to us (eric@successwizard.eu)</p>
+        <hr>
+        <h3 style="text-align: center; font-weight: 900">APPLICATION FORM</h3>
+      </div>
+      <form id="survey-form" methode="GET" action="#">
+        <div class="rowEntry name">
+          <div class="leftLabel">
+            <label id="name-label" for="name">* Name: </label>
+          </div>
+          <div class="rightForm">
+            <input autofocus="" type="text" name="name" id="name" class="input-field" placeholder="Enter your name" required="">
+          </div>
+        </div>
+        <div class="rowEntry email">
+          <div class="leftLabel">
+            <label id="email-label" for="email">* Email: </label>
+          </div>
+          <div class="rightForm">
+            <input type="email" name="email" id="email" class="input-field" required="" placeholder="Enter your Email">
+          </div>
+        </div>
+        <div class="rowEntry phone">
+          <div class="leftLabel">
+            <label id="tel-label" for="phone">* Phone: </label>
+          </div>
+          <div class="rightForm">
+            <input type="tel" name="phone" id="phone" class="input-field" required="" placeholder="Enter your Phone number">
+          </div>
+        </div>
+        <div class="rowEntry website">
+          <div class="leftLabel">
+            <label id="website-label" for="website">* Website: </label>
+          </div>
+          <div class="rightForm">
+            <input type="text" name="website" id="website" class="input-field" placeholder="Enter your website address" required="">
+          </div>
+        </div>
+        <div class="rowEntry title">
+          <p class="leftLabel" style="font-size: 18px"><u><b>Tell us about your business</b></u></p>
+        </div>
+        <div class="rowEntry why">
+          <div class="leftLabel">
+            <label id="why-label" for="why">Why should your customers buy from you than a competitor? (be specific of your Value proposition)</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="why" id="why" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter here why?"></textarea>
+          </div>
+        </div>
+        <div class="rowEntry sale-process">
+          <div class="leftLabel">
+            <label id="sale-process-label" for="sale-process">What is the typical sales process/cycle? EX: customer calls, then fills form, then sets appointment etc</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="sale-process" id="sale-process" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter here the sale process..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry goals">
+            <div class="leftLabel">
+              <label id="goals-label" for="goals">What are the short and long term goals of the company?</label>
             </div>
-            <div class="rowEntry">
-                    <div class="leftLabel">
-                      <label id="email-label" for="email">* Email: </label>
-                    </div>
-                    <div class="rightForm">
-                      <input type="email" name="email" id="email" class="input-field" required="" placeholder="Enter your Email">
-                    </div>
+            <div class="rightForm">
+              <textarea name="goals" id="goals" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter here your goals..."></textarea>
             </div>
-            <div class="rowEntry">
-                    <div class="leftLabel">
-                      <label id="number-label" for="age">* Age: </label>
-                    </div>
-                    <div class="rightForm">
-                      <input type="number" name="age" id="number" min="1" max="125" class="input-field" placeholder="Age">
-                    </div>
+        </div>
+        <div class="rowEntry product-service">
+          <div class="leftLabel">
+            <label id="product-service-label" for="product-service">What product or service would you like to sell more of?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="product-service" id="product-service" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter here your products/services..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry average">
+          <div class="leftLabel">
+            <label id="average-label" for="average">What is the average Lifetime value of your average customer? This is your profit over the life of that customer</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="average" id="average" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter here the average..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry ideal-client">
+          <div class="leftLabel">
+            <label id="ideal-client-label" for="ideal-client">Who is your ideal client?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="ideal-client" id="ideal-client" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter here the average..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry SEO-Experience">
+          <div class="leftLabel">
+            <label for="userRating">What knowledge of SEO exists within the company?</label>
+          </div>
+          <div class="rightForm">
+            <ul style="list-style: none;">
+              <li class="radio"><label>None<input name="radio-buttons" value="None" type="radio" class="userRatings"></label></li>
+              <li class="radio"><label>Little<input name="radio-buttons" value="Little" type="radio" class="userRatings"></label></li>
+              <li class="radio"><label>A lot<input name="radio-buttons" value="A lot" type="radio" class="userRatings"></label></li>
+            </ul>
+          </div>
+        </div>
+        <div class="rowEntry Previous-SEO">
+            <div class="leftLabel">
+              <label for="userRating">Have you had previous SEO on your site? If so, please check the investment level.</label>
             </div>
-            <div class="rowEntry">
-                    <div class="leftLabel">
-                      <label for="currentPos">Which option best describes your current role?</label>
-                    </div>
-                    <div class="rightForm">
-                      <select id="dropdown" name="currentPos" class="dropdown">
-                    <option disabled="" value="">Select an option</option>
-                    <option value="student">Student</option>
-                    <option value="job">Full Time Job</option>
-                    <option value="learner">Full Time Learner</option>
-                    <option value="preferNo">Prefer not to say</option>
-                    <option value="other">Other</option>
-                  </select>
-                    </div>
+            <div class="rightForm">
+              <ul style="list-style: none;">
+                <li class="radio"><label>Under €500 per month<input name="radio-buttons" value="-500 €" type="radio" class="userRatings"></label></li>
+                <li class="radio"><label>Under €1000 per month<input name="radio-buttons" value="-1000 €" type="radio" class="userRatings"></label></li>
+                <li class="radio"><label>Over €1000 per month<input name="radio-buttons" value="+1000 €" type="radio" class="userRatings"></label></li>
+              </ul>
             </div>
-            <div class="rowEntry">
-                    <div class="leftLabel">
-                      <label for="userRating">* How likely is that you would recommend freeCodeCamp to a friend?</label>
-                    </div>
-                    <div class="rightForm">
-                      <ul style="list-style: none;">
-                        <li class="radio"><label>Definitely<input name="radio-buttons" value="1" type="radio" class="userRatings"></label></li>
-                        <li class="radio"><label>Maybe<input name="radio-buttons" value="2" type="radio" class="userRatings"></label></li>
-                        <li class="radio"><label>Not sure<input name="radio-buttons" value="3" type="radio" class="userRatings"></label></li>
-                      </ul>
-                    </div>
-            </div>
-            <div class="rowEntry">
-                    <div class="leftLabel">
-                      <label for="most-like">What do you like most in FCC: </label>
-                    </div>
-                    <div class="rightForm">
-                      <select id="most-like" name="mostLike" class="dropdown">
-                    <option disabled="" selected="" value="">Select an option</option>
-                    <option value="challenges">Challenges</option>
-                    <option value="projects">Projects</option>
-                    <option value="community">Community</option>
-                    <option value="openSource">Open Source</option>
-                  </select>
-                    </div>
-            </div>
-            <div class="rowEntry">
-                    <div class="leftLabel">
-                      <label for="preferences">Things that should be improved in the future<br>(Check all that apply): </label>
-                    </div>
-                    <div class="rightForm">
-                      <ul id="preferences" style="list-style: none;">
-                        <li class="checkbox"><label><input name="prefer" value="1" type="checkbox" class="userRatings">Front-end Projects</label></li>
-                        <li class="checkbox"><input name="prefer" value="2" type="checkbox" class="userRatings">Back-end Projects</li>
-                        <li class="checkbox"><label><input name="prefer" value="3" type="checkbox" class="userRatings">Data Visualization</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="4" type="checkbox" class="userRatings">Challenges</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="5" type="checkbox" class="userRatings">Open Source Community</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="6" type="checkbox" class="userRatings">Gitter help rooms</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="7" type="checkbox" class="userRatings">Videos</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="8" type="checkbox" class="userRatings">City Meetups</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="9" type="checkbox" class="userRatings">Wiki</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Forum</label></li>
-                        <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Additional Courses</label></li>
-                      </ul>
-                    </div>
-            </div>
-            <div class="rowEntry">
-                    <div class="leftLabel">
-                      <label for="comments">Any Comments or Suggestions?</label>
-                    </div>
-                    <div class="rightForm">
-                      <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment" placeholder="Enter your comment here..."></textarea>
-                    </div>
-            </div>
-            <button id="submit" type="submit">Submit</button>
-        </form>
+          </div>
+        <div class="rowEntry">
+          <div class="leftLabel">
+            <label for="currentPos">What is your role in your business?</label>
+          </div>
+          <div class="rightForm">
+            <select id="dropdown" name="currentPos" class="dropdown">
+              <option disabled="" value="">Select an option</option>
+              <option value="student">Student</option>
+              <option value="job">Full Time Job</option>
+              <option value="learner">Full Time Learner</option>
+              <option value="preferNo">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="rowEntry">
+          <div class="leftLabel">
+            <label for="most-like">What do you like most in FCC: </label>
+          </div>
+          <div class="rightForm">
+            <select id="most-like" name="mostLike" class="dropdown">
+              <option disabled="" selected="" value="">Select an option</option>
+              <option value="challenges">Challenges</option>
+              <option value="projects">Projects</option>
+              <option value="community">Community</option>
+              <option value="openSource">Open Source</option>
+            </select>
+          </div>
+        </div>
+        <div class="rowEntry">
+          <div class="leftLabel">
+            <label for="preferences">Things that should be improved in the future<br>(Check all that apply): </label>
+          </div>
+          <div class="rightForm">
+            <ul id="preferences" style="list-style: none;">
+              <li class="checkbox"><label><input name="prefer" value="1" type="checkbox" class="userRatings">Front-end Projects</label></li>
+              <li class="checkbox"><input name="prefer" value="2" type="checkbox" class="userRatings">Back-end Projects</li>
+              <li class="checkbox"><label><input name="prefer" value="3" type="checkbox" class="userRatings">Data Visualization</label></li>
+              <li class="checkbox"><label><input name="prefer" value="4" type="checkbox" class="userRatings">Challenges</label></li>
+              <li class="checkbox"><label><input name="prefer" value="5" type="checkbox" class="userRatings">Open Source Community</label></li>
+              <li class="checkbox"><label><input name="prefer" value="6" type="checkbox" class="userRatings">Gitter help rooms</label></li>
+              <li class="checkbox"><label><input name="prefer" value="7" type="checkbox" class="userRatings">Videos</label></li>
+              <li class="checkbox"><label><input name="prefer" value="8" type="checkbox" class="userRatings">City Meetups</label></li>
+              <li class="checkbox"><label><input name="prefer" value="9" type="checkbox" class="userRatings">Wiki</label></li>
+              <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Forum</label></li>
+              <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Additional Courses</label></li>
+            </ul>
+          </div>
+        </div>
+        <div class="rowEntry">
+          <div class="leftLabel">
+            <label for="comments">Any Comments or Suggestions?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="comment" id="comments" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter your comment here..."></textarea>
+          </div>
+        </div>
+        <button id="submit" type="submit">Submit</button>
+      </form>
     </div>
     
 </body>

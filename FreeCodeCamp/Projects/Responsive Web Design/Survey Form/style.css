@@ -21,6 +21,12 @@ body {
 
 #description {
     text-align: center;
+    font-weight: 700;
+}
+
+.application {
+    margin: 0 25px 10px 25px;
+    text-align: left;
 }
 
 #survey-form {
