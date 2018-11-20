@@ -14,7 +14,7 @@
       <div class="application">
         <p >We would like to assist every company that has requested our know-how. However we select our clients very carefully with a reasonable set of criteria that needs to be met in order for us to proceed. We only work with a limited number of clients, to guarantee the highest focus to detail as well as your company’s greatest success.</p>
         <p>1. Our services are for companies that are up and running already and simply want to move a lot faster and a lot farther.</p>
-        <p style="padding-left: 5%"><u>We do not work with:</u></p>
+        <p style="padding-left: 5%"><u><b><i>We do not work with:</i></b></u></p>
           <ul style="padding-left: 5%">
             <li>Get Rich Quick Schemes</li>
             <li>MLM Companies</li>
@@ -23,13 +23,14 @@
           </ul>
         <p>2. A steady flow of customers. You’re running ads, you’re promoting, and/or you’re selling your services. You don’t have to be a household name …You just need to be PRESENT in your market.</p>
         <p>3. A good, solid product and a good reputation. Everything we do together will not only be bringing you more sales and profits, but we’ll be doing it in a way that creates MASSIVE goodwill in your market.</p>
-        <p style="text-align: justify"><b>That’s it! Those are all our requirements.</b> If you meet the criteria above and would like to speak with us personally about getting you incredible results, then we will happily set aside some time for you. Here’s how the process works: First, you’ll need to fill out the discovery form below.
-            Don’t worry, it’s simple and discreet. We just need to know what you’re selling, getting an idea of what you want to accomplish. We’ll carefully study your goals and your offers. Afterwards we’ll deliver a custom plan how to grow your revenues. 
-            Please fill-in the application form as much as possible and send it back to us (eric@successwizard.eu)</p>
+        <div style="text-align: justify">
+          <p><b>That’s it! Those are all our requirements.</b> If you meet the criteria above and would like to speak with us personally about getting you incredible results, then we will happily set aside some time for you. Here’s how the process works: First, you’ll need to fill out the discovery form below.</p>
+          <p>Don’t worry, it’s simple and discreet. We just need to know what you’re selling, getting an idea of what you want to accomplish. We’ll carefully study your goals and your offers. Afterwards we’ll deliver a custom plan how to grow your revenues.</p>
+        </div>
         <hr>
         <h3 style="text-align: center; font-weight: 900">APPLICATION FORM</h3>
       </div>
-      <form id="survey-form" methode="GET" action="#">
+      <form id="survey-form" methode="GET" action="mailto:abc@yourdomain.com" method="post" enctype="text/plain">
         <div class="rowEntry name">
           <div class="leftLabel">
             <label id="name-label" for="name">* Name: </label>
@@ -62,8 +63,43 @@
             <input type="text" name="website" id="website" class="input-field" placeholder="Enter your website address" required="">
           </div>
         </div>
-        <div class="rowEntry title">
-          <p class="leftLabel" style="font-size: 18px"><u><b>Tell us about your business</b></u></p>
+        <div class="rowEntry role">
+          <div class="leftLabel">
+            <label for="role">What is your role in your business?</label>
+          </div>
+          <div class="rightForm">
+            <select id="role" name="role" class="dropdown">
+              <option disabled="" selected="" value="">Select an option</option>
+              <option value="marketing department">Marketing Department</option>
+              <option value="manager">Manager</option>
+              <option value="ceo">CEO</option>
+              <option value="owner">Business Owner</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="rowEntry employees">
+          <div class="leftLabel">
+            <label for="employees">How many employees has the business?</label>
+          </div>
+          <div class="rightForm">
+            <select id="employees" name="employees" class="dropdown">
+              <option disabled="" selected="" value="">Select an option</option>
+              <option value="One">Only you</option>
+              <option value="-10">less than 10 employees</option>
+              <option value="10-19">10 to 19 employees</option>
+              <option value="20-49">20 to 49 employees</option>
+              <option value="+50">more than 50 employees</option>
+            </select>
+          </div>
+        </div>
+        <div class="rowEntry your-bizz">
+          <div class="leftLabel">
+            <label id="your-bizz-label" for="your-bizz"><u><b>Tell us about your business</b></u></label>
+          </div>
+          <div class="rightForm">
+            <textarea name="your-bizz" id="your-bizz" class="input-field" style="height:50px;resize:vertical;" placeholder="Tell here about your business..."></textarea>
+          </div>
         </div>
         <div class="rowEntry why">
           <div class="leftLabel">
@@ -136,57 +172,95 @@
                 <li class="radio"><label>Over €1000 per month<input name="radio-buttons" value="+1000 €" type="radio" class="userRatings"></label></li>
               </ul>
             </div>
-          </div>
-        <div class="rowEntry">
+        </div>
+        <div class="rowEntry keywords">
           <div class="leftLabel">
-            <label for="currentPos">What is your role in your business?</label>
+            <label for="keywords">Please write as many keywords as you can think of that you would like to target online. (Keywords are words typed into Google that your website will be visible for, example “Albufeira Chiropractor”</label>
           </div>
           <div class="rightForm">
-            <select id="dropdown" name="currentPos" class="dropdown">
-              <option disabled="" value="">Select an option</option>
-              <option value="student">Student</option>
-              <option value="job">Full Time Job</option>
-              <option value="learner">Full Time Learner</option>
-              <option value="preferNo">Prefer not to say</option>
-              <option value="other">Other</option>
-            </select>
+            <textarea name="keywords" id="keywords" class="input-field" style="height:85px;resize:vertical;" placeholder="Enter your keywords here..."></textarea>
           </div>
         </div>
-        <div class="rowEntry">
+        <div class="rowEntry target">
           <div class="leftLabel">
-            <label for="most-like">What do you like most in FCC: </label>
+            <label for="target">Please list radius and specific cities you would like to target. If you’re targeting national, just type in Portugal.</label>
           </div>
           <div class="rightForm">
-            <select id="most-like" name="mostLike" class="dropdown">
-              <option disabled="" selected="" value="">Select an option</option>
-              <option value="challenges">Challenges</option>
-              <option value="projects">Projects</option>
-              <option value="community">Community</option>
-              <option value="openSource">Open Source</option>
-            </select>
+            <textarea name="target" id="target" class="input-field" style="height:50px;resize:vertical;" placeholder="Specify here..."></textarea>
           </div>
         </div>
-        <div class="rowEntry">
+        <div class="rowEntry customers">
           <div class="leftLabel">
-            <label for="preferences">Things that should be improved in the future<br>(Check all that apply): </label>
+            <label id="number-label" for="new-customers">How many additional customers would you like to acquire a month?</label>
           </div>
           <div class="rightForm">
-            <ul id="preferences" style="list-style: none;">
-              <li class="checkbox"><label><input name="prefer" value="1" type="checkbox" class="userRatings">Front-end Projects</label></li>
-              <li class="checkbox"><input name="prefer" value="2" type="checkbox" class="userRatings">Back-end Projects</li>
-              <li class="checkbox"><label><input name="prefer" value="3" type="checkbox" class="userRatings">Data Visualization</label></li>
-              <li class="checkbox"><label><input name="prefer" value="4" type="checkbox" class="userRatings">Challenges</label></li>
-              <li class="checkbox"><label><input name="prefer" value="5" type="checkbox" class="userRatings">Open Source Community</label></li>
-              <li class="checkbox"><label><input name="prefer" value="6" type="checkbox" class="userRatings">Gitter help rooms</label></li>
-              <li class="checkbox"><label><input name="prefer" value="7" type="checkbox" class="userRatings">Videos</label></li>
-              <li class="checkbox"><label><input name="prefer" value="8" type="checkbox" class="userRatings">City Meetups</label></li>
-              <li class="checkbox"><label><input name="prefer" value="9" type="checkbox" class="userRatings">Wiki</label></li>
-              <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Forum</label></li>
-              <li class="checkbox"><label><input name="prefer" value="10" type="checkbox" class="userRatings">Additional Courses</label></li>
+            <input type="number" name="new-customers" id="new-customers" min="1" max="125" class="input-field" placeholder="Please set a number">
+          </div>
+        </div>
+        <div class="rowEntry marketing">
+          <div class="leftLabel">
+            <label for="marketing">Are you doing any other forms of marketing?<br>(Check all that apply): </label>
+          </div>
+          <div class="rightForm">
+            <ul id="marketing" style="list-style: none;">
+              <li class="checkbox"><label><input name="marketing" value="SEO" type="checkbox" class="userRatings">SEO (Search Engine Optimization)</label></li>
+              <li class="checkbox"><label><input name="marketing" value="PPC" type="checkbox" class="userRatings">PPC (Pay Per Click)</label></li>
+              <li class="checkbox"><label><input name="marketing" value="RTB" type="checkbox" class="userRatings">RTB (Real Time Bidding)</label></li>
+              <li class="checkbox"><label><input name="marketing" value="Video" type="checkbox" class="userRatings">Video Marketing</label></li>
+              <li class="checkbox"><label><input name="marketing" value="Social Media" type="checkbox" class="userRatings">Social Media</label></li>
+              <li class="checkbox"><label><input name="marketing" value="Offline" type="checkbox" class="userRatings">Offline: Printed, Radio, Media</label></li>
             </ul>
           </div>
         </div>
-        <div class="rowEntry">
+        <div class="rowEntry effective-advertising">
+          <div class="leftLabel">
+            <label for="effective-advertising">What would you say has been your most effective advertising method?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="effective-advertising" id="effective-advertising" class="input-field" style="height:50px;resize:vertical;" placeholder="Specify here..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry worst-advertising">
+          <div class="leftLabel">
+            <label for="worst-advertising">What would you say has been your least effective advertising method?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="worst-advertising" id="worst-advertising" class="input-field" style="height:50px;resize:vertical;" placeholder="Specify here..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry promotions">
+          <div class="leftLabel">
+            <label for="promotions">Do you offer any special promotions to new customers? If so, what are they?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="promotions" id="promotions" class="input-field" style="height:50px;resize:vertical;" placeholder="Specify here..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry competition">
+          <div class="leftLabel">
+            <label for="competition">Who is your competition?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="competition" id="competition" class="input-field" style="height:50px;resize:vertical;" placeholder="Specify here..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry budget">
+          <div class="leftLabel">
+            <label for="budget">What is your budget range for getting new customers?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="budget" id="budget" class="input-field" style="height:50px;resize:vertical;" placeholder="Specify here..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry concern">
+          <div class="leftLabel">
+            <label for="concern">What is your biggest concern working with a company for online marketing?</label>
+          </div>
+          <div class="rightForm">
+            <textarea name="concern" id="concern" class="input-field" style="height:50px;resize:vertical;" placeholder="Enter your concerns here..."></textarea>
+          </div>
+        </div>
+        <div class="rowEntry suggestions">
           <div class="leftLabel">
             <label for="comments">Any Comments or Suggestions?</label>
           </div>
@@ -195,6 +269,10 @@
           </div>
         </div>
         <button id="submit" type="submit">Submit</button>
+        <hr>
+        <div style="font-size: 10px; font-weight: 100">
+          Your-Company-name - Tel.: +351 123 456 789 - email: abc@yourdomain.com - Your website
+        </div>
       </form>
     </div>
     
