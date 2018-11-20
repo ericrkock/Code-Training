@@ -1,0 +1,52 @@
+#body {
+    background-color: bisque;
+}
+
+#header {
+
+}
+
+#header-img {
+
+}
+
+#nav-bar {
+
+}
+
+.nav-link {
+
+}
+
+#video {
+
+}
+
+#form {
+
+}
+
+#email {
+
+}
+
+#submit {
+
+}
+
+.footer {
+    display: inherit;
+    grid-template-columns: 50% 50%;
+}
+
+.footer-left {
+    display: inline-block;
+    width: 35%;
+    text-align: left;
+}
+
+.footer-right {
+    display: inline-block;
+    width: 35%;
+    text-align: right;
+}
