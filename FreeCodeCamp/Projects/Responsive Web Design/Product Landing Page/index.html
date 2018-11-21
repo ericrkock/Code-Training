@@ -4,30 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Product Landing Page</title>
 </head>
 <body>
-   <header id="header">
-       <img id="headr-img">
-       <nav id="nav-bar">
-           <nav-link>Section 1</nav-link>
-           <nav-link>Section 2</nav-link>
-           <nav-link>Section 3</nav-link>
-       </nav>
-   </header> 
-   <p>Embede video section</p>
-   <form id="form" action="#" method="post" enctype="text/plain">
-       <input type="email" name="email" id="email" class-field="input-field" required="" placeholder="Enter your Email address">
-       <button id="submit" type="submit">Submit</button>
-   </form>
-   <section>Features & Description</section>
-   <section>Embeded product video</section>
-   <section>Flexbox variants</section>
-   <footer>
-       <div class="footer">
-           <div class="footer-left">(c) 2018 - Copyright</div>
-           <div class="footer-right">Created by Eric R. Kock</div>
-       </div>
-   </footer>
+    <div class="product-page-wrapper">
+        <header id="header">
+            <div class="logo">
+                    <img id="header-img" src="https://shopnix.in/media/images/shopnix-large-logo.png" alt="logo">
+            </div>
+            <nav id="nav-bar">
+                <ul>
+                    <li><a class="nav-link" href="#features">Features</a></li>
+                    <li><a class="nav-link" href="#video">Video</a></li>
+                    <li><a class="nav-link" href="#variants">Variants</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container"></div>
+        <section class="mailing-block">
+            <h2>Receive our weekly new product catalog</h2>
+            <form id="form" action="#" method="post" enctype="text/plain">
+                <input type="email" id="email" name="email" class-field="input-field" required="" placeholder="Enter your Email address">
+                <button type="submit" id="submit" >Yes, send me</button>
+            </form>
+        </section>
+       
+        <section>
+        </section>
+        <footer>
+            <div class="footer-wrapper">
+                    <div class="footer-left">(c) 2018 - Copyright</div>
+                    <div class="footer-right">Created by Eric R. Kock</div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

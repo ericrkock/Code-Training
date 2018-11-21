@@ -1,52 +1,121 @@
-#body {
-    background-color: bisque;
+body {
+    background-color: aliceblue;
+}
+
+.product-page-wrapper {
+    max-width:  1200px;
+    min-width: 320px;
+    background-color: red;
 }
 
 #header {
+    position: fixed;
+    top: 0;
+    min-height: 75px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ff5900;
+}
 
+.logo {
+    width: 60vw;
 }
 
 #header-img {
-
+   width: 100%;
+    height: 100%;
+    max-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
 }
 
-#nav-bar {
-
+nav {
+   font-weight: 400px; 
+   float: right;
 }
 
 .nav-link {
+    color: rgb(253, 251, 251);
+    text-decoration: none;
+}
 
+nav ul {
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    align-items: center;
+    margin: 0 auto;
 }
 
 #video {
 
 }
 
-#form {
+.mailing-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+    margin-top: 50px; 
+}
 
+.mailing-block h2 {
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+#form {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #email {
-
+    max-width: 275px;
+    width: 100%;
+    padding: 5px;
 }
 
 #submit {
-
+    max-width: 150px;
+    width: 100%;
+    height: 30px;
+    margin: 15px 0;
+    border: 0;
+    background-color: #f1c40f;
 }
 
-.footer {
-    display: inherit;
-    grid-template-columns: 50% 50%;
+footer {
+    width: 100%;
+    background-color: #333;
+    padding: 60px 0px;
+}
+
+.footer-wrapper {
+    
 }
 
 .footer-left {
-    display: inline-block;
-    width: 35%;
-    text-align: left;
+    
 }
 
 .footer-right {
-    display: inline-block;
-    width: 35%;
-    text-align: right;
+    
 }
