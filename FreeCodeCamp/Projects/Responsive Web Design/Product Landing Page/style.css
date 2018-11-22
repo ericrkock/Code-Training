@@ -2,12 +2,13 @@ body {
     background-color: aliceblue;
 }
 
-.product-page-wrapper {
+#page-container {
     max-width:  1200px;
     min-width: 320px;
     background-color: red;
 }
 
+/* -- HEADER -- */
 #header {
     position: fixed;
     top: 0;
@@ -19,7 +20,7 @@ body {
     background-color: #ff5900;
 }
 
-.logo {
+#logo {
     width: 60vw;
 }
 
@@ -34,7 +35,8 @@ body {
     margin-left: 10px;
 }
 
-nav {
+/* HEADER NAVIGATION -- */
+header nav {
    font-weight: 400px; 
    float: right;
 }
@@ -55,15 +57,20 @@ li {
     list-style: none;
 }
 
-.container {
+/* -- PAGE CONTENT -- */
+#product-container {
     max-width: 1000px;
     width: 100%;
     align-items: center;
     margin: 0 auto;
 }
 
-#video {
+#product-image {
+    align-items: flex-start;
+}
 
+#video {
+    display: block;
 }
 
 .mailing-block {
@@ -102,6 +109,7 @@ li {
     background-color: #f1c40f;
 }
 
+/* -- FOOTER -- */
 footer {
     width: 100%;
     background-color: #333;
@@ -119,3 +127,5 @@ footer {
 .footer-right {
     
 }
+
+/* -- FOOTER NAVIGATION -- */
