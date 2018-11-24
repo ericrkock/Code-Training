@@ -5,7 +5,7 @@ body {
 #page-container {
     max-width:  1200px;
     min-width: 320px;
-    background-color: red;
+    background-color: blanchedalmond;
 }
 
 /* -- HEADER -- */
@@ -17,11 +17,12 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #ff5900;
+    background-color: #dcdddf;
 }
 
 #logo {
-    width: 60vw;
+    width: 55vw;
+    padding-left: 100px;
 }
 
 #header-img {
@@ -42,7 +43,7 @@ header nav {
 }
 
 .nav-link {
-    color: rgb(253, 251, 251);
+    color: rgb(0, 0, 0);
     text-decoration: none;
 }
 
@@ -59,15 +60,17 @@ li {
 
 /* -- PAGE CONTENT -- */
 #product-container {
-    max-width: 1000px;
-    width: 100%;
-    align-items: center;
-    margin: 0 auto;
+    display:flex;
+    flex-direction: row;
+    grid-template-columns: 40% 60%;
 }
 
 #product-image {
     align-items: flex-start;
 }
+ #product-description {
+    color : red;
+ }
 
 #video {
     display: block;
