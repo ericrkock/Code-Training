@@ -1,11 +1,10 @@
 body {
-    background-color: aliceblue;
+    background-color: rgb(225, 228, 230);
 }
 
 #page-container {
-    max-width:  1200px;
-    min-width: 320px;
-    background-color: blanchedalmond;
+    position: relative;
+    
 }
 
 /* -- HEADER -- */
@@ -22,7 +21,7 @@ body {
 
 #logo {
     width: 55vw;
-    padding-left: 100px;
+    margin-left: 110px;
 }
 
 #header-img {
@@ -60,20 +59,89 @@ li {
 
 /* -- PAGE CONTENT -- */
 #product-container {
-    display:flex;
-    flex-direction: row;
-    grid-template-columns: 40% 60%;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+#product {
+    margin-top: 30px;
+}
+
+.grid {
+    display: flex;
 }
 
 #product-image {
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+    width: 20vw;
+    padding: 200px 20px 20px 0;
 }
  #product-description {
-    color : red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    height: 125px;
+    width: 80vw;
+    margin: 150px 10px 200px 10px;
+ }
+
+ #product-button {
+    background-color: red;
+    color: white;
+    font-weight: 900;
  }
 
 #video {
-    display: block;
+    margin-top: 85px;
+    display: flex;
+    justify-content: center;
+}
+
+#product-variant {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.variant-header {
+    background-color: #ddd;
+    color: black;
+    padding: 15px 0;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.variant-price {
+    font-size: 24px;
+    font-weight: 500;
+    color: darkgrey;
+}
+
+#variant-image {
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    
+    
+}
+
+#variant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    margin: 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
 }
 
 .mailing-block {
@@ -114,9 +182,9 @@ li {
 
 /* -- FOOTER -- */
 footer {
-    width: 100%;
-    background-color: #333;
-    padding: 60px 0px;
+    margin-top: 30px;
+    background-color: #ddd;
+    padding: 20px;
 }
 
 .footer-wrapper {
@@ -124,11 +192,19 @@ footer {
 }
 
 .footer-left {
-    
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 0.9em;
+    color: #444;
 }
 
 .footer-right {
-    
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9em;
+    color: #444;
 }
 
 /* -- FOOTER NAVIGATION -- */

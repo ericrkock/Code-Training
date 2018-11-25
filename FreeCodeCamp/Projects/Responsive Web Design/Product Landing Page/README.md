@@ -1,6 +1,7 @@
 Responsive Web Design Projects - Build a Product Landing Page
 
     - Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/RKRbwL.
+            Desktop : file:///D:/Projects/WebDevSW/ERK/Git/FCC%20Training/FreeCodeCamp/Projects/Responsive%20Web%20Design/Product%20Landing%20Page/index.html
     
     - Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
     
