@@ -14,7 +14,7 @@
     <div> <!-- Header Container-->
         <section id="header">
             <div id="logo">
-                <img id="header-img" src="./img/Logos/Logo-GS.png" alt="Project logo">
+                <img id="header-img" src="https://raw.githubusercontent.com/ericrkock/Code-Training/master/FreeCodeCamp/Projects/Responsive%20Web%20Design/Product%20Landing%20Page/img/Logos/Logo-GS.png" alt="Project logo">
             </div>
             <nav id="nav-bar">
                 <ul>
@@ -45,8 +45,8 @@
         </div>
 
         <div id="video-section">
-            <section id="video">
-                <iframe src="https://player.vimeo.com/video/226542240" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <section>
+                <iframe id="video" src="https://player.vimeo.com/video/226542240" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </section>
         </div>
 
@@ -74,102 +74,27 @@
         <div id="mail-section">
             <section id="mailing">
                 <h2>Receive our weekly new product catalog</h2>
-                <form id="form" action="#" method="post" enctype="text/plain">
+                <form id="form" action="https://www.freecodecamp.com/email-submit" method="post" enctype="text/plain">
                     <input type="email" id="email" name="email" class-field="input-field" required="" placeholder="Enter your Email address"><br>
-                    <button type="submit" id="submit" >Yes, send me</button>
+                    <input type="submit" id="submit" class="btn" value="YES, SEND ME">
                 </form>
             </section>
         </div>
 
         <div id="footer-section">
             <section id="footer-left">
-
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </section>
             <section id="footer-right">
-                <div class="footer-right">(c) 2018 - Copyright GEEKSESSIONS | All Rights Reserved.</div>
-                <div class="footer-right">Created by Eric R. Kock</div>
+                <div>2018 Copyright GEEKSESSIONS FARO | All Rights Reserved.</div>
+                <div>- Created by Eric R. Kock -</div>
             </section>
         </div>
     </div>
-
-    <!-- OLD CODE
-    <div id="page-container">
-        <header id="header">
-            <div id="logo">
-                <img id="header-img" src="./img/Logos/Logo-GS.png" alt="Project logo">
-            </div>
-            <nav id="nav-bar">
-                <ul>
-                    <li><a class="nav-link" href="#product">Product</a></li>
-                    <li><a class="nav-link" href="#video">Video</a></li>
-                    <li><a class="nav-link" href="#product-variant">Variants</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div id="product-container">
-            <section id="product">
-                <div class="grid">
-                    <div id="product-image">
-                        <img src="img/Products/Luggage-Cover.jpg">
-                    </div>
-                    <div id="product-description">
-                        <h3 style="margin-top: 110px; color: darkblue; font-weight: 900">LUGGAGE COVER</h3>
-                        <p>Add style and personality to your luggage while protecting it from scratches, spills, stains and more while traveling.</p>
-                        <p style="color: red"><b>LUGGAGE, SUITE CASE NOT INCLUDED!!</b></p>
-                        <p>Constructed with an elastic polyester-spandex fabric for maximum durability and a snug fit.
-                           Features a high-quality no-fade print with uncompromising color vibrancy.
-                           Designed for quick and easy installation no tools required
-                           Includes side slits for easy access to your luggage handles and a zipper-bottom to securely fasten the cover to your luggage while ensuring a tight fit.</p>
-                        <p>Delivery takes between 2 and 4 weeks.</p>
-                    </div> 
-                    <button id="product-button">ADD TO CART</button>
-                </div>
-            </section>
-        
-            <div id="video">
-                <iframe src="https://player.vimeo.com/video/226542240" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                <!- <embed src="https://player.vimeo.com/video/226542240" width="640" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></embed> ->
-            </div>
-
-            <section id="product-variant">
-                <div id="variant">
-                    <div class="variant-header">Car seat covers</div>
-                    <img id="variant-image" src="img/Products/Car Seat Cover.jpg">
-                    <div class="variant-price">€99.99</div>
-                    <button id="variant-button">Add to cart</button>
-                </div>
-                <div id="variant">
-                    <div class="variant-header">Backpack</div>
-                    <img id="variant-image" src="img/Products/BackPack.jpg">
-                    <div class="variant-price">€59.99</div>
-                    <button id="variant-button">Add to cart</button>
-                </div>
-                <div id="variant">
-                    <div class="variant-header">Car sun shades</div>
-                    <img id="variant-image" src="img/Products/Car-SunShade.jpg">
-                    <div class="variant-price">€59.99</div>
-                    <button id="variant-button">Add to cart</button>
-                </div>
-            </section>
-            
-            <div id="mail-container">
-                <section id="mailing">
-                    <h2>Receive our weekly new product catalog</h2>
-                    <form id="form" action="#" method="post" enctype="text/plain">
-                        <input type="email" id="email" name="email" class-field="input-field" required="" placeholder="Enter your Email address">
-                        <button type="submit" id="submit" >Yes, send me</button>
-                    </form>
-                </section>
-            </div>
-            <footer>
-                <div id="footer-container">
-                    <div class="footer-right">(c) 2018 - Copyright GEEKSESSIONS | All Rights Reserved.</div>
-                    <div class="footer-right">Created by Eric R. Kock</div>
-                </div>
-            </footer>
-        </div>
-    </div>
--->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

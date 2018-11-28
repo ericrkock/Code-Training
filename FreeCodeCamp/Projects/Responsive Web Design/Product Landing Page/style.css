@@ -1,5 +1,5 @@
 body {
-    background-color: #666;
+    background-color: #eee;
 }
 
 /* -- HEADER -- */
@@ -14,7 +14,7 @@ body {
     top: 0;
     min-height: 75px;
     padding: 0px 20px;
-    background-color: #999;
+    background-color: #dddee0;
 }
 
 #logo {
@@ -59,7 +59,6 @@ li {
 
 #product-section {
     display: flex;
-    *margin-top: 110px;
 }
 
 #product-image {
@@ -88,11 +87,11 @@ li {
     width: 175px;
  }
 
-#video {
-    margin-top: 85px;
+#video-section {
+    margin-top: 60px;
     display: flex;
     justify-content: center;
-}
+} 
 
 #variant-section {
     width: 100%;
@@ -108,7 +107,6 @@ li {
     align-items: center;
     text-align: center;
     width: calc(100% / 3);
-    *margin: 10px;
     border: 1px solid #000;
     border-radius: 3px;
 }
@@ -150,10 +148,12 @@ li {
     justify-content: center;
     text-align: center;
     height: 200px;
-    margin-top: 50px; 
+    margin-top: 40px;
+    background-color: #333;
 }
 
 #mail-section h2 {
+    color: #fff;
     margin-bottom: 20px;
     word-wrap: break-word;
 }
@@ -173,21 +173,19 @@ li {
 #submit {
     max-width: 150px;
     width: 100%;
-    height: 30px;
-    margin: 15px 0;
+    height: 35px;
+    margin: 15px;
     border: 0;
-    background-color: #f1c40f;
+    background-color: #999;
+    color: #333;
+    font-weight: 700;
 }
 
 /* -- FOOTER -- */
-footer {
-    
-}
+
 
 #footer-section {
     display:flex;
-    max-width: 1000px;
-    width: 100%;
     margin: 0 auto;
     margin-top: 30px;
     background-color: #ddd;
@@ -197,17 +195,31 @@ footer {
 #footer-left {
     margin-top: 5px;
     display: flex;
-    justify-content: flex-start;
-    font-size: 0.9em;
-    color: #444;
+    flex: 3;
+    font-size: 12px;
+    color: #333;
 }
 
 #footer-right {
-    margin-top: 5px;
-    display: flex;
-    justify-content: flex-end;
-    font-size: 0.9em;
-    color: #444;
+    margin-top: 7px;
+    width: 100%;
+    flex: 2;
+    float: right;
+    text-align: right;
+    font-size: 11px;
+    color: #333;
 }
 
 /* -- FOOTER NAVIGATION -- */
+
+#footer-section ul {
+    display: flex;
+}
+
+#footer-section li {
+    padding: 0 10px;
+}
+
+#footer-left a {
+    color: #333;
+}
