@@ -18,16 +18,16 @@
             <a class="nav-link" href="#Hello_world" rel="internal"><li>Hello world</li></a>
             <a class="nav-link" href="#Functions" rel="internal"><li>Functions</li></a>
             <a class="nav-link" href="#Array_object" rel="internal"><li>Array object</li></a>
+            <a class="nav-link" href="#Constructor" rel="internal"><li>Constructor</li></a>
+            <a class="nav-link" href="#If_Else_Statement" rel="internal"><li>If ... Else Statement</li></a>
+            <a class="nav-link" href="#Switch_Statement" rel="internal"><li>Switch Statement</li></a>
+            <a class="nav-link" href="#Declarations" rel="internal"><li>Declarations</li></a>
+            <a class="nav-link" href="#Comments" rel="internal"><li>Comments</li></a>
+            <a class="nav-link" href="#Conditional_operator" rel="internal"><li>Conditional OPerator</li></a>
             <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
             <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
             <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Reference</li></a>
+            <a class="nav-link" href="#Reference" rel="internal"><li>Reference</li></a>
         </ul>
     </nav>
     <main id="main-doc">
@@ -127,29 +127,210 @@ arr.length = arrayLength;</code>
         Running a for...in loop on the array will return none of the array's elements.</div>
                 </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 6</header>
-                <article></article>
+        <section class="main-section" id="Constructor">
+                <header>Constructor</header>
+                <article>
+                        <p>There can be only one special method with the name "constructor" in a class. Having more than one occurrence of a constructor method in a class will throw a SyntaxError error.</p>
+                        <p>A constructor can use the super keyword to call the constructor of a parent class.</p>
+                        <p>If you do not specify a constructor method, a default constructor is used.</p>
+                        <code>class Square extends Polygon {
+        constructor(length) {
+                // Here, it calls the parent class' constructor with lengths
+                // provided for the Polygon's width and height
+                super(length, length);
+                // Note: In derived classes, super() must be called before you
+                // can use 'this'. Leaving this out will cause a reference error.
+                this.name = 'Square';
+        }
+
+        get area() {
+                return this.height * this.width;
+        }
+
+        set area(value) {
+                this.area = value;
+        } 
+}</code>
+                <p style="color: white; background-color: black; padding: 2px 0 2px 5px"><b>DEFAULT CONSTRUCTORS</b></p>
+                <p>As stated, if you do not specify a constructor method a default constructor is used. For base classes the default constructor is:</p>
+                <code>constructor() {}</code>
+                <p>For derived classes, the default constructor is:</p>
+                <code>constructor(...args) {
+        super(...args);
+}</code>
+                </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 7</header>
-                <article></article>
+        <section class="main-section" id="If_Else_Statement">
+                <header>If ... Else Statement</header>
+                <article>
+                        <p>Use the if statement to execute a statement if a logical condition is true. Use the optional else clause to execute a statement if the condition is false. An if statement looks as follows:</p>
+                        <code>if (condition) {
+        statement_1;
+} else {
+        statement_2;
+}</code>
+                        <p>Here the condition can be any expression that evaluates to true or false. See Boolean for an explanation of what evaluates to true and false. If condition evaluates to true, statement_1 is executed; otherwise, statement_2 is executed. statement_1 and statement_2 can be any statement, including further nested if statements.</p>
+                        <p>You may also compound the statements using else if to have multiple conditions tested in sequence, as follows:</p>
+                        <code>if (condition_1) {
+        statement_1;
+} else if (condition_2) {
+        statement_2;
+} else if (condition_n) {
+        statement_n;
+} else {
+        statement_last;
+} </code>
+                <p>In the case of multiple conditions only the first logical condition which evaluates to true will be executed. To execute multiple statements, group them within a block statement ({ ... }) . In general, it's good practice to always use block statements, especially when nesting if statements:</p>
+                <code>if (condition) {
+        statement_1_runs_if_condition_is_true;
+        statement_2_runs_if_condition_is_true;
+} else {
+        statement_3_runs_if_condition_is_false;
+        statement_4_runs_if_condition_is_false;
+}</code>
+                <p>It is advisable to not use simple assignments in a conditional expression, because the assignment can be confused with equality when glancing over the code. For example, do not use the following code:</p>
+                <code style="background-color: rgb(255, 204, 204); border-left-color: red">if (x = y) {
+        /* statements here */
+}</code>
+                <p>If you need to use an assignment in a conditional expression, a common practice is to put additional parentheses around the assignment. For example:</p>
+                <code>if ((x = y)) {
+        /* statements here */
+}</code>
+                <p style="font-weight: 700; color: white; background-color: black; padding: 2px 0 2px 5px">Falsy values</p>
+                <p>The following values evaluate to false (also known as Falsy values):</p>
+                <li>false</li>
+                <li>undefined</li>
+                <li>null</li>
+                <li>0</li>
+                <li>NaN</li>
+                <li>the empty string ("")</li>
+                <p>All other values, including all objects, evaluate to true when passed to a conditional statement.</p>
+                </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 8</header>
-                <article></article>
+        <section class="main-section" id="Switch_Statement">
+                <header>Switch Statement</header>
+                <article>
+                        <p>A switch statement allows a program to evaluate an expression and attempt to match the expression's value to a case label. If a match is found, the program executes the associated statement. A switch statement looks as follows:</p>
+                        <code>switch (expression) {
+case label_1:
+        statements_1
+        [break;]
+case label_2:
+        statements_2
+        [break;]
+        ...
+default:
+        statements_def
+        [break;]
+}</code>
+                        <p>The program first looks for a case clause with a label matching the value of expression and then transfers control to that clause, executing the associated statements. If no matching label is found, the program looks for the optional default clause, and if found, transfers control to that clause, executing the associated statements. If no default clause is found, the program continues execution at the statement following the end of switch. By convention, the default clause is the last clause, but it does not need to be so.</p>
+                        <p>The optional break statement associated with each case clause ensures that the program breaks out of switch once the matched statement is executed and continues execution at the statement following switch. If break is omitted, the program continues execution at the next statement in the switch statement.</p>
+                        <p><b>Example</b></p>
+                        <P>In the following example, if fruittype evaluates to "Bananas", the program matches the value with case "Bananas" and executes the associated statement. When break is encountered, the program terminates switch and executes the statement following switch. If break were omitted, the statement for case "Cherries" would also be executed.</P>
+                        <code>switch (fruittype) {
+        case 'Oranges':
+                console.log('Oranges are $0.59 a pound.');
+                break;
+        case 'Apples':
+                console.log('Apples are $0.32 a pound.');
+                break;
+        case 'Bananas':
+                console.log('Bananas are $0.48 a pound.');
+                break;
+        case 'Cherries':
+                console.log('Cherries are $3.00 a pound.');
+                break;
+        case 'Mangoes':
+                console.log('Mangoes are $0.56 a pound.');
+                break;
+        case 'Papayas':
+                console.log('Mangoes and papayas are $2.79 a pound.');
+                break;
+        default:
+                console.log('Sorry, we are out of ' + fruittype + '.');
+}
+console.log("Is there anything else you'd like?");</code>
+                </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 9</header>
-                <article></article>
+        <section class="main-section" id="Declarations">
+                <header>Declarations</header>
+                <article>
+                        <p>There are three kinds of declarations in JavaScript.</p>
+                        <p style="color: rgb(77, 77, 255)">var</p>
+                        <p style="padding-left: 10px">Declares a variable, optionally initializing it to a value.</p>
+                        <p style="color: rgb(77, 77, 255)">let</p>
+                        <p style="padding-left: 10px">Declares a block-scoped, local variable, optionally initializing it to a value.</p>
+                        <p style="color: rgb(77, 77, 255)">const</p>
+                        <p style="padding-left: 10px">Declares a block-scoped, read-only named constant.</p>
+                        <p style="padding: 2px 0 2px 5px; background-color: black; color: white; width: 35%">Variables</p>
+                        <p>You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.</p>
+                        <p>A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).</p>
+                        <p>You can use most of ISO 8859-1 or Unicode letters such as å and ü in identifiers (for more details see this blog post). You can also use the Unicode escape sequences as characters in identifiers.</p>
+                        <p>Some examples of legal names are Number_hits, temp99, $credit, and _name.</p>
+                        <p style="padding: 2px 0 2px 5px; background-color: black; color: white; width: 35%">Declaring variables</p>
+                        <p>You can declare a variable in three ways:</p>
+                        <li>With the keyword var. For example, var x = 42. This syntax can be used to declare both local and global variables.</li>
+                        <li>By simply assigning it a value. For example, x = 42. If this form is used outside of a function, it declares a global variable. It generates a strict JavaScript warning. You shouldn't use this variant.</li>
+                        <li>With the keyword let. For example, let y = 13. This syntax can be used to declare a block-scope local variable. See Variable scope below.</li>
+                        <p style="padding: 2px 0 2px 5px; background-color: black; color: white; width: 35%">Evaluating variables</p>
+                        <p>A variable declared using the var or let statement with no assigned value specified has the value of undefined.</p>
+                        <p>An attempt to access an undeclared variable results in a ReferenceError exception being thrown:</p>
+                        <code>var a;
+console.log('The value of a is ' + a); // The value of a is undefined
+
+console.log('The value of b is ' + b); // The value of b is undefined
+var b;
+// This one may puzzle you until you read 'Variable hoisting' below
+
+console.log('The value of c is ' + c); // Uncaught ReferenceError: c is not defined
+
+let x;
+console.log('The value of x is ' + x); // The value of x is undefined
+
+console.log('The value of y is ' + y); // Uncaught ReferenceError: y is not defined
+let y;</code>
+                        <p>You can use undefined to determine whether a variable has a value. In the following code, the variable input is not assigned a value, and the if statement evaluates to true.</p>
+                        <code>var input;
+if (input === undefined) {
+        doThis();
+} else {
+        doThat();
+}</code>
+                        <p>The undefined value behaves as false when used in a boolean context. For example, the following code executes the function myFunction because the myArray element is undefined:</p>
+                        <code>var myArray = [];
+if (!myArray[0]) myFunction();</code>
+                        <p>The undefined value converts to NaN when used in numeric context.</p>
+                        <code>var a;
+a + 2;  // Evaluates to NaN</code>
+                        <p>When you evaluate a null variable, the null value behaves as 0 in numeric contexts and as false in boolean contexts. For example:</p>
+                        <code>var n = null;
+console.log(n * 32); // Will log 0 to the console</code>
+                </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 10</header>
-                <article></article>
+        <section class="main-section" id="Comments">
+                <header>Comments</header>
+                <article>
+                        <p>The syntax of comments is the same as in C++ and in many other languages:</p>
+                        <code>// a one line comment
+
+/* this is a longer, 
+ * multi-line comment
+ */
+
+/* You can't, however, /* nest comments */ SyntaxError */</code>
+                        <p>Comments behave like whitespace and are discarded during script execution.</p>
+                </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 11</header>
-                <article></article>
+        <section class="main-section" id="Conditional_operator">
+                <header>Conditional (ternary) operator</header>
+                <article>
+                        <p>The conditional operator is the only JavaScript operator that takes three operands. The operator can have one of two values based on a condition. The syntax is:</p>
+                        <code>condition ? val1 : val2</code>
+                        <p>If condition is true, the operator has the value of val1. Otherwise it has the value of val2. You can use the conditional operator anywhere you would use a standard operator.</p>
+                        <p>For example,</p>
+                        <code>var status = (age >= 18) ? 'adult' : 'minor';</code>
+                        <p>This statement assigns the value "adult" to the variable status if age is eighteen or more. Otherwise, it assigns the value "minor" to status.</p>
+                </article>
         </section>
         <section class="main-section" id="">
                 <header>TOPIC 12</header>
@@ -163,7 +344,7 @@ arr.length = arrayLength;</code>
                 <header>TOPIC 14</header>
                 <article></article>
         </section>
-        <section class="main-section" id="reference">
+        <section class="main-section" id="Reference">
                 <header>Reference</header>
                 <article>
                         <li>
