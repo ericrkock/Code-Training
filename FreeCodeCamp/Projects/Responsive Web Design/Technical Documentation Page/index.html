@@ -14,24 +14,23 @@
         <header>JS Documentation</header>
         <ul>
             <a class="nav-link" href="#Introduction" rel="internal"><li>Introduction</li></a>
-            <a class="nav-link" href="#Grammar_Types" rel="internal"><li>Grammar & Types</li></a>
+            <a class="nav-link" href="#Grammar_and_Types" rel="internal"><li>Grammar and Types</li></a>
             <a class="nav-link" href="#Hello_world" rel="internal"><li>Hello world</li></a>
             <a class="nav-link" href="#Functions" rel="internal"><li>Functions</li></a>
             <a class="nav-link" href="#Array_object" rel="internal"><li>Array object</li></a>
             <a class="nav-link" href="#Constructor" rel="internal"><li>Constructor</li></a>
-            <a class="nav-link" href="#If_Else_Statement" rel="internal"><li>If ... Else Statement</li></a>
+            <a class="nav-link" href="#If_..._Else_Statement" rel="internal"><li>If ... Else Statement</li></a>
             <a class="nav-link" href="#Switch_Statement" rel="internal"><li>Switch Statement</li></a>
             <a class="nav-link" href="#Declarations" rel="internal"><li>Declarations</li></a>
             <a class="nav-link" href="#Comments" rel="internal"><li>Comments</li></a>
-            <a class="nav-link" href="#Conditional_operator" rel="internal"><li>Conditional OPerator</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
-            <a class="nav-link" href="#" rel="internal"><li>Documentation</li></a>
+            <a class="nav-link" href="#Conditional_operator" rel="internal"><li>Conditional operator</li></a>
+            <a class="nav-link" href="#String_objects" rel="internal"><li>String objects</li></a>
+            <a class="nav-link" href="#Arrow_functions" rel="internal"><li>Arrow functions</li></a>
+            <a class="nav-link" href="#Defining_getters_and_setters" rel="internal"><li>Defining getters and setters</li></a>
             <a class="nav-link" href="#Reference" rel="internal"><li>Reference</li></a>
         </ul>
     </nav>
     <main id="main-doc">
-        <div style="color: #000; font-size: 18px; font-weight: 700; padding: 15px">The JavaScript Documentation shows 13 steps how to use JavaScript and gives an overview of the language. If you need exhaustive information about a language feature, have a look at the JavaScript reference.</div>
         <section class="main-section" id="Introduction">
             <header>Introduction</header>
             <article>
@@ -42,7 +41,7 @@
                     <p>This means that in the browser, JavaScript can change the way the webpage (DOM) looks. And, likewise, Node.js JavaScript on the server can respond to custom requests from code written in the browser.</p>
             </article>
         </section>
-        <section class="main-section" id="Grammar_Types">
+        <section class="main-section" id="Grammar_and_Types">
                 <header>Grammar and Types</header>
                 <article>
                         <p>JavaScript borrows most of its syntax from Java, but is also influenced by Awk, Perl and Python.</p>
@@ -121,10 +120,7 @@ var arr = Array(arrayLength);
 // This has exactly the same effect
 var arr = [];
 arr.length = arrayLength;</code>
-                        <div><b>Note</b> : in the above code, arrayLength must be a Number. 
-        Otherwise, an array with a single element (the provided value) will be created. 
-        Calling arr.length will return arrayLength, but the array actually contains empty (undefined) elements. 
-        Running a for...in loop on the array will return none of the array's elements.</div>
+                        <p id="note"><b>Note</b> : in the above code, arrayLength must be a Number. Otherwise, an array with a single element (the provided value) will be created. Calling arr.length will return arrayLength, but the array actually contains empty (undefined) elements. Running a for...in loop on the array will return none of the array's elements.</p>
                 </article>
         </section>
         <section class="main-section" id="Constructor">
@@ -134,22 +130,22 @@ arr.length = arrayLength;</code>
                         <p>A constructor can use the super keyword to call the constructor of a parent class.</p>
                         <p>If you do not specify a constructor method, a default constructor is used.</p>
                         <code>class Square extends Polygon {
-        constructor(length) {
-                // Here, it calls the parent class' constructor with lengths
-                // provided for the Polygon's width and height
-                super(length, length);
-                // Note: In derived classes, super() must be called before you
-                // can use 'this'. Leaving this out will cause a reference error.
-                this.name = 'Square';
-        }
+   constructor(length) {
+     // Here, it calls the parent class' constructor with lengths
+     // provided for the Polygon's width and height
+     super(length, length);
+     // Note: In derived classes, super() must be called before you
+     // can use 'this'. Leaving this out will cause a reference error.
+     this.name = 'Square';
+   }
 
-        get area() {
-                return this.height * this.width;
-        }
+   get area() {
+     return this.height * this.width;
+   }
 
-        set area(value) {
-                this.area = value;
-        } 
+   set area(value) {
+     this.area = value;
+   } 
 }</code>
                 <p style="color: white; background-color: black; padding: 2px 0 2px 5px"><b>DEFAULT CONSTRUCTORS</b></p>
                 <p>As stated, if you do not specify a constructor method a default constructor is used. For base classes the default constructor is:</p>
@@ -160,7 +156,7 @@ arr.length = arrayLength;</code>
 }</code>
                 </article>
         </section>
-        <section class="main-section" id="If_Else_Statement">
+        <section class="main-section" id="If_..._Else_Statement">
                 <header>If ... Else Statement</header>
                 <article>
                         <p>Use the if statement to execute a statement if a logical condition is true. Use the optional else clause to execute a statement if the condition is false. An if statement looks as follows:</p>
@@ -282,12 +278,14 @@ console.log('The value of b is ' + b); // The value of b is undefined
 var b;
 // This one may puzzle you until you read 'Variable hoisting' below
 
-console.log('The value of c is ' + c); // Uncaught ReferenceError: c is not defined
+console.log('The value of c is ' + c); // Uncaught ReferenceError: 
+                                          c is not defined
 
 let x;
 console.log('The value of x is ' + x); // The value of x is undefined
 
-console.log('The value of y is ' + y); // Uncaught ReferenceError: y is not defined
+console.log('The value of y is ' + y); // Uncaught ReferenceError: 
+                                          y is not defined
 let y;</code>
                         <p>You can use undefined to determine whether a variable has a value. In the following code, the variable input is not assigned a value, and the if statement evaluates to true.</p>
                         <code>var input;
@@ -322,7 +320,7 @@ console.log(n * 32); // Will log 0 to the console</code>
                 </article>
         </section>
         <section class="main-section" id="Conditional_operator">
-                <header>Conditional (ternary) operator</header>
+                <header>Conditional operator</header>
                 <article>
                         <p>The conditional operator is the only JavaScript operator that takes three operands. The operator can have one of two values based on a condition. The syntax is:</p>
                         <code>condition ? val1 : val2</code>
@@ -332,17 +330,147 @@ console.log(n * 32); // Will log 0 to the console</code>
                         <p>This statement assigns the value "adult" to the variable status if age is eighteen or more. Otherwise, it assigns the value "minor" to status.</p>
                 </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 12</header>
-                <article></article>
+        <section class="main-section" id="String_objects">
+                <header>String objects</header>
+                <article>
+                        <p>The String object is a wrapper around the string primitive data type.</p>
+                        <code>var s = new String('foo'); // Creates a String object
+console.log(s); // Displays: {'0': 'f', '1': 'o', '2': 'o'}
+typeof s; // Returns 'object'</code>
+                        <p>You can call any of the methods of the String object on a string literal value—JavaScript automatically converts the string literal to a temporary String object, calls the method, then discards the temporary String object. You can also use the String.length property with a string literal.</p>
+                        <p>You should use string literals unless you specifically need to use a String object, because String objects can have counterintuitive behavior. For example:</p>
+                        <code>var s1 = '2 + 2'; // Creates a string literal value
+var s2 = new String('2 + 2'); // Creates a String object
+eval(s1); // Returns the number 4
+eval(s2); // Returns the string "2 + 2"</code>
+                        <p>A String object has one property, length, that indicates the number of UTF-16 code units in the string. For example, the following code assigns x the value 13, because "Hello, World!" has 13 characters, each represented by one UTF-16 code unit. You can access each code unit using an array bracket style. You can't change individual characters because strings are immutable array-like objects:</p>
+                        <code>var mystring = 'Hello, World!';
+var x = mystring.length;
+mystring[0] = 'L'; // This has no effect, because strings are immutable
+mystring[0]; // This returns "H"</code>
+                        <p>Characters whose Unicode scalar values are greater than U+FFFF (such as some rare Chinese/Japanese/Korean/Vietnamese characters and some emoji) are stored in UTF-16 with two surrogate code units each. For example, a string containing the single character U+1F600 "Emoji grinning face" will have length 2. Accessing the individual code units in such a string using brackets may have undesirable consequences such as the formation of strings with unmatched surrogate code units, in violation of the Unicode standard. (Examples should be added to this page after MDN bug 857438 is fixed.) See also String.fromCodePoint() or String.prototype.codePointAt().</p>
+                        <p>A String object has a variety of methods: for example those that return a variation on the string itself, such as substring and toUpperCase.</p>
+                </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 13</header>
-                <article></article>
+        <section class="main-section" id="Arrow_functions">
+                <header>Arrow functions</header>
+                <article>
+                        <p>An arrow function expression (previously, and now incorrectly known as fat arrow function) has a shorter syntax compared to function expressions and does not have its own this, arguments, super, or new.target. Arrow functions are always anonymous. See also this hacks.mozilla.org blog post: "ES6 In Depth: Arrow functions".</p>
+                        <p>Two factors influenced the introduction of arrow functions: shorter functions and non-binding of this.</p>
+                        <p style="padding: 2px 0 2px 5px; background-color: black; color: white; width: 35%">Shorter functions</p>
+                        <p>In some functional patterns, shorter functions are welcome. Compare:</p>
+                        <code>var a = [
+        'Hydrogen',
+        'Helium',
+        'Lithium',
+        'Beryllium'
+];
+
+var a2 = a.map(function(s) { return s.length; });
+
+console.log(a2); // logs [8, 6, 7, 9]
+
+var a3 = a.map(s => s.length);
+
+console.log(a3); // logs [8, 6, 7, 9]</code>
+                        <p style="padding: 2px 0 2px 5px; background-color: black; color: white; width: 35%">No separate this</p>
+                        <p>Until arrow functions, every new function defined its own this value (a new object in the case of a constructor, undefined in strict mode function calls, the base object if the function is called as an "object method", etc.). This proved to be less than ideal with an object-oriented style of programming.</p>
+                        <code>function Person() {
+        // The Person() constructor defines `this` as itself.
+        this.age = 0;
+
+        setInterval(function growUp() {
+                // In nonstrict mode, the growUp() function defines `this` 
+                // as the global object, which is different from the `this`
+                // defined by the Person() constructor.
+                this.age++;
+        }, 1000);
+}
+
+var p = new Person();</code>
+                        <p>In ECMAScript 3/5, this issue was fixed by assigning the value in this to a variable that could be closed over.</p>
+                        <code>function Person() {
+        var self = this; // Some choose `that` instead of `self`. 
+                                // Choose one and be consistent.
+        self.age = 0;
+
+        setInterval(function growUp() {
+                // The callback refers to the `self` variable of which
+                // the value is the expected object.
+                self.age++;
+        }, 1000);
+}</code>
+                        <p>Alternatively, a bound function could be created so that the proper this value would be passed to the growUp() function.</p>
+                        <p>An arrow function does not have its own this; the this value of the enclosing execution context is used. Thus, in the following code, the this within the function that is passed to setInterval has the same value as this in the enclosing function:</p>
+                        <code>function Person() {
+        this.age = 0;
+
+        setInterval(() => {
+                this.age++; // |this| properly refers to the person object
+        }, 1000);
+}
+
+var p = new Person();</code>
+                </article>
         </section>
-        <section class="main-section" id="">
-                <header>TOPIC 14</header>
-                <article></article>
+        <section class="main-section" id="Defining_getters_and_setters">
+                <header>Defining getters and setters</header>
+                <article>
+                        <p>A getter is a method that gets the value of a specific property. A setter is a method that sets the value of a specific property. You can define getters and setters on any predefined core object or user-defined object that supports the addition of new properties. The syntax for defining getters and setters uses the object literal syntax.</p>
+                        <p>The following illustrates how getters and setters could work for a user-defined object o.</p>
+                        <code>var o = {
+        a: 7,
+        get b() { 
+                return this.a + 1;
+        },
+        set c(x) {
+                this.a = x / 2;
+        }
+};
+
+console.log(o.a); // 7
+console.log(o.b); // 8
+o.c = 50;
+console.log(o.a); // 25</code>
+                        <p>The o object's properties are:</p>
+                        <li>o.a — a number</li>
+                        <li>o.b — a getter that returns o.a plus 1</li>
+                        <li>o.c — a setter that sets the value of o.a to half of the value o.c is being set to</li>
+                        <p>Please note that function names of getters and setters defined in an object literal using "[gs]et property()" (as opposed to __define[GS]etter__ ) are not the names of the getters themselves, even though the [gs]et propertyName(){ } syntax may mislead you to think otherwise. To name a function in a getter or setter using the "[gs]et property()" syntax, define an explicitly named function programmatically using Object.defineProperty (or the Object.prototype.__defineGetter__ legacy fallback).</p>
+                        <p>The following code illustrates how getters and setters can extend the Date prototype to add a year property to all instances of the predefined Date class. It uses the Date class's existing getFullYear and setFullYear methods to support the year property's getter and setter.</p>
+                        <p>These statements define a getter and setter for the year property:</p>
+                        <code>var d = Date.prototype;
+Object.defineProperty(d, 'year', {
+        get: function() { return this.getFullYear(); },
+        set: function(y) { this.setFullYear(y); }
+});</code>
+                        <p>These statements use the getter and setter in a Date object:</p>
+                        <code>var now = new Date();
+console.log(now.year); // 2000
+now.year = 2001; // 987617605170
+console.log(now);
+// Wed Apr 18 11:13:25 GMT-0700 (Pacific Daylight Time) 2001</code>
+                        <p>In principle, getters and setters can be either</p>
+                        <li>defined using object initializers, or</li>
+                        <li>added later to any object at any time using a getter or setter adding method.</li>
+                        <p>When defining getters and setters using object initializers all you need to do is to prefix a getter method with get and a setter method with set. Of course, the getter method must not expect a parameter, while the setter method expects exactly one parameter (the new value to set). For instance:</p>
+                        <code>var o = {
+        a: 7,
+        get b() { return this.a + 1; },
+        set c(x) { this.a = x / 2; }
+};</code>
+                        <p>Getters and setters can also be added to an object at any time after creation using the Object.defineProperties method. This method's first parameter is the object on which you want to define the getter or setter. The second parameter is an object whose property names are the getter or setter names, and whose property values are objects for defining the getter or setter functions. Here's an example that defines the same getter and setter used in the previous example:</p>
+                        <code>var o = { a: 0 };
+
+Object.defineProperties(o, {
+        'b': { get: function() { return this.a + 1; } },
+        'c': { set: function(x) { this.a = x / 2; } }
+});
+
+o.c = 10; // Runs the setter, which assigns 10 / 2 (5) to the 'a' property
+console.log(o.b); // Runs the getter, which yields a + 1 or 6</code>
+                        <p>Which of the two forms to choose depends on your programming style and task at hand. If you already go for the object initializer when defining a prototype you will probably most of the time choose the first form. This form is more compact and natural. However, if you need to add getters and setters later — because you did not write the prototype or particular object — then the second form is the only possible form. The second form probably best represents the dynamic nature of JavaScript — but it can make the code hard to read and understand.</p>
+                </article>
         </section>
         <section class="main-section" id="Reference">
                 <header>Reference</header>
@@ -355,6 +483,6 @@ console.log(n * 32); // Will log 0 to the console</code>
         </section>
 
     </main>
-        
+
 </body>
 </html>
