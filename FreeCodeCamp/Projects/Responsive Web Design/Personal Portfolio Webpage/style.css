@@ -1,17 +1,20 @@
-body {
-    background-color: crimson;
+html, body {
+    background-color: #eee;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
 }
-
 * {
-        margin: 0;
-        padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
+/* Navigation Section */
+/* ================== */
 nav ul {
-    position: fixed;
-    width: 100%;
     text-align: right;
-    color: #333;
+    position: fixed;
+    display: block;
+    width: 100%;
     background-color: #eee;
 }
 
@@ -19,12 +22,173 @@ nav ul li {
     display: inline-block;
     margin: 55px;
     margin-bottom: 15px;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+}
 
-#welcome-section {
+nav ul li a:hover {
+    color: crimson;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Welcome Section */
+/* =============== */
+.welcome-intro {
+    top: 0;
+    background: crimson;
+    min-height: 55vh;
+    padding-top: 45vh;
+}
+
+.welcome-intro h1 {
+    color: yellow;
+    font-weight: 700;
+}
+.welcome-intro p {
+    color: white;
+}
+
+/* Project Section */
+/* =============== */
+.project-portfolio {
+    padding-top: 60px;
+    margin-top: -60px;
+}
+
+.project-portfolio .portfolio-header {
+    margin-top: 50px;
+    color: crimson;
+    font-weight: normal;
+}
+
+.project-grid {
+    display: flex;
+    margin: 40px auto 40px;
+}
+
+.project {
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: crimson;
+    display: inline-block;
+    overflow: hidden;
+    border: 2px solid crimson;
+    height: 220px;
+    width: 280px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.project-thumb {
+    width: 100%;
+    height: 180px;
+    border-bottom: 2px solid rgba(220, 20, 60, 0.25);
+}
+
+.project-title {
+    font-weight: bold;
+}
+
+.show-all-projects {
+    text-decoration: none;
     display: block;
-    margin-top: 150px;
-    background-color: yellow;
+    width: 300px;
+    height: 30px;
+    margin: 50px auto 50px;
+    background: crimson;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border: 2px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    padding-top: 10px;
 }
+
+hr {
+    color: crimson;
+}
+
+/* Contact Section */
+.contact {
+    color: crimson;
+    background: yellow;
+    padding-bottom: 160px;
+}
+
+.contact-header {
+    padding: 160px 0 110px;
+}
+
+.contact-details {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0 35px 45px 35px;
+    list-style-type: none;
+    border: 2px solid crimson;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    background: #e0ebe8;
+    color: crimson;
+    text-decoration: none;
+}
+
+.contact-details:hover {
+    background: crimson;
+    color: yellow;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    background: #333;
+    color: white;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+footer a {
+    color: white;
+}
+
+/* Responsive Section */
+/* ================== */
+@media only screen and (max-width: 500px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 20px;
+    }
+
+    .project-grid {
+        display: block;
+    }
+
+    .project {
+        margin: 40px 0;
+    }
+}
+
+@media only screen and (max-width: 367px) {
+    /*    #contact{
+      min-height:1100px;
+    } */
+    .contact-details {
+      border: 2px solid crimson;
+      border-radius: 0;
+      width: 100px;
+      height: 20px;
+      padding: 10px;
+      line-height: normal;
+    }
+  }

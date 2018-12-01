@@ -8,19 +8,80 @@
     <title>Personal Portfolio Webpage</title>
 </head>
 <body>
+    <!-- FreeCodeCamp Project Tester-->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <!-- Project Starts here -->
     <nav>
         <ul id="navbar">
-            <li>About</li>
-            <li>Work</li>
-            <li>Contact</li>
+            <li><a href="#welcome-section">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <div id="welcome-section">
+    <div id="welcome-section" class="welcome-intro">
         <h1>Hey I'am Eric</h1>
-        <p>a junior web developer</p>
+        <p>a web-builder and</p>
+        <p>a junior web-developer</p><br>
+        <p style="color: yellow">Scroll-down to see my projects</p>
     </div>
-    <div id="projects"></div>
-    <div id="Contact"></div>
-    <footer></footer>
+    <div id="projects" class="project-portfolio">
+        <h2 class="portfolio-header">Some of my Responsive Webpage freeCodeCamp Projects</h2>
+        <div class="project-grid">
+            <a class="project project-tile" href="https://codepen.io/EricRKock/full/XYrqZB" target="_blank">
+                <img class="project-thumb" src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/2026315.XYrqZB.6b9f9274-66a5-45d7-99b7-d8c08a95a21b.png" alt="Tribute Page Project">
+                <div class="project-title">Tribute Page</div>
+            </a>
+            <a class="project project-tile" href="https://codepen.io/EricRKock/full/qQpZov" target="_blank">
+                <img class="project-thumb" src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/2026315.qQpZov.92793d38-9a17-439b-bdff-fc730c902413.png" alt="Survey Form Project">
+                <div class="project-title">Survey Form</div>
+            </a>
+            <a class="project project-tile" href="https://codepen.io/EricRKock/full/QJZrpy" target="_blank">
+                <img class="project-thumb" src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/2026315.QJZrpy.4848b322-5294-4208-bd1b-6890a4628cab.png" alt="Product Landing Page Project">
+                <div class="project-title">Product Landing Page</div>
+            </a>
+            <a class="project project-tile" href="https://codepen.io/EricRKock/full/QJzzae" target="_blank">
+                <img class="project-thumb" src="https://s3-us-west-2.amazonaws.com/i.cdpn.io/2026315.QJzzae.2397dcd0-c870-4ee9-8704-9b863ce24a14.png" alt="Technical Documentation Webpage Project">
+                <div class="project-title">Technical Documentation Page</div>
+            </a>
+        </div>
+        <a class="show-all-projects" href="https://codepen.io/EricRKock/#" target="_blank">Show All FreeCodeCamp Projects</a>
+        <hr>
+        <h2 class="portfolio-header">Some real websites I've build</h2>
+        <div class="project-grid">
+            <a class="project" href="https://artis.directory/" target="_blank">
+                <img class="project-thumb" src="thumb/Artis-Directory.png" alt="Real Websites">
+                <div class="project-title">ARTIS Directory</div>
+            </a>
+            <a class="project" href="https://expatpropertyfinders.com/" target="_blank">
+                <img class="project-thumb" src="thumb/Expat-Property-Finders.png" alt="Real Websites">
+                <div class="project-title">Expat Property Finders</div>
+            </a>
+            <a class="project" href="https://facematt.com/" target="_blank">
+                <img class="project-thumb" src="thumb/Facematt.png" alt="Real Websites">
+                <div class="project-title">Facematt</div>
+            </a>
+            <a class="project" href="http://villa-leste.com" target="_blank">
+                <img class="project-thumb" src="thumb/Villa-Leste.png" alt="Real Websites">
+                <div class="project-title">Villa Leste</div>
+            </a>
+        </div>
+    </div>
+    <div id="contact" class="contact">
+        <div class="contact-header">
+            <h1>Do you like what you see?</h1>
+            <p>Contact me for more information ...</p>
+        </div>
+        <a class="contact-details" href="https://www.facebook.com/eric.r.kock" target="_blank">Facebook</a>
+        <a id="profile-link" class="contact-details" href="https://github.com/ericrkock" target="_blank">GitHub</a>
+        <a class="contact-details" href="#twitter" target="_blank">Twitter</a>
+        <a class="contact-details" href="mailto:eric.r.kock@gmail.com" target="_blank">Send a mail</a>
+        <a class="contact-details" href="callto:+351960131892" target="_blank">Call me</a>
+    </div>
+    <footer>
+        <p>2018 © Created for <a href="https://www.freecodecamp.com/" target="_blank">FreeCodeCamp</a> Project</p>
+        <p>Copyright Eric R. Kock | All Rights Reserved.</p>
+    </footer>
+    <!-- End of FreeCodeCamp Project -->
 </body>
 </html>
