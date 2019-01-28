@@ -1,0 +1,157 @@
+/* FONTS */
+/* ===== */
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+/* latin-ext */
+@font-face {
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyCMIT5lu.woff2) format('woff2');
+   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+ }
+ /* latin */
+ @font-face {
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptug8zYS_SKggPNyC0ITw.woff2) format('woff2');
+   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+ }
+ /* latin-ext */
+ @font-face {
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 500;
+   src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptrg8zYS_SKggPNwN4rWqhPAMif.woff2) format('woff2');
+   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+ }
+ /* latin */
+ @font-face {
+   font-family: 'Raleway';
+   font-style: normal;
+   font-weight: 500;
+   src: local('Raleway Medium'), local('Raleway-Medium'), url(https://fonts.gstatic.com/s/raleway/v12/1Ptrg8zYS_SKggPNwN4rWqZPAA.woff2) format('woff2');
+   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+ }
+
+body {
+   color: black;
+   background-color: crimson;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 400;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   vertical-align: baseline;
+}
+
+/* Quote Box Section */
+/* ================= */
+#quote-box {
+   border-radius: 3px;
+   position: relative;
+   width: 450px;
+   padding: 40px 50px;
+   display: table;
+   background-color: #fff;
+}
+
+#quote-box .quote-text {
+   text-align: center;
+   width: 450px;
+   height: auto;
+   clear: both;
+   font-weight: 500;
+   font-size: 1.75em;
+}
+
+#quote-box .quote-text i {
+   font-size: 1.0em;
+   margin-right: 0.4em;
+}
+
+#quote-box .quote-author {
+   width: 450px;
+   height: auto;
+   clear: both;
+   padding-top: 20px;
+   font-size: 1em;
+   text-align: right;
+}
+
+div {
+   position: relative;
+   z-index: 2;
+}
+
+/* Quote Buttons */
+/* ============= */
+#quote-box .buttons {
+   width: 450px;
+   margin: auto;
+   display: block;
+}
+
+#quote-box .buttons .button {
+   height: 38px;
+   border: none;
+   border-radius: 3px;
+   color: #fff;
+   background-color: #333;
+   outline: none;
+   font-size: 0.85em;
+   padding: 8px 18px 6px 18px;
+   margin-top: 30px;
+   opacity: 1;
+   cursor: pointer;
+}
+
+#quote-box .buttons .button#tweet-quote, #quote-box .buttons .button#tumblr-quote {
+   float: left;
+   padding: 0px;
+   padding-top: 8px;
+   text-align: center;
+   font-size: 1.2em;
+   margin-right: 5px;
+   height: 30px;
+   width: 40px;
+}
+
+.button#tumblr-quote {
+   float: left;
+   padding: 0px;
+   padding-top: 8px;
+   text-align: center;
+   font-size: 1.2em;
+   margin-right: 5px;
+   height: 30px;
+   width: 40px;
+}
+
+#quote-box .buttons .button#new-quote {
+   float: right;
+}
+
+/* Footer */
+/* ====== */
+.quote-box-footer {
+   width: 450px;
+   text-align: center;
+   display: block;
+   margin: 15px auto 30px auto;
+   font-size: 0.8em;
+   color: #fff;
+}
+
+.quote-box-footer a {
+   font-weight: 500;
+   text-decoration: none;
+   color: #fff;
+}
