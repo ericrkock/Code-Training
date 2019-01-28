@@ -20,3 +20,22 @@ JSON  : JavaScript Object Notation
 JSX   : React JS / Library
 PHP   : Personal Home Page / Language
 XML   : Extensible Markup Language / Markup
+
+
+Add Install FontAwesome in React
+   URL: https://www.npmjs.com/package/@fortawesome/react-fontawesome
+   URL: https://programmingwithmosh.com/react/font-awesome-5-with-react/
+   URL: https://stackoverflow.com/questions/23116591/how-to-include-a-font-awesome-icon-in-reacts-render
+
+   $ npm i --save @fortawesome/fontawesome-svg-core
+   $ npm i --save @fortawesome/free-solid-svg-icons
+   $ npm i --save @fortawesome/free-brands-svg-icons
+   $ npm i --save @fortawesome/react-fontawesome
+
+   $ npm i --save @fortawesome/free-brands-svg-icons
+   $ npm i --save @fortawesome/free-regular-svg-icons
+
+   $ npm i --save @fortawesome/fontawesome
+   $ npm i --save @fortawesome/react-fontawesome
+   $ npm i --save @fortawesome/fontawesome-free-solid
+   $ npm i --save @fortawesome/fontawesome-free-regular

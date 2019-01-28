@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo } from '@fortawesome/free-solid-svg-icons'
 
-// library.add(faIgloo)
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faIgloo } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithubAlt,
+  faGoogle,
+  faFacebook,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons';
+
+
 
 import './App.css';
-
+library.add(faIgloo);
 class App extends Component {
   render() {
     return (
@@ -19,7 +26,7 @@ class App extends Component {
           <div className="quote-text" style={{opacity: 1}}>
             <i className="fa fa-quote-left"></i>
             <span id="quote-text">
-              Quote comes here
+              <a> Quote comes here</a>
             </span>
           </div>
           <div className="quote-author">
@@ -28,8 +35,8 @@ class App extends Component {
             </span>
           </div>
           <div className="quote-buttons">
-            <a id="tweet-quote" className="tweet-button" title="Tweet this code" target="_blank" href="#"><i className="fa fa-twitter"></i></a>
-            <a id="tumblr-quote" className="tumblr-button" title="Post this quote on Tumblr" target="_blank" href="#"><i className="fa fa-tumblr"></i></a>
+            <a id="tweet-quote" className="tweet-button" title="Tweet this code" target="_blank" href="#"> <FontAwesomeIcon icon={faTwitter} /></a>
+            <a id="tumblr-quote" className="tumblr-button" title="Post this quote on Tumblr" target="_blank" href="#"><i className="fa fa-tumblr" aria-hidden="true"></i></a>
             <button id="new-quote" className="new-quote-button">New Quote</button>
           </div>
 
