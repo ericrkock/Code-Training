@@ -8,13 +8,14 @@ import {
   faGithubAlt,
   faGoogle,
   faFacebook,
+  faTumblr,
   faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 
 
 
 import './App.css';
-library.add(faIgloo);
+library.add(faIgloo, faTumblr, faTwitter);
 class App extends Component {
   render() {
     return (
@@ -26,8 +27,9 @@ class App extends Component {
           <div className="quote-text" style={{opacity: 1}}>
             <i className="fa fa-quote-left"></i>
             <span id="quote-text">
-              <a> Quote comes here</a>
+              <a> Quote comes here </a>
             </span>
+            <i className="fa fa-quote-right"></i>
           </div>
           <div className="quote-author">
             <span id="author">
@@ -35,8 +37,9 @@ class App extends Component {
             </span>
           </div>
           <div className="quote-buttons">
-            <a id="tweet-quote" className="tweet-button" title="Tweet this code" target="_blank" href="#"> <FontAwesomeIcon icon={faTwitter} /></a>
-            <a id="tumblr-quote" className="tumblr-button" title="Post this quote on Tumblr" target="_blank" href="#"><i className="fa fa-tumblr" aria-hidden="true"></i></a>
+            <a id="facebook-quote" className="facebook-button" title="Post this quote on Facebook" target="_blank" href="#"><FontAwesomeIcon icon={faFacebook} /></a>
+            <a id="tweet-quote" className="tweet-button" title="Tweet this code" target="_blank" href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+            <a id="tumblr-quote" className="tumblr-button" title="Post this quote on Tumblr" target="_blank" href="#"><FontAwesomeIcon icon={faTumblr} /></a>
             <button id="new-quote" className="new-quote-button">New Quote</button>
           </div>
 

@@ -16,7 +16,7 @@
   /*display: flex;*/
   justify-content: center;
   align-items: center;
-  /*height: 100vh;*/
+  height: 100vh;
 }
 
 .quote-header {
@@ -34,8 +34,9 @@
 
 .quote-box {
   border-radius: 3px;
-  position: relative;
+  /*position: relative;*/
   width: 450px;
+  margin: auto;
   padding: 40px 50px;
   display: table;
   background-color: #fff;
@@ -66,11 +67,23 @@
   display: block;
 }
 
+.facebook-button {
+  background-color: midnightblue ;
+  float: left;
+  padding: auto;
+  padding-top: 2px;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 5px;
+  height: 30px;
+  width: 40px;
+}
+
 .tweet-button {
   background-color: deepskyblue;
   float: left;
-  padding: 0px;
-  padding-top: 8px;
+  padding: auto;
+  padding-top: 2px;
   text-align: center;
   font-size: 1.2em;
   margin-right: 5px;
@@ -81,8 +94,8 @@
 .tumblr-button {
   background-color: #2f4155;
   float: left;
-  padding: 0px;
-  padding-top: 8px;
+  padding: auto;
+  padding-top: 2px;
   text-align: center;
   font-size: 18px;
   margin-right: 5px;
