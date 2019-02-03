@@ -1,6 +1,5 @@
 @import "https://use.fontawesome.com/releases/v5.6.3/css/all.css";
 
-
 * {
   margin: 0;
   padding: 0;
@@ -68,12 +67,14 @@
 }
 
 .facebook-button {
-  background-color: midnightblue ;
+  background-color: midnightblue;
+  color: white;
   float: left;
-  padding: auto;
-  padding-top: 2px;
+  padding: 0;
+  padding-top: 0;
+  text-decoration: none;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 20px;
   margin-right: 5px;
   height: 30px;
   width: 40px;
@@ -81,11 +82,11 @@
 
 .tweet-button {
   background-color: deepskyblue;
+  color: white;
   float: left;
-  padding: auto;
-  padding-top: 2px;
+  padding-top: -1px;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 20px;
   margin-right: 5px;
   height: 30px;
   width: 40px;
@@ -93,9 +94,9 @@
 
 .tumblr-button {
   background-color: #2f4155;
+  color: white;
   float: left;
-  padding: auto;
-  padding-top: 2px;
+  padding-top: -1px;
   text-align: center;
   font-size: 18px;
   margin-right: 5px;
@@ -103,7 +104,7 @@
   width: 40px;
 }
 
-.new-quote-button {
+.next-quote-button {
   width: 125px;
   float: right;
   color: white;
@@ -111,7 +112,7 @@
 }
 
 /* Footer CSS */
-.quote-box-footer {
+.footer {
   width: 450px;
   text-align: center;
   display: block;
@@ -120,7 +121,7 @@
   color: #fff;
 }
 
-.quote-box-footer a {
+.footer a {
   font-weight: 500;
   text-decoration: none;
   color: rgb(255, 255, 255);

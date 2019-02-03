@@ -32,10 +32,9 @@ Add Install FontAwesome in React
    $ npm i --save @fortawesome/free-brands-svg-icons
    $ npm i --save @fortawesome/react-fontawesome
 
-   $ npm i --save @fortawesome/free-brands-svg-icons
    $ npm i --save @fortawesome/free-regular-svg-icons
 
    $ npm i --save @fortawesome/fontawesome
-   $ npm i --save @fortawesome/react-fontawesome
+
    $ npm i --save @fortawesome/fontawesome-free-solid
    $ npm i --save @fortawesome/fontawesome-free-regular
