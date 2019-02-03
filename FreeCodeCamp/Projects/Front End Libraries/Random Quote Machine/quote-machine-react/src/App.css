@@ -1,0 +1,128 @@
+@import "https://use.fontawesome.com/releases/v5.6.3/css/all.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+
+.body {
+  color: black;
+  background-color: crimson;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quote-header {
+  background-color: #282c34;
+  /*min-height: 100vh;*/
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  margin: 5px auto 10px auto;
+  color: white;
+}
+
+.quote-box {
+  border-radius: 3px;
+  /*position: relative;*/
+  width: 450px;
+  margin: auto;
+  padding: 40px 50px;
+  display: table;
+  background-color: #fff;
+}
+
+.quote-box .quote-text {
+  text-align: center;
+  width: 450px;
+  height: auto;
+  clear: both;
+  font-weight: 500;
+  font-size: 1.75em;
+}
+
+.quote-box .quote-author {
+  width: 450px;
+  height: auto;
+  clear: both;
+  padding-top: 20px;
+  font-size: 1em;
+  text-align: right;
+}
+
+/* Quote Buttons CSS */
+.quote-buttons {
+  width: 475px;
+  margin: 15px 0 10px 0;
+  display: block;
+}
+
+.facebook-button {
+  background-color: midnightblue;
+  color: white;
+  float: left;
+  padding: 0;
+  padding-top: 0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  margin-right: 5px;
+  height: 30px;
+  width: 40px;
+}
+
+.tweet-button {
+  background-color: deepskyblue;
+  color: white;
+  float: left;
+  padding-top: -1px;
+  text-align: center;
+  font-size: 20px;
+  margin-right: 5px;
+  height: 30px;
+  width: 40px;
+}
+
+.tumblr-button {
+  background-color: #2f4155;
+  color: white;
+  float: left;
+  padding-top: -1px;
+  text-align: center;
+  font-size: 18px;
+  margin-right: 5px;
+  height: 30px;
+  width: 40px;
+}
+
+.next-quote-button {
+  width: 125px;
+  float: right;
+  color: white;
+  background-color: crimson;
+}
+
+/* Footer CSS */
+.footer {
+  width: 450px;
+  text-align: center;
+  display: block;
+  margin: 75px auto 0 auto;
+  font-size: 11px;
+  color: #fff;
+}
+
+.footer a {
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}

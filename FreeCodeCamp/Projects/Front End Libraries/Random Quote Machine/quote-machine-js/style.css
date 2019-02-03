@@ -1,0 +1,77 @@
+/* CSS Variables */
+/* ************* */
+:root {
+   --primary: #ddd;
+   --dark: #333;
+   --light: #fff;
+   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+/* CSS General */
+/* *********** */
+html {
+   font-family: Arial, Helvetica, sans-serif;
+   color: var(--dark);
+   background-color: crimson;
+}
+
+body {
+   margin: 30px 50px;
+   line-height: 20px;
+}
+
+/* CSS Quote */
+/* ********* */
+#quote-box{
+   display: table;
+   background-color: white;
+   box-shadow: 5px;
+   width: 450px;
+   margin: auto;
+   padding: 40px 50px;
+   border-radius: 3px;
+}
+
+.quote {
+   font-size: 28px;
+   font-weight: 700;
+   margin: 0;
+   color: var(--dark);
+}
+
+.author {
+   margin-top: 15px;
+   text-align: right;
+}
+
+/* CSS Buttons */
+/* *********** */
+.buttons .btn {
+   color: (--light);
+   margin: 30px 5px 10px 0;
+   padding: 10px 20px;
+   text-decoration: none;
+   border: 0;
+}
+
+#tweet-quote{
+   background-color: deepskyblue;
+   color: var(--light);
+   font-size: 18px;
+   float: left;
+}
+
+#tumblr-quote {
+   background-color: #2f4155;
+   color: var(--light);
+   font-size: 18px;
+   float: left;
+}
+
+#new-quote {
+   background-color: crimson;
+   color: var(--light);
+   font-size: 18px;
+   font-weight: 700;
+   float: right;
+}
