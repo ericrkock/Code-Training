@@ -12,23 +12,35 @@
 <body>
    <!-- FreeCodeCamp Project Tester-->
    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+   
+   <header>
+      <div>
+         <h1>Random Quote Machine</h1><hr class="divide-line-header">
+         <p>A FreeCodeCamp Project Challenge</p>
+      </div>
+   </header>
    <div id="quote-box">
       <div>
          <i class="fa fa-quote-left"></i>
-         <span id="text" class="quote"> Quote comes here </span>
+         <span id="text" class="quote"></span>
          <i class="fa fa-quote-right"></i>
       </div>
       <div id="author" class="author">
-         <span>-Author's name comes here</span>
+         <span></span>
       </div>
+      <hr class="divide-line-quote">
       <div class="buttons">
          <button id="tweet-quote" class="btn" title="Tweet this code"><i class="fa fa-twitter"></i></button>
          <button id="tumblr-quote" class="btn" title="Post this quote on Tumblr"><i class="fa fa-tumblr"></i></button>
-         <button id="new-quote" class="btn">New Quote</button>
+         <button id="new-quote" class="btn" title="Display new quote">New Quote</button>
       </div>
    </div>
-   
-   <script type="text/javascript" src="quotes.json"></script>
+   <footer>
+      <div>
+         <span>Presented by <a href="https://codepen.io/EricRKock/" target="_blank">Eric R. Kock</a></span>
+      </div>
+   </footer>
+   <!-- <script type="text/javascript" src="quotes.json"></script> -->
    <script src="quote-machine.js"></script>
 </body>
 </html>
