@@ -47,14 +47,15 @@ function tumblrQuote() {
 
 function displayQuote() {
    // Choose a random quote from json file
-   randomQuoteID = JSON.parse(quotes[Math.floor(Math.random() * quotes.length)]); // Still need to connect with JSON file
-   console.log(randomQuoteId);
+   //randomQuoteID = JSON.parse(quotes[Math.floor(Math.random() * quotes.length)]); // Still need to connect with JSON file
+   //console.log(randomQuoteId);
 
    // Display Quote & Author
-   document.getElementById('text'). textContent = quotes[randomQuoteId].quote;
-   document.getElementById('author').textContent = quotes[randomQuoteID].author;
+   //document.getElementById('text'). textContent = quotes[randomQuoteId].quote;
+   //document.getElementById('author').textContent = quotes[randomQuoteID].author;
+   
    // To delete Once connection is made with JSON
-   //document.getElementById('text'). textContent = "Display New Quote";
-   //document.getElementById('author').textContent = "-New Author\'s name";
+   document.getElementById('text'). textContent = "Display New Quote";
+   document.getElementById('author').textContent = "-New Author\'s name";
 }
 
