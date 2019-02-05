@@ -31,12 +31,15 @@
          </div>
       </div>
       <div class="settings">
-         <div class="power">Power ON/OFF</div>
-         <div class="event">Event Display</div>
+         <div id="power" class="power">Power is ON </div>
+         <div><label  class="switch"><input id="powertoggle" type="checkbox" checked><span class="slider round"></span></label></div>
+         <div id="event" class="event">Event Display</div>
          <div class="volume">
-            <input type="range" step="0.01" min="0" max="1" value="0.5">
+            <input id="key-volume" type="range" step="0.01" min="0" max="1" value="0.5">
          </div>
-         <div class="mp3-style">MP3 Style</div>
+         <div id="mp3" class="mp3-style">MP3 Style : 1</div>
+         <div><label  class="switch"><input id="mp3-style" type="checkbox" checked><span class="slider"></span></label></div>
+
       </div>
    </div>
    <footer>
@@ -44,5 +47,7 @@
                <span>Presented by <a href="https://codepen.io/EricRKock/" target="_blank">Eric R. Kock</a></span>
             </div>
    </footer>
+
+   <script src="drum-machine.js"></script>
 </body>
 </html>
