@@ -149,7 +149,7 @@ function playTune() {
         audio.volume = actualVolume;
         audio.play();
     } else {
-        var audio = new Audio("./tunes/power-off.mp3");
+        var audio = new Audio("https://raw.githubusercontent.com/ericrkock/Code-Training/master/FreeCodeCamp/Projects/Front%20End%20Libraries/Drum%20Machine/tunes/power-off.mp3");
         audio.play();
     }
 }

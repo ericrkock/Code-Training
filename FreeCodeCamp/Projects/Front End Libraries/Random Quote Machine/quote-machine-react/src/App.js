@@ -48,6 +48,6 @@ class App extends Component {
 }
 
 function displayQuote() {
-  document.querySelector(#text).textContent = "Display Quote";
+  //document.querySelector(#text).textContent = "Display Quote";
 }
 export default App;
