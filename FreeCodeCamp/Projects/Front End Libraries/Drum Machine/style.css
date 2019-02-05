@@ -231,9 +231,10 @@ header {
    box-shadow: var(--shadow);
 }
 
-#Q:hover, #W:hover, #E:hover, #A:hover, #S:hover, #D:hover, #Z:hover, #X:hover, #C:hover {
+/*#Q:hover, #W:hover, #E:hover, #A:hover, #S:hover, #D:hover, #Z:hover, #X:hover, #C:hover { */
+.keys:hover, .active {
    outline: 3px solid var(--hover);
-   background-color: var(--border);
+   background-color: var(--border) !important;
 }
 
 /* CSS Footer */

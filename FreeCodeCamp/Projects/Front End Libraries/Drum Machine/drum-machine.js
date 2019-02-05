@@ -2,8 +2,7 @@
 
 // Still To DO
 
-// 2. Set volume
-// 3. Use keyboard keys
+// 3. use JSON file
 
 
 
@@ -33,25 +32,47 @@ const tuneStyleTwo = [
 
 var actualEvent;
 var powerToggle = true;
-var musicStyle = 1;
+var musicStyle = 1; 
 var actualVolume = 0.5;
 var tuneURL;
 
-document.querySelector('#Q').addEventListener('click', qEvent); function qEvent() {tuneDefine = 0; defineTune();}
-document.querySelector('#W').addEventListener('click', wEvent); function wEvent() {tuneDefine = 1; defineTune();}
-document.querySelector('#E').addEventListener('click', eEvent); function eEvent() {tuneDefine = 2; defineTune();}
-document.querySelector('#A').addEventListener('click', aEvent); function aEvent() {tuneDefine = 3; defineTune();}
-document.querySelector('#S').addEventListener('click', sEvent); function sEvent() {tuneDefine = 4; defineTune();}
-document.querySelector('#D').addEventListener('click', dEvent); function dEvent() {tuneDefine = 5; defineTune();}
-document.querySelector('#Z').addEventListener('click', zEvent); function zEvent() {tuneDefine = 6; defineTune();}
-document.querySelector('#X').addEventListener('click', xEvent); function xEvent() {tuneDefine = 7; defineTune();}
-document.querySelector('#C').addEventListener('click', cEvent); function cEvent() {tuneDefine = 8; defineTune();}
+document.querySelector('#Q').addEventListener('click', qEvent); function qEvent() {defineTune(0); activeKey("#Q")}
+document.querySelector('#W').addEventListener('click', wEvent); function wEvent() {defineTune(1); activeKey("#W")}
+document.querySelector('#E').addEventListener('click', eEvent); function eEvent() {defineTune(2); activeKey("#E")}
+document.querySelector('#A').addEventListener('click', aEvent); function aEvent() {defineTune(3); activeKey("#A")}
+document.querySelector('#S').addEventListener('click', sEvent); function sEvent() {defineTune(4); activeKey("#S")}
+document.querySelector('#D').addEventListener('click', dEvent); function dEvent() {defineTune(5); activeKey("#D")}
+document.querySelector('#Z').addEventListener('click', zEvent); function zEvent() {defineTune(6); activeKey("#Z")}
+document.querySelector('#X').addEventListener('click', xEvent); function xEvent() {defineTune(7); activeKey("#X")}
+document.querySelector('#C').addEventListener('click', cEvent); function cEvent() {defineTune(8); activeKey("#C")}
+
+document.addEventListener("keydown", key_pressed);
 
 document.querySelector('#powertoggle').addEventListener('click', togglePower);
 document.querySelector('#mp3-style').addEventListener('click', styleMusic);
 document.querySelector('#key-volume').addEventListener('click', adjustVolume);
 
-function defineTune () {
+function activeKey(activeTune) {
+    document.querySelector(activeTune).classList.add('active');
+    setTimeout(function() {
+        document.querySelector(activeTune).classList.remove('active');
+    }, 200);
+}
+
+function key_pressed(e) {
+    let k = e.which || e.keyCode;
+    if (k == 81) qEvent();
+    if (k == 87) wEvent();
+    if (k == 69) eEvent();
+    if (k == 65) aEvent();
+    if (k == 83) sEvent();
+    if (k == 68) dEvent();
+    if (k == 90) zEvent();
+    if (k == 88) xEvent();
+    if (k == 67) cEvent();
+}
+
+function defineTune (tuneDefine) {
     if(powerToggle === true) {
         if (musicStyle === 1) {
             actualEvent = tuneStyleOne[tuneDefine].titleTune;
@@ -87,6 +108,7 @@ function togglePower() {
         document.documentElement.style.setProperty("--border", "crimson");
     }
     document.getElementById('power'). textContent = result;
+    document.getElementById('event'). textContent = result;
     styleMusic();
 }
 
@@ -116,13 +138,15 @@ function styleMusic() {
 }
 
 function adjustVolume() {
-    actualVolume = document.getElementById('#key-volume').value;
+    actualVolume = document.querySelector('#key-volume').value;
     console.log(actualVolume);
 }
 
 function playTune() {
+    console.log(actualVolume);
     if (powerToggle === true) {
         var audio = new Audio(tuneURL);
+        audio.volume = actualVolume;
         audio.play();
     } else {
         var audio = new Audio("./tunes/power-off.mp3");
