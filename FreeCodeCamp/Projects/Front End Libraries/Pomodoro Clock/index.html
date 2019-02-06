@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link type="text/css" rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+   <title>Pomodoro Clock</title>
+</head>
+<body>
+      <!-- FreeCodeCamp Project Tester-->
+      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+   
+   <header>
+      <div>
+         <h1>Pomodoro Clock</h1><hr class="divide-line-header">
+         <p>A FreeCodeCamp Project Challenge</p>
+      </div>
+   </header>
+   <div class="pomodoro">
+      <div class="labels">
+         <div id="break-label">
+            Break Length
+         </div >
+         <div id="session-label">
+            Session Length
+         </div>
+      </div>
+      <div class="timer-settings">
+         <div class="break">
+            <div id="break-decrement"><i class="fas fa-arrow-circle-up"></i></div>
+            <div id="break-length">5</div>
+            <div id="break-increment"><i class="fas fa-arrow-circle-down"></i></div>
+         </div>
+         <div class="session">
+            <div id="session-decrement"><i class="fas fa-arrow-circle-up"></i></div>
+            <div id="session-length">25</div>
+            <div id="session-increment"><i class="fas fa-arrow-circle-down"></i></div>
+         </div>
+      </div>
+      <div class="timer">
+         <div id="timer-label">Session</div>
+         <div id="time-left">
+            <div class="minutes">
+               <div id="m" class="m">25</div>
+               <p>Minutes</p>
+            </div>
+            <div class="separator">:</div>
+            <div class="seconds">
+               <div class="s">00</div>
+               <p>Seconds</p>
+            </div>
+         </div>
+      </div>
+      <div class="timer-control">
+         <div id="start_stop"><i class="fas fa-play"></i><i class="fas fa-pause"></i></div>
+         <div id="reset"><i class="fas fa-sync"></i></div>
+      </div>
+   </div>
+   <footer>
+         <div>
+               <span>Presented by <a href="https://codepen.io/EricRKock/" target="_blank">Eric R. Kock</a> - Feb. 2019</span>
+            </div>
+   </footer>
+
+   <script src="pomodoro-clock.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+/* Pomodoro CSS Style */
+/* ================== */
+
+/* == Theme Variables == */
+:root {
+   --primary: yellow;
+   --secondary: green;
+   --light: white;
+   --dark: darkgrey;
+   --background: rgb(238, 216, 144);
+   --border: black;
+   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+   --test: #ff5900;
+}
+
+/* == Main Tags == */
+html {
+   font-family: Arial, Helvetica, sans-serif;
+   color: var(--dark);
+   background-color: var(--background);
+}
+body {
+   font-family: 'Righteous';
+   margin: 30px 50px;
+   line-height: 20px;
+}
+
+header {
+   color: white;
+   text-transform: uppercase;
+   text-align: center;
+   margin-bottom: 30px; 
+}
+
+.divide-line-header {
+   color: var(--light);
+   margin-top: 25px;
+   width: 25%;
+}
+
+/* == The Clock == */
+.pomodoro {
+   display: block;
+   width: 400px;
+   height: 350px;
+   margin: auto;
+   background-color: var(--secondary);
+   border-radius: 10px;
+   box-shadow: var(--shadow);
+}
+
+.labels {
+   display: flex;
+   text-transform: uppercase;
+}
+
+#break-label {
+   width: 50%;
+   padding-top: 25px;
+   padding-bottom: 15px;
+   text-align: center;
+   color: var(--primary);
+}
+
+#session-label {
+   width: 50%;
+   padding-top: 25px;
+   padding-bottom: 15px;
+   text-align: center;
+   color: var(--primary);
+
+}
+.timer-settings {
+   display: flex;
+   align-content: center;
+   justify-content: center;
+}
+
+.break{
+   display: flex;
+   width: 50%;
+}
+
+#break-decrement {
+   width: 15%;
+   margin-left: 20%;
+   text-align: center;
+}
+
+#break-length {
+   width: 30%;
+   margin-top: 2px;
+   font-weight: 700;
+   font-size: 20px;
+   color: var(--primary);
+   text-align: center;
+}
+#break-increment {
+   width: 15%;
+   text-align: center;
+}
+
+.session {
+   display: flex;
+   width: 50%
+}
+
+#session-decrement {
+   width: 15%;
+   margin-left: 20%;
+   text-align: center;
+}
+
+#session-length {
+   width: 30%;
+   margin-top: 2px;
+   font-weight: 700;
+   font-size: 20px;
+   color: var(--primary);
+   text-align: center;
+}
+#session-increment {
+   width: 15%;
+   text-align: center;
+}
+
+.timer {
+   margin: auto;
+   margin-top: 10px;
+   width: 50%;
+   height: 150px;
+   border: 10px;
+   border-color: var(--light);
+   border-style: solid;
+   border-top-right-radius: 20px;
+   border-top-left-radius: 20px;
+   border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+   box-shadow: var(--shadow);
+}
+
+#timer-label {
+   padding-top: 15px;
+   font-size: 22px;
+   font-weight: 300;
+   text-align: center;
+   color: var(--primary);
+}
+
+#time-left {
+   display: flex;
+   padding-top: 30px;
+   font-weight: 700;
+   text-align: center;
+   color: var(--primary);
+}
+
+.minutes {
+   display: block;
+   width: 100px;
+}
+
+.m {
+   font-size: 68px;
+   text-align: center;
+   padding: 5px;
+}
+
+.separator {
+   font-size: 48px;
+   font-weight: 300;
+}
+.seconds {
+   display: block;
+   width: 100px;
+}
+
+.s {
+   font-size: 68px;
+   text-align: center;
+   padding: 5px
+}
+
+.timer-control {
+   display: flex;
+   margin-top: 10px;
+   align-content: center;
+   justify-content: center;
+   background-color: var(--test);
+}
+
+#start_stop{
+   float: left;
+}
+
+#reset {
+   float: right;
+}
+
+/* == Icons CSS == */
+i {
+   padding: 5px;
+   font-size: 18px;
+   color: var(--primary);
+}
+
+/* == CSS Footer == */
+footer {
+   margin-top: 15px;
+   font-size: 12px;
+   color: var(--light);
+   text-align: center;
+}
+
+footer a {
+   color: var(--light);
+   text-decoration: none;
+}
