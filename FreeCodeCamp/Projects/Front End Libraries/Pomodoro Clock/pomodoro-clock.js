@@ -28,6 +28,7 @@ function breakIncrement() {
 
 function sessionDecrement() {
    document.getElementById("session-length").textContent = Number(+document.getElementById("session-length").textContent+1);
+   document.getElementById("m").textContent = parseInt(+document.getElementById("m").textContent+1);
 }
 
 function sessionIncrement() {
@@ -36,7 +37,6 @@ function sessionIncrement() {
       document.getElementById("session-length").textContent = parseInt(+document.getElementById("session-length").textContent-1);
       document.getElementById("m").textContent = parseInt(+document.getElementById("m").textContent-1);
    }
-   console.log(y);
 }
 
 function switchStatus() {
@@ -52,12 +52,18 @@ function switchStatus() {
 function countDown() {
    
    if (startStop == "start") {
-      if (pomodorSwitch == "session") {
+      if (pomodoroSwitch == "session") {
 
-         
+         pomodoroSwitch ="pause";
+         document.documentElement.style.setProperty("--switch", "green");
+      } else {
+
+         pomodoroSwitch ="session";
+         document.documentElement.style.setProperty("--switch", "navy");
       }
       console.log("Count Down is running");
    } else {
+
       console.log("Count Down has Stopped!")
    }
    console.log(startStop);
@@ -67,4 +73,7 @@ function reset() {
    document.getElementById("break-length").textContent = "5";
    document.getElementById("session-length").textContent = "25";
    document.getElementById("m").textContent = "25";
+   document.documentElement.style.setProperty("--switch", "navy");
+   pomodoroSwitch = "session";
+   startStop = "pause";
 }
