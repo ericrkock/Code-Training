@@ -3,31 +3,27 @@
 
 /* == Theme Variables == */
 :root {
-   --primary: navy;
-   --secondary: rgb(233, 207, 122);
+   --theme: navy;
    --light: white;
-   --dark: darkgrey;
-   --switch: navy;
-   --background: rgb(106, 172, 248);
+   --play: navy;
+   --mainBG: #2eb3e4;
+   --clockBG: #e4b72e;
    --border: black;
    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-   --test: #ff5900;
 }
 
 /* == Main Tags == */
 html {
-   font-family: Arial, Helvetica, sans-serif;
    color: var(--dark);
-   background-color: var(--background);
+   background-color: var(--mainBG);
 }
 body {
-   font-family: 'Righteous';
    margin: 30px 50px;
    line-height: 20px;
 }
 
 header {
-   color: white;
+   color: var(--light);
    text-transform: uppercase;
    text-align: center;
    margin-bottom: 30px; 
@@ -45,7 +41,7 @@ header {
    width: 400px;
    height: 325px;
    margin: auto;
-   background-color: var(--secondary);
+   background-color: var(--clockBG);
    border-radius: 10px;
    box-shadow: var(--shadow);
 }
@@ -60,7 +56,7 @@ header {
    padding-top: 25px;
    padding-bottom: 15px;
    text-align: center;
-   color: var(--primary);
+   color: var(--theme);
 }
 
 #session-label {
@@ -68,7 +64,7 @@ header {
    padding-top: 25px;
    padding-bottom: 15px;
    text-align: center;
-   color: var(--primary);
+   color: var(--theme);
 
 }
 .timer-settings {
@@ -83,6 +79,14 @@ header {
    width: 50%;
 }
 
+#span-break-min {
+   margin: 0 5px 0 5px;
+   width: 15%;
+   font-weight: 100;
+   font-size: 14px;
+   color: var(--theme);
+}
+
 #break-decrement {
    width: 15%;
    margin-left: 20%;
@@ -90,13 +94,15 @@ header {
 }
 
 #break-length {
-   width: 30%;
+   font-family: 'Orbitron', sans-serif;
+   width: 15%;
    margin-top: 2px;
    font-weight: 700;
-   font-size: 22px;
-   color: var(--primary);
+   font-size: 16px;
+   color: var(--theme);
    text-align: center;
 }
+
 #break-increment {
    width: 15%;
    text-align: center;
@@ -107,6 +113,14 @@ header {
    width: 50%
 }
 
+#span-session-min {
+   margin: 0 5px 0 5px;
+   width: 15%;
+   font-weight: 100;
+   font-size: 14px;
+   color: var(--theme);
+}
+
 #session-decrement {
    width: 15%;
    margin-left: 20%;
@@ -114,11 +128,12 @@ header {
 }
 
 #session-length {
-   width: 30%;
+   font-family: 'Orbitron', sans-serif;
+   width: 15%;
    margin-top: 2px;
    font-weight: 700;
-   font-size: 22px;
-   color: var(--primary);
+   font-size: 16px;
+   color: var(--theme);
    text-align: center;
 }
 #session-increment {
@@ -146,46 +161,17 @@ header {
    font-size: 22px;
    font-weight: 300;
    text-align: center;
-   color: var(--primary);
+   color: var(--theme);
 }
 
 #time-left {
-   display: flex;
+   font-family: 'Orbitron', sans-serif;
    margin: auto;
-   padding-top: 30px;
+   padding-top: 45px;
+   font-size: 48px;
    font-weight: 700;
    text-align: center;
-   color: var(--primary);
-}
-
-.minutes {
-   display: block;
-   width: 45%;
-}
-
-.m {
-   font-size: 68px;
-   text-align: center;
-   padding: 5px;
-   color: var(--switch);
-}
-
-.separator {
-   width: 10%;
-   font-size: 48px;
-   font-weight: 300;
-   color: var(--switch);
-}
-.seconds {
-   display: block;
-   width: 45%;
-}
-
-.s {
-   font-size: 68px;
-   text-align: center;
-   padding: 5px;
-   color: var(--switch);
+   color: var(--theme);
 }
 
 .timer-control {
@@ -197,6 +183,10 @@ header {
 
 #start_stop{
    float: left;
+   font-size: 28px;
+   font-weight: 900;
+   color: var(--play);
+ 
 }
 
 #reset {
@@ -206,7 +196,7 @@ header {
 /* == Icons CSS == */
 i {
    font-size: 22px;
-   color: var(--primary);
+   color: var(--theme);
 }
 .fa-pause {
    padding-left: 5px;

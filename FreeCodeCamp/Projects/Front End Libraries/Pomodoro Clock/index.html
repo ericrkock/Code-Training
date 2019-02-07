@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link type="text/css" rel="stylesheet" href="style.css">
+   <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
    <title>Pomodoro Clock</title>
 </head>
@@ -18,43 +19,35 @@
          <p>A FreeCodeCamp Project Challenge</p>
       </div>
    </header>
-   <div class="pomodoro">
-      <div class="labels">
-         <div id="break-label">
-            Break Length
-         </div >
+   <div class="pomodoro" id="pomodoro">
+      <div class="labels">         
          <div id="session-label">
-            Session Length
+            Working Time
          </div>
+         <div id="break-label">
+            Break Duration
+         </div >
+
       </div>
-      <div class="timer-settings">
-         <div class="break">
-            <div id="break-decrement"><i class="fas fa-arrow-circle-up"></i></div>
-            <div id="break-length">5</div>
-            <div id="break-increment"><i class="fas fa-arrow-circle-down"></i></div>
-         </div>
+      <div class="timer-settings">         
          <div class="session">
-            <div id="session-decrement"><i class="fas fa-arrow-circle-up"></i></div>
-            <div id="session-length">25</div>
-            <div id="session-increment"><i class="fas fa-arrow-circle-down"></i></div>
+            <div id="session-decrement"><i class="fas fa-plus-circle"></i></div>
+            <div id="session-length"></div><span id="span-session-min">mins</span>
+            <div id="session-increment"><i class="fas fa-minus-circle"></i></div>
          </div>
+         <div class="break">
+            <div id="break-decrement"><i class="fas fa-plus-circle"></i></div>
+            <div id="break-length"></div><span id="span-break-min">mins</span>
+            <div id="break-increment"><i class="fas fa-minus-circle"></i></div>
+         </div>
+
       </div>
       <div class="timer">
-         <div id="timer-label">Session</div>
-         <div id="time-left">
-            <div class="minutes">
-               <div id="m" class="m">25</div>
-               <p>Minutes</p>
-            </div>
-            <div class="separator">:</div>
-            <div class="seconds">
-               <div class="s">00</div>
-               <p>Seconds</p>
-            </div>
-         </div>
+         <div id="timer-label"></div>
+         <div id="time-left"></div>
       </div>
       <div class="timer-control">
-         <div id="start_stop"><i class="fas fa-play"></i><i class="fas fa-pause"></i></div>
+         <div id="start_stop"></div>
          <div id="reset"><i class="fas fa-sync"></i></div>
       </div>
    </div>
