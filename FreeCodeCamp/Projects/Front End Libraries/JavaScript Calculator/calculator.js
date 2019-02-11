@@ -14,8 +14,15 @@ var chainDisplay = "";
 var previousKeyUsed = "";
 var tempChainDisplay;
 var decimalUsed = false;
+var isDecimal = false;
 var isOperator = false;
+var calculationChain =[];
+var tempCalculationChain = "";
 
+
+var canDigit = true;
+var canDecimal = false;
+var canOperator = false;
 
 
 function padClicked(obj) {
@@ -53,6 +60,26 @@ function tempDisplayOperator(x) {
    if (x == "divide") displayOperator("/");
 }
 
+function tempTank(x) {
+   if (x <= 9 || x >= 0) {
+      canDecimal = true;
+   }
+
+   if (x == "." && isDecimal == false) {
+      tempResult = tempResult + x;
+      isDecimal = true;
+
+   } 
+
+   if ((x == "+" || x == "-" || x == "x" || x == "/") && isOperator == false) {
+      isDecimal = false;
+      isOperator = true;
+
+   }
+
+}
+
+
 function displayDigit(x) {
    if (resultDisplay != 0 || x != 0) {
       if (previousKeyUsed == "operator") {
@@ -63,8 +90,9 @@ function displayDigit(x) {
       chainDisplay = chainDisplay + x;
       updateHTML(chainDisplay, resultDisplay);
       previousKeyUsed = "digit";
+      tempCalculationChain = tempCalculationChain + x;
    }
-   console.log("66 Digit Chain & Result : ",chainDisplay, " ", resultDisplay)
+   console.log("70 Digit Chain : ",chainDisplay, " Result: ", resultDisplay, " Temp Calc Chain: ", tempCalculationChain);
 }
 
 function displayDecimal() {
@@ -80,7 +108,6 @@ function displayDecimal() {
       decimalUsed = true;
       previousKeyUsed ="decimal";
    } else {
-      //chainDisplay = tempChainDisplay;
       resultDisplay = tempResultDisplay;
    }
    updateHTML(chainDisplay, resultDisplay);
@@ -96,7 +123,7 @@ function displayOperator(x) {
       previousKeyUsed = "operator";
       resultDisplay = "";
    }
-   console.log("94 Digit Chain : ",chainDisplay, " Result: ", resultDisplay)
+   console.log("102 Digit Chain : ",chainDisplay, " Result: ", resultDisplay)
 }
 
 function backspaceDisplay() {
