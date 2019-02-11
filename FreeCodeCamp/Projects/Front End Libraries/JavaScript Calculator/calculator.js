@@ -7,8 +7,127 @@
 // - Buzz on error
 // - Backspace
 // - Equal
-// - Operators
 
+
+var resultDisplay = "";
+var chainDisplay = "";
+var previousKeyUsed = "";
+var tempChainDisplay;
+var decimalUsed = false;
+var isOperator = false;
+
+
+
+function padClicked(obj) {
+   var keyID = obj.id;
+   var keyValue = obj.value;
+
+   console.log( "Clicked : ID: ", keyID, " - Value: ", keyValue);
+   if (keyValue == "digit") tempDisplayDigit(keyID);
+   if (keyValue == "decimal") displayDecimal();
+   if (keyValue =="operator") tempDisplayOperator(keyID);
+}
+
+
+function tempDisplayDigit(x) {
+   if (x == "zero") displayDigit("0");
+   if (x == "one") displayDigit("1");
+   if (x == "two") displayDigit("2");
+   if (x == "three") displayDigit("3");
+   if (x == "four") displayDigit("4");
+   if (x == "five") displayDigit("5");
+   if (x == "six") displayDigit("6");
+   if (x == "seven") displayDigit("7");
+   if (x == "eight") displayDigit("8");
+   if (x == "nine") displayDigit("9");
+}
+
+function tempDisplayOperator(x) {
+   if (x == "clear") resetDisplay();
+   if (x == "backspace") backspaceDisplay();
+   if (x == "equal") finalResult();
+
+   if (x == "add") displayOperator("+");
+   if (x == "substract") displayOperator("-");
+   if (x == "multiply") displayOperator("x");
+   if (x == "divide") displayOperator("/");
+}
+
+function displayDigit(x) {
+   if (resultDisplay != 0 || x != 0) {
+      if (previousKeyUsed == "operator") {
+         chainDisplay = tempChainDisplay;
+         decimalUsed = false;
+      }
+      resultDisplay = resultDisplay + x;
+      chainDisplay = chainDisplay + x;
+      updateHTML(chainDisplay, resultDisplay);
+      previousKeyUsed = "digit";
+   }
+   console.log("66 Digit Chain & Result : ",chainDisplay, " ", resultDisplay)
+}
+
+function displayDecimal() {
+   console.log("70 Digit Chain & Result : ",chainDisplay, " ", resultDisplay)
+   if (!decimalUsed && previousKeyUsed != "operator") {
+      if (resultDisplay == 0) {
+         chainDisplay = "0.";
+         resultDisplay = "0.";
+      } else {
+         chainDisplay = chainDisplay + ".";
+         resultDisplay = resultDisplay + ".";
+      }
+      decimalUsed = true;
+      previousKeyUsed ="decimal";
+   } else {
+      //chainDisplay = tempChainDisplay;
+      resultDisplay = tempResultDisplay;
+   }
+   updateHTML(chainDisplay, resultDisplay);
+   console.log("83 Digit Chain & Result : ",chainDisplay, " ", resultDisplay)
+}
+
+function displayOperator(x) {
+   if (previousKeyUsed != "decimal") {
+      tempChainDisplay = chainDisplay + x;
+      resultDisplay = x;
+      tempResultDisplay = x;
+      updateHTML(tempChainDisplay, resultDisplay);
+      previousKeyUsed = "operator";
+      resultDisplay = "";
+   }
+   console.log("94 Digit Chain : ",chainDisplay, " Result: ", resultDisplay)
+}
+
+function backspaceDisplay() {
+   // Remove last key pressed
+   updateHTML("Back Space: Remove last key pressed", "Coming Soon");
+}
+
+function finalResult() {
+   if (previousKeyUsed != "decimal" && previousKeyUsed != "operator") {
+      // Show Mathematical result
+   }
+   updateHTML("Final Result","Coming Soon");
+}
+
+function updateHTML(chain, result) {
+   document.querySelector("#chain").textContent = chain;
+   document.querySelector("#result").textContent = result;
+}
+
+function resetDisplay() {
+   console.log("Reset Done!")
+   chainDisplay = "";
+   resultDisplay = "";
+   previousKeyUsed = "";
+   decimalUsed = false;
+   isOperator = false;
+   document.querySelector("#chain").textContent = "«";
+   document.querySelector("#result").textContent = "0";
+}
+
+/*
 var chain = "";
 var result = "";
 let decimal = false;
@@ -119,3 +238,4 @@ function clearOperator() {
    operator = false;
    prevO = "empty";
 }
+*/

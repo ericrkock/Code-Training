@@ -59,7 +59,7 @@ header {
    margin: auto;
    width: 500px;
    height: 500px;
-   color: var(--light);
+   color: var(--light) !important;
    background-color: var(--calculatorBG);
    border: 5px;
    border-style: solid;
@@ -134,6 +134,7 @@ header {
    text-align: center;
    align-items: center;
    border: 0.5px;
+   color: var(--light);
    border-color: var(--borderPad);
    border-style: solid;   
 }
