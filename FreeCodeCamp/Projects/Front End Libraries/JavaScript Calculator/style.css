@@ -77,7 +77,7 @@ header {
       'board board board board';
 }
 
-#display {
+#screen {
    grid-area: display;
    display: grid;
    grid-template-areas: 
@@ -103,7 +103,7 @@ header {
    overflow: hidden;
 }
 
-#result {
+#display {
    display: grid;
    grid-area: result;
    text-align: right;
@@ -127,7 +127,7 @@ header {
       'zero backspace decimal add equal';
 }
 
-#clear, #add, #substract, #divide, #multiply, #equal, #decimal, #backspace, #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine {
+#clear, #add, #subtract, #divide, #multiply, #equals, #decimal, #backspace, #zero, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine {
    display: grid;
    font-size: 32px;
    font-weight: 700;
@@ -139,7 +139,7 @@ header {
    border-style: solid;   
 }
 
-#clear, #add, #substract, #divide, #multiply {
+#clear, #add, #subtract, #divide, #multiply {
    background-color: var(--oparators);
 }
 
@@ -175,7 +175,7 @@ header {
    
 }
 
-#substract {
+#subtract {
    grid-area: substract;
 }
 
@@ -187,7 +187,7 @@ header {
    grid-area: multiplying;
 }
 
-#equal {
+#equals {
    grid-area: equal;
    background-color: var(--equalPad);
 }
