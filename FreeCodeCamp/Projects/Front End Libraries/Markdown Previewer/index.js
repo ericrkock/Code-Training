@@ -1,2 +1,0 @@
-// Markdown Previewer
-// Coming Soon

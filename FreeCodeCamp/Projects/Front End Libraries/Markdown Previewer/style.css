@@ -1,0 +1,137 @@
+/* Markfown Previewer */
+/* ================== */
+
+/* == Theme Variables == */
+:root {
+    --theme: #999;
+    --light: white;
+
+    --editorH: #999;
+    --editorC: #000;
+    --previewH: navy;
+    --previewC: #000;
+    
+    --mainBG: #333;
+    --editorBG: #fff;
+    --previewerBG: rgb(225, 225, 225);
+    --shadow: 0 10px 25px rgba(104, 104, 104, 0.8);
+ 
+}
+ 
+/* == Main Tags == */
+html {
+    background-color: var(--mainBG);
+}
+
+body {
+    margin: 30px 50px;
+    line-height: 20px;
+}
+ 
+header {
+    color: var(--light);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px; 
+}
+ 
+.divide-line-header {
+    color: var(--light);
+    margin-top: 25px;
+    width: 25%;
+}
+ 
+/* == CSS Markdown == */
+.wrapper {
+    display: grid;
+    width: 700px;
+    margin: auto;
+    grid-template-areas: 
+        'editor-header'
+        'editor editor'
+        'preview-header preview-header'
+        'preview preview';
+}
+
+.editor-header, .preview-header {
+    display: grid;
+    text-transform: uppercase;
+    height: 25px;
+    padding-top: 5px;
+    padding-left: 15px;
+    color: var(--light);
+    
+}
+
+.editor-header {
+    background-color: var(--editorH);
+}
+
+.preview-header {
+    margin-top: 25px;
+    background-color: var(--previewH);
+}
+
+#editor {
+    display: grid;
+    height: 300px;
+    background-color: var(--editorBG);
+    border: 3px;
+    border-style: solid;
+    border-color: var(--theme);
+    box-shadow: var(--shadow);
+}
+
+#preview {
+    display: grid;
+    padding: 20px;;
+    height: auto;
+    color: var(--previewC);
+    background-color: var(--previewerBG);
+    box-shadow: var(--shadow);
+}
+
+#preview blockquote {
+    border-left: 3px solid #224B4B;
+    color: #224B4B;
+    padding-left: 5px;
+    margin-left: 25px;
+  }
+  #preview code {
+    background: white;
+    padding: 1px 4px 2px 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  #preview pre {
+    background: white;
+    padding: 5px 0 5px 5px;
+  }
+  #preview h1 {
+    /*border-bottom: 2px solid #224B4B;*/
+  }
+  #preview h2 {
+    /*border-bottom: 1px solid #224B4B;*/
+  }
+  #preview table {
+    border-collapse: collapse;
+  }
+  #preview td,
+  #preview th {
+    border: 2px solid #224B4B;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+/* == CSS Footer == */
+footer {
+    margin-top: 25px;
+    font-size: 12px;
+    color: var(--light);
+    text-align: center;
+}
+ 
+footer a {
+    color: var(--light);
+    text-decoration: none;
+}
