@@ -1,0 +1,51 @@
+/* D3: Data with a Bar Chart */
+/* ========================= */
+
+/* == Theme Variables == */
+:root {
+   --theme: #999;
+   --themeBG: #333;
+   --light: white;
+
+   --shadow: 0 10px 25px rgba(104, 104, 104, 0.8);
+}
+
+/* == Main Tags == */
+html {
+   background-color: var(--mainBG);
+}
+
+body {
+   margin: 30px 50px;
+   line-height: 20px;
+}
+
+header {
+   color: var(--light);
+   text-transform: uppercase;
+   text-align: center;
+   margin-bottom: 30px; 
+}
+
+.divide-line-header {
+   color: var(--light);
+   margin-top: 25px;
+   width: 25%;
+}
+
+/* == CSS Bar Chart == */
+
+
+
+/* == CSS Footer == */
+footer {
+   margin-top: 25px;
+   font-size: 12px;
+   color: var(--light);
+   text-align: center;
+}
+
+footer a {
+   color: var(--light);
+   text-decoration: none;
+}
