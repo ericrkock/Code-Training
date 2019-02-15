@@ -32,10 +32,12 @@ document.addEventListener("keypress", function(event) {if (event.keyCode === 13 
       if (ans === this.correct) {
          document.getElementById("correct-answer").textContent = "CORRECT Answer!";
          document.documentElement.style.setProperty("--answer", "green");
+         document.documentElement.style.setProperty("--answerBG", "lightgreen");
          sc = callback(true);
       } else {
          document.getElementById("correct-answer").textContent = "WRONG Answer!";
          document.documentElement.style.setProperty("--answer", "red");
+         document.documentElement.style.setProperty("--answerBG", "lightcoral");
          sc = callback(false);
       }
       this.displayScore(sc);
@@ -85,7 +87,8 @@ document.addEventListener("keypress", function(event) {if (event.keyCode === 13 
          }
       } else {
          document.documentElement.style.setProperty("--answer", "blue");
-         document.getElementById("correct-answer").textContent = "NO ANSWER HAS BEEN GIVEN!";
+         document.documentElement.style.setProperty("--answerBG", "lightblue");
+         document.getElementById("correct-answer").textContent = "NO ANSWER BEEN GIVEN!";
       }
    }
    

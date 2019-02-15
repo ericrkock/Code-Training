@@ -11,8 +11,9 @@
    --questionBG: lightgreen;
    --answers: blue;
    --answersBG: lightblue;
-   --btn: #333;
+   --btn: #999;
    --answer: white;
+   --answerBG: #333;
    --mainBG: #333;
    --shadow: 0 10px 25px rgba(104, 104, 104, 0.8);
 }
@@ -93,15 +94,21 @@ header {
 
 #players-answer-panel {
    display: grid;
-   padding-top: 15px;
-   padding-bottom: 10px;
+   margin-top: 15px;
+   padding-top: 10px;
+   background-color: var(--answerBG);
+   border: 3px;
+   border-style: solid;
+   border-color: var(--light);
    grid-template-areas: 
       'players-answer submit correct-answer'
 }
 
 #players-answer {
    width: 110px;
-   height: 25px;
+   height: 30px;
+   margin-left: 10px;
+   padding-left: 5px;
    color: var(--theme);
    font-size: 18px;
    font-weight: 100;
@@ -109,8 +116,9 @@ header {
 
 .submit {
    width: 75px;
-   height: 30px;
-   color: var(--light);
+   height: 35px;
+   color: var(--header);
+   text-shadow: var(--shadow);
    background-color: var(--btn);
    border: 1px;
    border-style: solid;
@@ -118,20 +126,27 @@ header {
    font-size: 16px;
 }
 
+.submit:hover {
+   color: var(--answers);
+   background-color: var(--answersBG);
+}
+
 #correct-answer {
-   width: 225px;
-   height: 60px;
-   padding-top: 5px;
+   width: 240px;
+   height: 30px;
+   padding-top: 7px;
    padding-left: 30px;
-   padding-bottom: 15px;
+   padding-bottom: 10px;
    font-size: 18px;
    font-weight: 900;
    color: var(--answer);
 }
 
 #score-panel {
-   margin-left: 20px;
-   margin-bottom: 25px;
+   display: grid;
+   height: 30px;
+   margin-top: 10px;
+   justify-content: center;
    color: var(--light);
    font-size: 20px;
    font-weight: 300;
