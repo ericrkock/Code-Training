@@ -4,32 +4,17 @@
 ** Rules: read the README.md file */
 
 // Load JSON File //
-/*
-function loadJSON(callback) {   
-
-   var xobj = new XMLHttpRequest();
-       xobj.overrideMimeType("application/json");
-   xobj.open('GET', 'quotes.json', true); 
-   xobj.onreadystatechange = function () {
-         if (xobj.readyState == 4 && xobj.status == "200") {
-           // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-           callback(xobj.responseText);
-         }
-   };
-   xobj.send(null);  
+//getQuotes();
+function getQuotes() {
+   req = new XMLHttpRequest();
+   req.open("GET", "/quotes.json", true);
+   req.send();
+   req.onload = function() {
+      let quoteList = JSON.parse(req.quotes);
+   }
 }
 
-init();
-function init() {
-   loadJSON(function(response) {
-    // Parse JSON string into object
-      var actual_JSON = JSON.parse(response);
-      console.log(actual_JSON);
-   });
-  }
-*/
-
-let quoteList = {
+/*let quoteList = {
    "quotes" : [
       {"quote":"You know you’re in love when you can’t fall asleep because reality is finally better than your dreams.", "author":"Dr. Suess"},
       {"quote":"I’m selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can’t handle me at my worst, then you sure as hell don’t deserve me at my best.", "author":"Marilyn Monroe"},
@@ -47,7 +32,7 @@ let quoteList = {
       {"quote":"Let us always meet each other with smile, for the smile is the beginning of love.", "author":"Mother Theresa"},
       {"quote":"Challenges are what make life interesting and overcoming them is what makes life meaningful.", "author":"Joshua J. Marine"}
    ]
-};
+};*/
 
 const randomColor = ["crimson", "blue", "red", "black", "#ff5900", "deepskyblue", "#2f4155", '#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 
@@ -85,9 +70,9 @@ function tumblrQuote() {
 
 function displayQuote() {
    // Choose a random quote from json file
-   //randomQuoteID = JSON.parse(quotes[Math.floor(Math.random() * quotes.length)]); // Still need to connect with JSON file
+   randomQuoteID = JSON.parse(quoteList.quotes[Math.floor(Math.random() * quoteList.quotes.length)]); // Still need to connect with JSON file
    
-   randomQuoteID = Math.floor(Math.random() * quoteList.quotes.length);
+   //randomQuoteID = Math.floor(Math.random() * quoteList.quotes.length);
    while (randomQuoteID === actualQuoteID) {
       randomQuoteID = Math.floor(Math.random() * quoteList.quotes.length);
    }
@@ -100,8 +85,11 @@ function displayQuote() {
    document.documentElement.style.setProperty("--general", randomColor[randomColorID]);
    
    // Display Quote & Author
-   document.getElementById('text'). textContent = quoteList.quotes[randomQuoteID].quote;
-   document.getElementById('author').textContent = "-" + quoteList.quotes[randomQuoteID].author;
+   /*document.getElementById('text'). textContent = quoteList.quotes[randomQuoteID].quote;
+   document.getElementById('author').textContent = "-" + quoteList.quotes[randomQuoteID].author;*/
+
+   document.getElementById('text'). textContent = JSON.stringify(quoteList.quotes[randomQuoteID].quote);
+   document.getElementById('author').textContent = JSON.stringify("-" + quoteList.quotes[randomQuoteID].author);
    
    actualQuote = quoteList.quotes[randomQuoteID].quote;
    actualAuthor = "-" + quoteList.quotes[randomQuoteID].author;

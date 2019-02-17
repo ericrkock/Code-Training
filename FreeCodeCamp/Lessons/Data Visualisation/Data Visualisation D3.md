@@ -1,4 +1,7 @@
 
+//
+// CHART BAR
+//
 
 01.   Add Document Elements with D3
          Use the select method to select the body tag in the document. Then append an h1 tag to it, and add the text "Learning D3" into the h1 element.
@@ -227,6 +230,9 @@
                      .attr("height", h);
                   svg.selectAll("rect")
                   // Add your code below this line
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
                   // Add your code above this line
                      .attr("x", 0)
                      .attr("y", 0)
@@ -236,19 +242,452 @@
             </body>
 
 13.   Dynamically Set the Coordinates for Each Bar
+         Change the x attribute callback function so it returns the index times 30.
+         >> Note: Each bar has a width of 25, so increasing each x value by 30 adds some space between the bars. Any value greater than 25 would work in this example.
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => 
+                     // Add your code below this line
+                        i*30
+                     // Add your code above this line
+                     )
+                     .attr("y", 0)
+                     .attr("width", 25)
+                     .attr("height", 100);
+               </script>
+            </body>
+
+
 14.   Dynamically Change the Height of Each Bar
+         Change the callback function for the height attribute to return the data value times 3.
+         >> Note: Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example.
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", 0)
+                     .attr("width", 25)
+                     .attr("height", (d, i) => 
+                     // Add your code below this line
+                        d*3
+                     // Add your code above this line
+                     );
+               </script>
+            </body>
+
 15.   Invert SVG Elements
+         Change the callback function for the y attribute to set the bars right-side-up. Remember that the height of the bar is 3 times the data value d.
+         >> Note: In general, the relationship is y = h - m * d, where m is the constant that scales the data points.
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => 
+                     // Add your code below this line
+                        h - 3 * d
+                     // Add your code above this line
+                     )
+                     .attr("width", 25)
+                     .attr("height", (d, i) => 3 * d);
+               </script>
+            </body>
+
 16.   Change the Color of an SVG Element
+         Add an attr() method to set the "fill" of all the bars to the color "navy".
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - 3 * d)
+                     .attr("width", 25)
+                     .attr("height", (d, i) => 3 * d)
+                     // Add your code below this line
+                        .attr("fill", "navy")
+                     // Add your code above this line
+               </script>
+            </body>
+
 17.   Add Labels to D3 Elements
+         The code in the editor already binds the data to each new text element. First, append text nodes to the svg. Next, add attributes for the x and y coordinates. They should be calculated the same way as the rect ones, except the y value for the text should make the label sit 3 units higher than the bar. Finally, use the D3 text() method to set the label equal to the data point value.
+         >> Note: For the label to sit higher than the bar, decide if the y value for the text should be 3 greater or 3 less than the y value for the bar.
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - 3 * d)
+                     .attr("width", 25)
+                     .attr("height", (d, i) => 3 * d)
+                     .attr("fill", "navy");
+                  svg.selectAll("text")
+                     .data(dataset)
+                     .enter()
+                     // Add your code below this line
+                        .append("text")
+                        .text((d) => d)
+                        .attr("x", (d, i) => i * 30)
+                        .attr("y", (d, i) => h - (3 * d) - 3)
+                     // Add your code above this line
+               </script>
+            <body>
+
 18.   Style D3 Labels
+         Set the font-size of the text elements to 25px, and the color of the text to red.
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - 3 * d)
+                     .attr("width", 25)
+                     .attr("height", (d, i) => d * 3)
+                     .attr("fill", "navy");
+                  svg.selectAll("text")
+                     .data(dataset)
+                     .enter()
+                     .append("text")
+                     .text((d) => d)
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - (3 * d) - 3)
+                     // Add your code below this line
+                        .attr("fill", "red")
+                        .style("font-size", 25+ "px")
+                     // Add your code above this line
+               </script>
+            </body>
+
 19.   Add a Hover Effect to a D3 Element
+         Use the attr() method to add a class of bar to all the rect elements. This changes the fill color of the bar to brown when you mouse over it.
+            <style>
+               .bar:hover {
+                  fill: brown;
+               }
+            </style>
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - 3 * d)
+                     .attr("width", 25)
+                     .attr("height", (d, i) => 3 * d)
+                     .attr("fill", "navy")
+                     // Add your code below this line
+                        .attr("class", "bar")
+                     // Add your code above this line
+                  svg.selectAll("text")
+                     .data(dataset)
+                     .enter()
+                     .append("text")
+                     .text((d) => d)
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - (3 * d) - 3);
+               </script>
+            </body>
+
 20.   Add a Tooltip to a D3 Element
+         Append a title element under each rect node. Then call the text() method with a callback function so the text displays the data value.
+            <style>
+               .bar:hover {
+                  fill: brown;
+               }
+            </style>
+            <body>
+               <script>
+                  const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+                  const w = 500;
+                  const h = 100;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("rect")
+                     .data(dataset)
+                     .enter()
+                     .append("rect")
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - 3 * d)
+                     .attr("width", 25)
+                     .attr("height", (d, i) => d * 3)
+                     .attr("fill", "navy")
+                     .attr("class", "bar")
+                     // Add your code below this line
+                        .append("title")
+                        .text((d) => d)
+                     // Add your code above this line
+                  svg.selectAll("text")
+                     .data(dataset)
+                     .enter()
+                     .append("text")
+                     .text((d) => d)
+                     .attr("x", (d, i) => i * 30)
+                     .attr("y", (d, i) => h - (d * 3 + 3))   
+               </script>
+            </body>
+
+//
+// SCATTERPLOT - CIRCLES
+//
+
 21.   Create a Scatterplot with SVG Circles
+         Use the data(), enter(), and append() methods to bind dataset to new circle elements that are appended to the SVG canvas.
+         >> Note: The circles won't be visible because we haven't set their attributes yet. We'll do that in the next challenge.
+            <body>
+               <script>
+                  const dataset = [
+                                 [ 34,    78 ],
+                                 [ 109,   280 ],
+                                 [ 310,   120 ],
+                                 [ 79,    411 ],
+                                 [ 420,   220 ],
+                                 [ 233,   145 ],
+                                 [ 333,   96 ],
+                                 [ 222,   333 ],
+                                 [ 78,    320 ],
+                                 [ 21,    123 ]
+                              ];
+                  const w = 500;
+                  const h = 500;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("circle")
+                     // Add your code below this line
+                        .data(dataset)
+                        .enter()
+                        .append("circle")
+                     // Add your code above this line
+               </script>
+            </body>
+
 22.   Add Attributes to the Circle Elements
+         Add cx, cy, and r attributes to the circle elements. The cx value should be the first number in the array for each item in dataset. The cy value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The r value should be 5 for all circles.
+            <body>
+               <script>
+                  const dataset = [
+                                 [ 34,    78 ],
+                                 [ 109,   280 ],
+                                 [ 310,   120 ],
+                                 [ 79,    411 ],
+                                 [ 420,   220 ],
+                                 [ 233,   145 ],
+                                 [ 333,   96 ],
+                                 [ 222,   333 ],
+                                 [ 78,    320 ],
+                                 [ 21,    123 ]
+                              ];
+                  const w = 500;
+                  const h = 500;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("circle")
+                     .data(dataset)
+                     .enter()
+                     .append("circle")
+                     // Add your code below this line
+                        .attr("cx", (d, i) => d[0])
+                        .attr("cy", (d, i) => h - d[1])
+                        .attr("r",5)
+                     // Add your code above this line
+               </script>
+            </body>
+
 23.   Add Labels to Scatter Plot Circles
+         Label each point on the scatter plot using the text elements. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is "34, 78". Set the x attribute so it's 5 units more than the value you used for the cx attribute on the circle. Set the y attribute the same way that's used for the cy value on the circle.
+            <body>
+               <script>
+                  const dataset = [
+                                 [ 34,    78 ],
+                                 [ 109,   280 ],
+                                 [ 310,   120 ],
+                                 [ 79,    411 ],
+                                 [ 420,   220 ],
+                                 [ 233,   145 ],
+                                 [ 333,   96 ],
+                                 [ 222,   333 ],
+                                 [ 78,    320 ],
+                                 [ 21,    123 ]
+                              ];
+                  const w = 500;
+                  const h = 500;
+                  const svg = d3.select("body")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                  svg.selectAll("circle")
+                     .data(dataset)
+                     .enter()
+                     .append("circle")
+                     .attr("cx", (d, i) => d[0])
+                     .attr("cy", (d, i) => h - d[1])
+                     .attr("r", 5);
+                  svg.selectAll("text")
+                     .data(dataset)
+                     .enter()
+                     .append("text")
+                     // Add your code below this line
+                        .text((d, i) => d[0] + ", " + d[1])
+                        .attr("x", (d, i) => d[0] + 5)
+                        .attr("y", (d, i) => h - d[1])
+                     // Add your code above this line
+               </script>
+            </body>
+
+//
+// LINEAR SCALE
+//
+
 24.   Create a Linear Scale with D3
+         Change the scale variable to create a linear scale. Then set the output variable to the scale called with an input argument of 50.
+            <body>
+               <script>
+                  // Add your code below this line
+                     const scale = d3.scaleLinear(); // Create the scale here
+                     const output = scale(50); // Call the scale with an argument here
+                  // Add your code above this line
+                  d3.select("body")
+                     .append("h2")
+                     .text(output);
+               </script>
+            </body>
+
 25.   Set a Domain and a Range on a Scale
+         Create a scale and set its domain to [250, 500] and range to [10, 150].
+         >> Note: You can chain the domain() and range() methods onto the scale variable.
+            <body>
+               <script>
+                  // Add your code below this line
+                     const scale = d3.scaleLinear();
+                     scale.domain([250, 500]);
+                     scale.range([10, 150]);
+                  // Add your code above this line
+                  const output = scale(50);
+                  d3.select("body")
+                     .append("h2")
+                     .text(output);
+               </script>
+            </body>
+
 26.   Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
+         The positionData variable holds a 3-dimensional (3D) array. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the output variable.
+         >> Note: Fun fact - D3 can plot 3D arrays.
+            <body>
+               <script>
+                  const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
+                  // Add your code below this line
+                     const output = d3.max(positionData, (d) => d[2] ); // Change this line
+                  // Add your code above this line
+                  d3.select("body")
+                     .append("h2")
+                     .text(output)
+               </script>
+            </body>
+
 27.   Use Dynamic Scales
+         Use the yScale variable to create a linear y-axis scale. The domain should start at zero and go to the maximum y value in the set. The range should use the SVG height (h) and include padding.
+         >> Note: Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument.
+            <body>
+               <script>
+                  const dataset = [
+                                 [ 34,    78 ],
+                                 [ 109,   280 ],
+                                 [ 310,   120 ],
+                                 [ 79,    411 ],
+                                 [ 420,   220 ],
+                                 [ 233,   145 ],
+                                 [ 333,   96 ],
+                                 [ 222,   333 ],
+                                 [ 78,    320 ],
+                                 [ 21,    123 ]
+                              ];
+                  const w = 500;
+                  const h = 500;
+                  // Padding between the SVG canvas boundary and the plot
+                     const padding = 30;
+                  // Create an x and y scale
+                  const xScale = d3.scaleLinear()
+                                 .domain([0, d3.max(dataset, (d) => d[0])])
+                                 .range([padding, w - padding]);
+                  // Add your code below this line
+                     const yScale = undefined;
+                  // Add your code above this line
+                  const output = yScale(411); // Returns 30
+                  d3.select("body")
+                     .append("h2")
+                     .text(output)
+               </script>
+            </body>
+
 28.   Use a Pre-Defined Scale to Place Elements
 29.   Add Axes to a Visualization

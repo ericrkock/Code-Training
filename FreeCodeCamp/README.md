@@ -1,23 +1,37 @@
-# FCC-Training
-FCC Challenges
+//   FREE CODE CAMP   //
+// Project Challenges //
+// ================== //
 
-// FreeCodeCamp
-// TASKS
+// LINKS =============================================== //
 
-1. Setup Accounts & Add first file
-2. Add FCC Challenges ReactJS
-3. Create some folders
+FreeCodeCamp : https://www.freecodecamp.org/eric-r-kock
+About Me : https://about.me/erickock
+Codepen : https://codepen.io/EricRKock/
+
+// END LINKS =========================================== //
+
+
+// PROJECTS ============================================ //
+
     - Projects
-        - Responsive Web Design
+        - RESPONSIVE WEB DESIGN
             - Tribute - Done
             - Survey Form - Done
             - Product Landing Page - Done
             - Technical Documentation Page
             - Personal Portfolio Webpage
-        - Front End Libraries
+        - FRONT END LIBRARIES
             - Random Quote Machine - Done
             - Markdown Previewer - Done
-            - Drum Machine
-            - JS Calculator
-            - Pomodoro Clock
-4. Update README
+            - Drum Machine - Done
+            - JS Calculator - Done
+            - Pomodoro Clock - Done
+        - DATA VISUALIZATION
+            - Bar Chart
+            - Scatterplot Graph
+            - Heat Map
+            - Choropleth Map
+            - Treemap Diagram
+        - more to come ...
+
+// END PROJECTS ======================================== //
