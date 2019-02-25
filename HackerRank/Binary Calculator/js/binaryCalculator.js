@@ -3,16 +3,15 @@
 
 // A HackerRank Challenge - 10 Days of JavaScript > Day 9
 
-
-var newChallenge = "";
-
 var newDecimal = "";
 var newBinary = "";
 var operator = false;
 var usedOperator = "";
 var binaryOne ="";
 var binaryTwo = "";
-var decimal
+var decimal = "";
+var decimalOne = "";
+var decimalTwo = "";
 
 function padEntry(obj) {
    // Determ what the entry is and send to function
@@ -33,24 +32,29 @@ function displayBinary(x) {
   newBinary = newBinary + x;
   if (operator == true) {
      binaryTwo = binaryTwo + x;
+     decimalTwo = parseInt(binaryTwo,2);
+     decimal = decimalOne + usedOperator + decimalTwo;
   } else {
      binaryOne = binaryOne + x;
+     decimalOne = parseInt(binaryOne,2);
+     decimal = decimalOne;
   }
-  updateHTML(newBinary);
+  updateHTML(newBinary, decimal);
 }
 
 function displayOperator(x) {
    // If entry is an operator
    if (operator == false) {
       newBinary = newBinary + x ;
-      updateHTML(newBinary);
+      decimal = decimalOne + x;
+      updateHTML(newBinary, decimal);
       usedOperator = x;
       operator = true;
    }
 }
 
 function updateHTML (binary, decimal) {
-   // Show in display > id: res
+   // Show in display > id: res & converted
    document.querySelector("#res").textContent = binary;
    document.querySelector("#converted").textContent = decimal;
 }
@@ -65,29 +69,24 @@ function binaryCalculation() {
    convertResult = eval(outCome);
    var finalResult = convertResult.toString(2);
 
-   updateHTML(finalResult);
-
-   // Reset after calculation
-   newChallenge = "";
-   binaryOne = "";
-   binaryTwo = "";
-   operator = false;
+   updateHTML(finalResult, convertResult);
+   resetVariables();
 }
 
 function clearRes() {
    // Clear all settings to beginning
    document.querySelector("#res").textContent = "";
-   document.querySelector("#res2").textContent = "";
-   newChallenge = "";
-   binaryOne = "";
-   binaryTwo = "";
-   operator = false;
+   document.querySelector("#converted").textContent = "";
+   resetVariables();
 }
 
-/*
-var binary1 = "11011";
-var binary2 = "1000";
-var som = parseInt(binary1,2)+ parseInt(binary2,2);
-console.log("to string: ", parseInt(binary1,2)+ parseInt(binary2,2));
-console.log("to Binary: ", som.toString(2));
-*/
+function resetVariables() {
+   newBinary = "";
+   binaryOne = "";
+   binaryTwo = "";
+   decimal = "";
+   decimalOne = "";
+   decimalTwo = "";
+   operator = false;
+   usedOperator = "";
+}
