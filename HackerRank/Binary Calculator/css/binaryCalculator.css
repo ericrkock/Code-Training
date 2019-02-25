@@ -1,0 +1,97 @@
+/* BinaryCalculator */
+/* ================ */
+
+/* == Theme Variables == */
+:root {
+   --theme: #333;
+   --white: white;
+   --res: lightgrey;
+   --Border: #999;
+   --BG-btn-Light: lightgreen;
+   --BG-btn-Dark: darkgreen;
+   --BG-btn_Black: black;
+   --C-btn-Brown: brown;
+   --C-btn-Red: red;
+   --C-btn-White: white;
+}
+
+/* == Main Tags == */
+html {
+   padding: 75px;
+   background-color: var(--theme);
+}
+body {
+   margin: auto;
+   width: 33%;
+}
+
+header {
+   color: var(--white);
+   text-transform: uppercase;
+   text-align: center;
+   margin-bottom: 30px; 
+}
+
+.divide-line-header {
+   color: var(-white);
+   margin-top: 25px;
+   width: 25%;
+}
+
+/* == Calculator == */
+
+#res {
+   background-color: var(--res);
+   border: 5px;
+   border-color: var(--Border);
+   border-style: solid;
+   height: 48px;
+   font-size: 20px;
+   padding-left: 5px;
+}
+
+#converted {
+   background-color: var(--BG-btn_Black);
+   color: var(--white);
+   border: 5px;
+   border-color: var(--Border);
+   border-style: solid;
+   height: 24px;
+   font-size: 18px;
+   padding-left: 10px;
+}
+
+#btns button {
+   width: 25%;
+   height: 36px;
+   font-size: 18px;
+   margin: 0;
+   float: left;
+}
+#btn0, #btn1 {
+   background-color: var(--BG-btn-Light);
+   color: var(--C-btn-Brown);
+}
+
+#btnClr, #btnEql {
+   background-color: var(--BG-btn-Dark);
+   color: var(--C-btn-White);
+}
+
+#btnSum, #btnSub, #btnMul, #btnDiv {
+   background-color: var(--BG-btn_Black);
+   color: var(--C-btn-Red);
+}
+
+/* == CSS Footer == */
+footer {
+   margin-top: 100px;
+   font-size: 12px;
+   color: var(--white);
+   text-align: center;
+}
+
+footer a {
+   color: var(--white);
+   text-decoration: none;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="css/binaryCalculator.css" type="text/css">
+   <title>Binary Calculator by ERK</title>
+</head>
+<body>
+   <header>
+      <div>
+         <h1>Binary Calculator</h1><hr class="divide-line-header">
+         <p>A HackerRank Project Challenge</p>
+      </div>
+   </header>
+   <div class="calculator">
+      <div id="res"></div>
+      <div id="converted"></div>
+      <div id="btns">
+         <button id="btn0"   value="0" onclick="padEntry(this)">0</button>
+         <button id="btn1"   value="1" onclick="padEntry(this)">1</button>
+         <button id="btnClr" value="C" onclick="padEntry(this)">C</button>
+         <button id="btnEql" value="=" onclick="padEntry(this)">=</button>
+         <button id="btnSum" value="+" onclick="padEntry(this)">+</button>
+         <button id="btnSub" value="-" onclick="padEntry(this)">-</button>
+         <button id="btnMul" value="*" onclick="padEntry(this)">*</button>
+         <button id="btnDiv" value="/" onclick="padEntry(this)">/</button>
+      </div>
+   </div>
+   <footer>
+      <div>
+         <span>Presented by Eric R. Kock - Feb. 2019 | 
+            <a href="https://about.me/erickock" target="_blank"> About Me</a> -
+            <a href="https://github.com/ericrkock/Code-Training/tree/master/FreeCodeCamp/Projects" target="_blank"> GitHub</a> -
+            <a href="https://codepen.io/EricRKock/" target="_blank"> CodePen </a> - 
+            <a href="https://www.hackerrank.com/EricRKock" target="_blank"> HackerRank </a> -
+            <a href="https://www.freecodecamp.org/eric-r-kock" target="_blank"> FreeCodeCamp </a>
+         </span> 
+      </div>
+   </footer>
+   <script src="js/binaryCalculator.js" type="text/javascript"></script>
+</body>
+</html>
