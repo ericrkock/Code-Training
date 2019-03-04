@@ -1,4 +1,18 @@
+//    HackerRank Challenges 
+// Problem Solving - Algorithms 
+// ============================ 
 
+// == DATA STRUCTURES == Warmup == 
+// =============================== 
+
+// Solve Me First - Easy
+//solveMeFirst(2,3);
+function solveMeFirst(a, b) {
+   // Hint: Type return a+b below  
+     return a + b;
+ }
+
+// Simple Array Sum - Easy
 //simpleArraySum([1, 2, 3, 4, 10, 11]);
 function simpleArraySum(ar) {
    /*
@@ -11,6 +25,49 @@ function simpleArraySum(ar) {
    return sum;
 }
 
+// Compare the Triplets
+//compareTriplets([17,28,30], [99,16,8]);
+function compareTriplets(a, b) {
+   var alice = 0;
+   var bob = 0;
+
+   for (var i = 0; i < a.length; i++) {
+      if ( a[i] > b[i]) {
+         alice++;
+      } else if (a[i] < b[i]) {
+         bob++;
+      }
+   }
+   console.log([alice, bob]);
+   return [alice, bob];
+}
+
+// A Very Big Sum - Easy
+//aVeryBigSum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005]);
+function aVeryBigSum(ar) {
+   var sum = 0;
+   for (var i = 0; i < ar.length; i++) {
+       sum = sum + ar[i];
+   }
+   return sum;
+}
+
+// Diagonal Difference - Easy
+//diagonalDifference([[1,2,3],[4,5,6],[9,8,9]]);
+function diagonalDifference(arr) {
+   let sumDiag1 = 0;
+   let sumDiag2 = 0;
+   let arrLength = arr.length - 1;
+   for (let i = 0; i < arr.length; i++) {
+      sumDiag1 = sumDiag1 + arr[i][i];
+      sumDiag2 = sumDiag2 + arr[i][arrLength];
+      arrLength--;
+   }
+   //console.log(Math.abs(sumDiag1 - sumDiag2));
+   return Math.abs(sumDiag1-sumDiag2);
+}
+
+// Plus Minus - Easy
 //plusMinus([-4, 3, -9, 0, 4, 1]);
 function plusMinus(arr) {
    var negative = 0;
@@ -30,6 +87,18 @@ function plusMinus(arr) {
    console.log(zero / arr.length);
 }
 
+// Staircase - Easy
+//staircase(8);
+function staircase(n) {
+   let cardinal ="#";
+   let space = " ";
+   for (let i = 1; i <= n; i++) {
+      let line = space.repeat(n-i) + cardinal.repeat(i);
+      console.log(line);
+   }
+}
+
+// Mini-Max Sum - Easy
 //miniMaxSum([5,5,5,5,5]);
 function miniMaxSum(arr) {
    var minimum = Math.min.apply(null, arr);
@@ -55,6 +124,21 @@ function miniMaxSum(arr) {
    console.log(sumMin, sumMax);
 }
 
+// Birthday Cake Candles - Easy
+//birthdayCakeCandles([3,2,1,3]);
+function birthdayCakeCandles(ar) {
+   var max = Math.max.apply(null, ar);
+   var num = 0;
+   for (var i = 0; i < ar.length; i++) {
+      if(ar[i] == max) {
+         num++;
+      }
+   }
+   console.log(num);
+   return num;
+}
+
+// Time Conversion - Easy
 //timeConversion("07:05:45PM");
 function timeConversion(s) {
    console.log(s);
@@ -78,58 +162,70 @@ function timeConversion(s) {
     return newTime
 }
 
-//birthdayCakeCandles([3,2,1,3]);
-function birthdayCakeCandles(ar) {
-   var max = Math.max.apply(null, ar);
-   var num = 0;
-   for (var i = 0; i < ar.length; i++) {
-      if(ar[i] == max) {
-         num++;
-      }
-   }
-   console.log(num);
-   return num;
-}
+// == DATA STRUCTURES == Implementation == 
+// =======================================
 
-//compareTriplets([17,28,30], [99,16,8]);
-function compareTriplets(a, b) {
-   var alice = 0;
-   var bob = 0;
-
-   for (var i = 0; i < a.length; i++) {
-      if ( a[i] > b[i]) {
-         alice++;
-      } else if (a[i] < b[i]) {
-         bob++;
-      }
-   }
-   var result = alice + " " + bob;
-   console.log(result);
-   return result;
-
-}
-
-gradingStudents([73,67,38,33]);
+// Grading Students
+//gradingStudents([73,67,38,33]);
 function gradingStudents(grades) {
-  var finalGrade = 0;
+  var finalGrade = [];
   for (var i = 0; i < grades.length; i++) {
      if (grades[i] >= 38) {
          var gradeMultiple = Math.ceil(grades[i]/5)*5;
          var substraction = gradeMultiple - grades[i];
          if ( substraction < 3) {
-            finalGrade = gradeMultiple;
+            finalGrade.push(gradeMultiple);
          } else {
-            finalGrade = grades[i];
+            finalGrade.push(grades[i]);
          }
      } else {
-        finalGrade = grades[i];
+        finalGrade.push(grades[i]);
      }
-     
-     returnGrade(finalGrade);
   }
-}
-
-function returnGrade(finalGrade) {
    console.log(finalGrade);
    return finalGrade;
+}
+
+// Apple and Orange - Easy
+//
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+   
+
+}
+
+// Kangaroo - Easy
+//
+
+// Between Two Sets - Easy
+//
+
+// Breaking the Records - Easy
+//
+
+// Birthday Chocolate - Easy
+//
+
+
+// DYNAMIC PROGRAMMING //
+// =================== //
+
+// Beta Tester for HackerRank - NOT SOLVED YET!!!
+// Bricks Game - Medium
+//bricksGame([1,2,3,4,5]);
+function bricksGame(arr) {
+   /*
+    * Write your code here.
+    */
+   let bricksLength = arr.length;
+   let player = 1;
+   let score1 = 0;
+   let score2 = 0;
+   let tempScore1 = 0;
+   let tempScore2 = 0;
+
+
+   for (let i = 0; i < (arr.length)/3; i++) {
+      for (let x = 1; x <= 3; x++) {
+      }
+   }
 }
