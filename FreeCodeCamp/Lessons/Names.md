@@ -19,7 +19,11 @@ JS    : JavaScript / Laguage
 JSON  : JavaScript Object Notation
 JSX   : React JS / Library
 PHP   : Personal Home Page / Language
+REST API : REpresentational State Transfer API
+SHELL :
 XML   : Extensible Markup Language / Markup
+
+.env  : Hidden file to pass Environment variables to your application
 
 
 Add Install FontAwesome in React

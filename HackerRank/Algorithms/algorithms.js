@@ -109,3 +109,27 @@ function compareTriplets(a, b) {
 
 }
 
+gradingStudents([73,67,38,33]);
+function gradingStudents(grades) {
+  var finalGrade = 0;
+  for (var i = 0; i < grades.length; i++) {
+     if (grades[i] >= 38) {
+         var gradeMultiple = Math.ceil(grades[i]/5)*5;
+         var substraction = gradeMultiple - grades[i];
+         if ( substraction < 3) {
+            finalGrade = gradeMultiple;
+         } else {
+            finalGrade = grades[i];
+         }
+     } else {
+        finalGrade = grades[i];
+     }
+     
+     returnGrade(finalGrade);
+  }
+}
+
+function returnGrade(finalGrade) {
+   console.log(finalGrade);
+   return finalGrade;
+}
