@@ -33,9 +33,30 @@ function main() {
 }
 
 // Day 2 : Operators
-
+//solve(12.9,20,8);
+function solve(meal_cost, tip_percent, tax_percent) {
+   var cost = meal_cost;
+   var tip = cost * (tip_percent/100);
+   var tax = cost * (tax_percent/100);
+   var totalCost = Math.round(cost + tip + tax);
+   console.log(totalCost);
+   return totalCost;
+}
 
 // Day 3 : Intro to Conditional Statements
+//main();
+function main() {
+   //const N = parseInt(readLine(), 10);
+   const N = 33;
+   let x = N % 2;
+
+   if (x == 0 && (N < 6 || N > 20)) {
+      console.log("Not Weird");
+   } else {
+      console.log("Weird");
+   }
+}
+
 // Day 4 : Class vs Instance
 // Day 5 : Loops
 // Day 6 : Let's Review
