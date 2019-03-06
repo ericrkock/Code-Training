@@ -187,14 +187,35 @@ function gradingStudents(grades) {
 }
 
 // Apple and Orange - Easy
-//
+//countApplesAndOranges(7,11,5,15,[-2,2,1],[5,-6]);
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
-   
+   var countApples = 0;
+   var countOranges = 0;
 
+   for (let apple = 0; apple < apples.length; apple++) {
+      let distanceApple = parseInt(a) + parseInt(apples[apple]);
+      if (distanceApple >= parseInt(s) && distanceApple <= parseInt(t)) {
+         countApples++;
+      }
+      console.log("Distance: ",distanceApple, " ", apples[apple]);
+   }
+   for (let orange = 0; orange < oranges.length; orange++) {
+      let distanceOrange = parseInt(b) + parseInt(oranges[orange]);
+      if (distanceOrange >= parseInt(s) && distanceOrange <= parseInt(t)) {
+         countOranges++;
+      }
+      console.log("Distance: ",distanceOrange, " ", oranges[orange]);
+   }
+console.log(countApples);
+console.log(countOranges);
 }
 
 // Kangaroo - Easy
 //
+function kangaroo(x1, v1, x2, v2) {
+
+
+}
 
 // Between Two Sets - Easy
 //
