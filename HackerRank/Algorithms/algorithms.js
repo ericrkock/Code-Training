@@ -211,11 +211,32 @@ console.log(countOranges);
 }
 
 // Kangaroo - Easy
-//
+//kangaroo(0,3,4,2);
+//kangaroo(0,2,5,3);
+//kangaroo(2564,5393,5121,2836);
 function kangaroo(x1, v1, x2, v2) {
-
+   if (v1 == v2 && x1 != x2) console.log("1. NO"); //return "NO";
+   if (x1 < x2 && v1 < v2) console.log("2. NO"); //return "NO";
+   if (x1 > x2 && v1 > v2) console.log("3. NO"); //return "NO";
+   if (x1 < x2 && v1 > v2) {
+      while (x1 != x2) {
+         x1 = x1 + v1;
+         x2 = x2 + v2;
+         if (x1 == x2) console.log("4. YES"); //return "YES";
+         if (x1 > x2) console.log("5. NO"); //return "NO";
+      }
+   }
+   if (x1 > x2 && v1 < v2) {
+      while (x1 != x2) {
+         x1 = x1 + v1;
+         x2 = x2 + v2;
+         if (x1 == x2) console.log("6. YES"); //return "YES";
+         if (x1 < x2) console.log("7. NO"); //return "NO";
+      }
+   }
 
 }
+
 
 // Between Two Sets - Easy
 //
