@@ -2,8 +2,8 @@
 // Problem Solving - Algorithms 
 // ============================ 
 
-// == DATA STRUCTURES == Warmup == 
-// =============================== 
+/* == DATA STRUCTURES == Warmup == */
+/* =============================== */
 
 // Solve Me First - Easy
 //solveMeFirst(2,3);
@@ -162,8 +162,8 @@ function timeConversion(s) {
     return newTime
 }
 
-// == DATA STRUCTURES == Implementation == 
-// =======================================
+/* == DATA STRUCTURES == Implementation */ 
+/* ==================================== */
 
 // Grading Students
 //gradingStudents([73,67,38,33]);
@@ -206,8 +206,8 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
       }
       console.log("Distance: ",distanceOrange, " ", oranges[orange]);
    }
-console.log(countApples);
-console.log(countOranges);
+   console.log(countApples);
+   console.log(countOranges);
 }
 
 // Kangaroo - Easy
@@ -215,41 +215,261 @@ console.log(countOranges);
 //kangaroo(0,2,5,3);
 //kangaroo(2564,5393,5121,2836);
 function kangaroo(x1, v1, x2, v2) {
-   if (v1 == v2 && x1 != x2) console.log("1. NO"); //return "NO";
-   if (x1 < x2 && v1 < v2) console.log("2. NO"); //return "NO";
-   if (x1 > x2 && v1 > v2) console.log("3. NO"); //return "NO";
+   if (v1 == v2 && x1 != x2) console.log("NO"); //return "NO";
+   if (x1 < x2 && v1 < v2) console.log("NO"); //return "NO";
+   if (x1 > x2 && v1 > v2) console.log("NO"); //return "NO";
    if (x1 < x2 && v1 > v2) {
       while (x1 != x2) {
          x1 = x1 + v1;
          x2 = x2 + v2;
-         if (x1 == x2) console.log("4. YES"); //return "YES";
-         if (x1 > x2) console.log("5. NO"); //return "NO";
+         if (x1 == x2) console.log("YES"); //return "YES";
+         if (x1 > x2) console.log("NO"); //return "NO";
       }
    }
    if (x1 > x2 && v1 < v2) {
       while (x1 != x2) {
          x1 = x1 + v1;
          x2 = x2 + v2;
-         if (x1 == x2) console.log("6. YES"); //return "YES";
-         if (x1 < x2) console.log("7. NO"); //return "NO";
+         if (x1 == x2) console.log("YES"); //return "YES";
+         if (x1 < x2) console.log("NO"); //return "NO";
       }
    }
 
 }
 
-
 // Between Two Sets - Easy
-//
+//getTotalX([2,4],[16,32,96]);
+//getTotalX([3,4],[24,48]);
+function getTotalX(a, b) {
+   let setCount = 0;
+   for (let i = Math.min(...a); i <= Math.max(...b); i++) {
+       if (a.every(int => (i % int == 0))) {
+           if (b.every(int => (int % i == 0))) {
+               setCount++;
+           }
+       }
+   }
+   console.log(setCount);
+   return setCount;
+}
 
 // Breaking the Records - Easy
-//
+//breakingRecords([12,24,10,24]);
+//breakingRecords([10,5,20,20,4,5,2,25,1]);
+function breakingRecords(scores) {
+   var result = [];
+   var countMin = 0;
+   var countMax = 0;
+   var min = scores[0];
+   var max = scores[0];
+   for (let i = 0; i < scores.length; i++) {
+      if (scores[i] < min) {
+         min = scores[i]; 
+         countMin++;
+      }
+      if (scores[i] > max) {
+         max = scores[i]; 
+         countMax++;
+      }
+   }
+   result.push(countMax);
+   result.push(countMin);
+   console.log(result);
+   return result;
+}
 
 // Birthday Chocolate - Easy
 //
+function birthday(s, d, m) {
+
+}
+
+// Divisble Sum Pairs - Easy
+//divisibleSumPairs(6,3,[1,3,2,6,1,2]);
+function divisibleSumPairs(n, k, ar) {
+   var countPairs = 0;
+   for (let i = 0; i < n; i++) {
+      for (let l = i+1; l < n; l++) {
+         let sum = ar[i] + ar[l];
+         if (sum == k) countPairs ++;
+         if (sum !== k & sum%k == 0) countPairs++;
+      }
+   }
+   console.log(countPairs);
+   return countPairs;
+}
+
+// Migratory Birds - Easy
+//migratoryBirds([1,4,4,4,5,3]);
+//migratoryBirds([1,2,3,4,5,4,3,2,1,3,4]);
+function migratoryBirds(arr) {
+   var newArr = arr.sort();
+   var birds = 0;
+   var max = 0;
+   var bird = "";
+   for (let i = 0; i < arr.length; i++){
+      if (newArr[i] == newArr[i+1]) {
+         birds ++;
+      } else if (birds > max) {
+         max = birds;
+         birds = 0;
+         bird = newArr[i];
+      }
+   }
+   console.log(bird);
+   return birds;
+}
+
+// Day of the Programmer - Easy
+//dayOfProgrammer(2017);
+//dayOfProgrammer(2016);
+//dayOfProgrammer(1800);
+function dayOfProgrammer(year) {
+   if (year == 1918) {
+      console.log("26.09.1918"); 
+      return "26.09.1918";
+   }
+   if((year <= 1917 && (year%4 == 0)) || ((year > 1918) && (year%400 == 0 || ((year%4 == 0) && (year%100 != 0))))) {
+      console.log("12.09." + year);
+      return "12.09." + year;
+   } else {
+      console.log("13.09." + year);
+      return "13.09." + year;
+   }
+}
+
+// Bom Appétit - Easy
+//bonAppetit([3,10,2,9],1,12);
+//bonAppetit([3,10,2,9],1,7);
+function bonAppetit(bill, k, b) {
+   var amount= 0;
+   var checkAmount = 0;
+   for (let i = 0; i < bill.length; i++) {
+      if (i != k) {
+         amount = amount + bill[i];
+      }
+   }
+   checkAmount = amount / 2;
+   if (checkAmount != b) {
+      console.log(b - checkAmount);
+   } else {
+      console.log("Bon Apetit");
+   }
+}
+
+// Drawing Book - Easy
+//pageCount(6,2);
+//pageCount(5,4);
+//pageCount(6,3);
+function pageCount(n, p) {
+   var turnedPages = 0;
+   var activePage = 0;
+   if( n / 2 >= p && n != p) {
+      activePage = 1;
+      while (activePage < p) {
+         turnedPages++;
+         activePage = activePage + 2;
+      }
+   } else if (n / 2 <= p && n%2 == 0 && n != p) {
+      activePage = n;
+      while (activePage > p) {
+         turnedPages++;
+         activePage = activePage - 2;
+      }
+   } else if (n / 2 <= p && n%2 == 1 && n != p) {
+      activePage = n-1;
+      while (activePage > p) {
+         turnedPages++;
+         activePage = activePage - 2;
+      }
+   } 
+   console.log(turnedPages);
+}
+
+// Electronics Shop - Easy
+//getMoneySpent([3,1],[5,2,8],10);
+//getMoneySpent([5],[4],5);
+function getMoneySpent(keyboards, drives, b) {
+   let max = -1;
+   if (keyboards.length > 0 && drives.length > 0) {
+      for (let i = 0; i < keyboards.length; i++) {
+         for (let j = 0; j < drives.length; j++) {
+            if ((keyboards[i] + drives[j]) <= b && keyboards[i] + drives[j] > max) {
+               max = keyboards[i] + drives[j];
+            }
+         }
+      }
+   } 
+   console.log(max);
+   return max;
+}
+
+// Cats and a Mouse - Easy
+// Forming a MAgic Square - Medium
+// Picking Numbers - Easy
+// Climbing the LEaderboard - Medium
+// The Hurdle Race - Easy
+// Designer PDF Viewer - Easy
+// Utopian Tree - Easy
+// Angry Professor - Easy
+// Beautiful Days at the Movies - Easy
+// Viral Advertising - Easy
+// SAve the Prisoner! - Easy
+// Circular Array Rotation - Easy
+// Sequence Equation - Easy
+// Jumping on the Clouds: REvisited - Easy
+// Find Digits - Easy
+// Extra Long Factorials - Medium
+// Append and Delete - Easy
+// Sherlock and Squares - Easy
+// Library Fine - Easy
+// Cut the sticks - Easy
+// Non-divisible Subset - Medium
+// Equalize the Array - Easy
+// Queen's Attack II - Medium
+// ACM ICPC Team - Easy
+// Taum and B'day - Easy
+// Organizing Containers of Balls - Medium
+// Encryption - Medium
+// Bigger is Greater - Medium
+// Modified Kaprekar Numbers - Easy
+// Beautiful Triplets - Easy
+// Minimum Distances - Easy
+// Halloween Sale - Easy
+// The Time in Words - Medium
+// Chocolate Feast - Easy
+// Service Lane - Easy
+// Flatland Space Station - Easy
+// Fair Rotation - Easy
+// Cavity Map - Easy
+// Manasa and Stones - Easy
+// The Grid Search - Medium
+// Happy Ladybugs - Easy
+// Strange Counter - Easy
+// 3D Surface Area - Medium
+// Absolute Permutation - Medium
+// The Bomberman Game - Medium
+// Emma's Supercomputer - Medium
+// Larry's Array - Medium
+// Almost Sorted - Medium
+// Matrix Layer Rotation - Hard
 
 
-// DYNAMIC PROGRAMMING //
-// =================== //
+
+/* STRINGS */
+/* ======= */
+
+/* SORTING */
+/* ======= */
+
+/* DYNAMIC PROGRAMMING */
+/* =================== */
+
+// The Coin Change Problem - Medium
+// Equal - Medium
+// Sherlock and Cost - Medium
+// Construct the Array - Medium
+// Kingdom Division
 
 // Beta Tester for HackerRank - NOT SOLVED YET!!!
 // Bricks Game - Medium

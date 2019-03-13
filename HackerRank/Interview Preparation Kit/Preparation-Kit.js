@@ -107,31 +107,35 @@ function rotLeft(a, d) {
 // New Year Chaos - Medium
 //minimumBribes([2,1,5,3,4]);
 //minimumBribes([2,1,5,3,4]);
-minimumBribes([5,1,2,3,7,8,6,4]);
+//minimumBribes([5,1,2,3,7,8,6,4]);
 //minimumBribes([1,2,5,3,7,8,6,4]);
 //minimumBribes([1,2,5,3,4,7,8,6]);
 function minimumBribes(q) {
    let swaps = 0;
    let min = q.length;
-   for (var i = q.length - 1; i >= 0; i--){
-       if (q[i] - i > 3){
-          console.log("Too chaotic");
-           return "Too chaotic";
-       }
-       if (q[i] > i+1){
-           swaps += (q[i]-(i+1));
-       } else {
-           if (min > q[i]){
-               min = q[i];
-           } else if (q[i] != min){
-               swaps++;
-           }
-       }
+   for (var i = q.length - 1; i >= 0; i--) {
+      if (q[i] - i > 3) {
+         console.log("Too chaotic");
+         return "Too chaotic";
+      }
+      if (q[i] > i+1) {
+         swaps += (q[i]-(i+1));
+      } else {
+         if (min > q[i]) {
+            min = q[i];
+         } else if (q[i] != min) {
+            swaps++;
+         }
+      }
    }
    console.log(swaps);
    return swaps;
-
 }
 
 // Minimum Swaps 2 - Medium
+//minimumSwaps();
+function minimumSwaps(arr) {
+
+}
+
 // Array Manupilation - Hard
