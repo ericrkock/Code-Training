@@ -279,9 +279,17 @@ function breakingRecords(scores) {
 }
 
 // Birthday Chocolate - Easy
-//
+//birthday([1,2,1,3,2], 3, 2);
+//birthday([1,1,1,1,1,1], 3, 2);
+//birthday([4], 4, 1);
 function birthday(s, d, m) {
-
+   let counter = 0;
+   const reducer = (a, b) => a + b;
+   for(let i=0; i<s.length-m+1; i++) {
+         if (s.slice(i,i+m).reduce(reducer) == d) counter++;
+   }
+   console.log(counter);
+   return counter;
 }
 
 // Divisble Sum Pairs - Easy
@@ -405,6 +413,18 @@ function getMoneySpent(keyboards, drives, b) {
 }
 
 // Cats and a Mouse - Easy
+//catAndMouse(1,2,3);
+//catAndMouse(1,3,2);
+function catAndMouse(x, y, z) {
+   var distanceA = x - z;
+   var distanceB = y - z;
+   if (distanceA < 0) distanceA *= -1;
+   if (distanceB < 0) distanceB *= -1;
+   if (distanceA < distanceB ) return "Cat A"; // console.log("Cat A"); 
+   if (distanceA > distanceB ) return "Cat B"; // console.log("Cat B");
+   if (distanceA == distanceB ) return "Mouse C"; //console.log("Mouse C");
+}
+
 // Forming a MAgic Square - Medium
 // Picking Numbers - Easy
 // Climbing the LEaderboard - Medium

@@ -2,7 +2,7 @@
 /*    30 Days of Code    */
 /* ===================== */ 
 
-// Day 0 : Hello, World
+// Day 0 : Hello, World - Easy
 //processData("Welcome to 30 Days of Code!");
 function processData(inputString) {
    // This line of code prints the first line of output
@@ -11,7 +11,7 @@ function processData(inputString) {
    // Write the second line of output that prints the contents of 'inputString' here.
 }
 
-// Day 1 : Data Types
+// Day 1 : Data Types - Easy
 function main() {
    var i = 4
    var d = 4.0
@@ -33,7 +33,7 @@ function main() {
       console.log(s + z);
 }
 
-// Day 2 : Operators
+// Day 2 : Operators - Easy
 //solve(12.9,20,8);
 function solve(meal_cost, tip_percent, tax_percent) {
    var cost = meal_cost;
@@ -44,7 +44,7 @@ function solve(meal_cost, tip_percent, tax_percent) {
    return totalCost;
 }
 
-// Day 3 : Intro to Conditional Statements
+// Day 3 : Intro to Conditional Statements - Easy
 //main();
 function main() {
    //const N = parseInt(readLine(), 10);
@@ -58,7 +58,7 @@ function main() {
    }
 }
 
-// Day 4 : Class vs Instance
+// Day 4 : Class vs Instance - Easy
 //Person(13);
 function Person(initialAge){
    // Add some more code to run some checks on initialAge
@@ -86,7 +86,7 @@ function Person(initialAge){
   };
 }
 
-// Day 5 : Loops
+// Day 5 : Loops - Easy
 //multiplying(2);
 function multiplying(n) {
    var arr = [];
@@ -95,7 +95,7 @@ function multiplying(n) {
    }
 }
 
-// Day 6 : Let's Review
+// Day 6 : Let's Review - Easy
 //processData([2,"Hacker","Rank"]);
 function processData(input) {
    //Enter your code here
@@ -127,7 +127,7 @@ function processData(input) {
    }); */
 } 
 
-// Day 7 : Arrays
+// Day 7 : Arrays - Easy
 //main([1,4,3,2]);
 function main(arr) {
    //const n = parseInt(readLine(), 10);
@@ -144,7 +144,7 @@ function main(arr) {
    return newArr;
 }
 
-// Day 8 : Dictionaries and Maps
+// Day 8 : Dictionaries and Maps - Easy
 //processData([3, ["sam 99912222", "tom 11122222", "harry 12299933", "sam", "edward", "harry"]]);
 function processData(input) {
    var lines = input.split('\n').reverse(),
@@ -168,7 +168,7 @@ function processData(input) {
    }
 } 
 
-// Day 9 : Recursion 3
+// Day 9 : Recursion 3 - Easy
 //factorial(3);
 function factorial(n) {
    if (n == 1) {
@@ -185,8 +185,42 @@ function factorial(n) {
 }
 
 
-// Day 10 : Binary Numbers
-// Day 11 : 2D Arrays
+// Day 10 : Binary Numbers - Easy
+//main(5);
+//main(6);
+function main(n) {
+   //var n = parseInt(readLine());
+   var bin = "";
+   var currentValue;
+   var max = 0;
+   var count = 0;
+   while (n > 0) {
+       currentValue = (n / 2) % 1 === 0 ? "0" : "1";
+       currentValue === "1" ? count++ : count = 0;
+       if (count > max) max = count;       
+       bin = currentValue + bin;
+       n = Math.floor(n/2);
+   }
+   console.log(max);
+}
+
+// Day 11 : 2D Arrays - Easy >> Same as Preparation Kit: Arrays: 2D Array DS
+//hourglassSum([[1,1,1,0,0,0],[0,1,0,0,0,0],[1,1,1,0,0,0],[0,0,2,4,4,0],[0,0,0,2,0,0],[0,0,1,2,4,0]]);
+//hourglassSum([[-1,1,-1,0,0,0],[0,-1,0,0,0,0],[-1,-1,-1,0,0,0],[0,-9,2,-4,-4,0],[-7,0,0,-2,0,0],[0,0,-1,-2,-4,0]]);
+//hourglassSum([[-9,-9,-9,1,1,1],[0,-9,0,4,3,2],[-9,-9,-9,1,2,3],[0,0,8,6,6,0],[0,0,0,-2,0,0],[0,0,1,2,4,0,]]);
+function hourglassSum(arr) {
+   maxSum = [];
+   sumHourGlass = 0;
+   for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+         sumHourGlass = arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
+         maxSum.push(sumHourGlass);
+      }
+   }
+   console.log(Math.max(...maxSum));
+   return Math.max(...maxSum);
+}
+
 // Day 12 : Inheritance
 // Day 13 : Abstract Classes
 // Day 14 : Scope
