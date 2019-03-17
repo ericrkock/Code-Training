@@ -184,7 +184,6 @@ function factorial(n) {
    */
 }
 
-
 // Day 10 : Binary Numbers - Easy
 //main(5);
 //main(6);
@@ -221,9 +220,96 @@ function hourglassSum(arr) {
    return Math.max(...maxSum);
 }
 
-// Day 12 : Inheritance
-// Day 13 : Abstract Classes
-// Day 14 : Scope
+// Day 12 : Inheritance - Easy
+class Persons {
+   constructor(firstName, lastName, identification) {
+       this.firstName = firstName;
+       this.lastName = lastName;
+       this.idNumber = identification;
+   }
+   
+   printPerson() {
+       console.log(
+           "Name: " + this.lastName + ", " + this.firstName 
+           + "\nID: " + this.idNumber
+       )
+   }
+}
+class Student extends Persons {
+   /*	
+   *   Class Constructor
+   *   
+   *   @param firstName - A string denoting the Person's first name.
+   *   @param lastName - A string denoting the Person's last name.
+   *   @param id - An integer denoting the Person's ID number.
+   *   @param scores - An array of integers denoting the Person's test scores.
+   */
+   // Write your constructor here
+   constructor(firstName, lastName, identification, score) {
+       super(firstName, lastName, identification)
+       this.score = score
+   }
+   /*	
+   *   Method Name: calculate
+   *   @return A character denoting the grade.
+   */
+   // Write your method here
+   calculate() {
+       let avg = this.score.reduce(calc) / this.score.length
+       if (avg >= 90) {
+           return 'O'
+       } else if (avg >= 80) {
+           return 'E'
+       } else if (avg >= 70) {
+           return 'A'
+       } else if (avg >= 55) {
+           return 'P'
+       } else if (avg >= 40) {
+           return 'D'
+       } else {
+           return 'T'
+       }
+   }
+}
+function calc(score1, score2) {
+   return score1 + score2;
+}
+
+// Day 13 : Abstract Classes - Easy
+class Book {
+   constructor(title, author) {
+      if (this.constructor === Book) {
+         throw new TypeError('Do not attempt to directly instantiate an abstract class.'); 
+      }
+      else {
+         this.title = title;
+         this.author = author;
+      }
+   }
+   display() {
+      console.log('Implement the \'display\' method!')
+   }
+}
+class MyBook extends Book {
+   // Write your constructor here
+   constructor(title, author, price) {
+       super(title, author);
+       this.price = price;
+   }
+   // Write your method here
+   display() {
+       console.log("Title: " + this.title);
+       console.log("Author: " + this.author);
+       console.log("Price: " + this.price);
+   }
+}
+
+// Day 14 : Scope - Easy (JS option not availble)
+function computeDifference() {
+   this.maximumDifference = Math.max(...this.elements) - Math.min(...this.elements);
+   console.log(maximumDifference);
+ }
+
 // Day 15 : Linked List
 // Day 16 : Exceptions - String to integer
 // Day 17 : More exceptions
