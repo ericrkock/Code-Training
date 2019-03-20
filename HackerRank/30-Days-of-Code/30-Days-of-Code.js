@@ -310,9 +310,40 @@ function computeDifference() {
    console.log(maximumDifference);
  }
 
-// Day 15 : Linked List
+// Day 15 : Linked List - Easy
+function Solution() {
+   var newNode = "";
+   this.insert=function(head,data) {
+      //complete this method
+      newNode = new Node(data);     // Create a new node with the data passed in
+      curNode = head;               // Set the current node as the passed in head
+      if (curNode != null ) {       // If the current node is not null (it has values), walk the node list
+         while (curNode.next != null) {
+            curNode = curNode.next;
+         }
+         curNode.next = newNode;
+      } else {                     // Otherwise, if the list is empty, return the created node
+         head = newNode;
+      }
+      return head;
+   };
+}
+
 // Day 16 : Exceptions - String to integer
+
+
 // Day 17 : More exceptions
+class Calculator {
+   power(n, p) {
+     if (n < 0 || p < 0) {
+       throw ('n and p should be non-negative');
+     } else {
+       return Math.pow(n, p);
+     }
+   }
+   
+ }
+
 // Day 18 : Queues and Stacks
 // Day 19 : Interfaces
 // Day 20 : Sorting
