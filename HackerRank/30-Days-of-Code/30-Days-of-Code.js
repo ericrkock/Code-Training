@@ -330,7 +330,16 @@ function Solution() {
 }
 
 // Day 16 : Exceptions - String to integer
-
+function main(S) {
+   //const S = readLine();
+   try {
+       var ans = parseInt(S) || ans.toString();
+       console.log(parseInt(S));
+   }
+   catch (e) {
+       console.log("Bad String");
+   }
+}
 
 // Day 17 : More exceptions
 class Calculator {

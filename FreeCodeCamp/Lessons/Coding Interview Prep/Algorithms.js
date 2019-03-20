@@ -44,40 +44,44 @@ function sym(args) {
 //var newInv = [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]];
 //updateInventory(curInv, newInv);
 //updateInventory([[21, "Bowling Ball"], [2, "Dirty Sock"], [1, "Hair Pin"], [5, "Microphone"]], []);
-updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]);
+//updateInventory([], [[2, "Hair Pin"], [3, "Half-Eaten Apple"], [67, "Bowling Ball"], [7, "Toothpaste"]]);
 //updateInventory([[0, "Bowling Ball"], [0, "Dirty Sock"], [0, "Hair Pin"], [0, "Microphone"]], [[1, "Hair Pin"], [1, "Half-Eaten Apple"], [1, "Bowling Ball"], [1, "Toothpaste"]]);
 function updateInventory(arr1, arr2) {
-   // All inventory must be accounted for or you're fired!
-   console.log("Arr2 before sort: ", arr2);
-   // Sort 2nd array
-
-   arr2.sort(function(a, b) {
-      a[1] = a[1].toString();
-      b[1] = b[1].toString();
-      console.log(a[1], " - ", b[1]);
-      console.log(a[1]-b[1]);
-      //return a[1] - b[1];
-      
+   if (arr1.length == 0) {   // When arr1 is empty
+      sortArray(arr2);
+      console.log(arr2);
+      return arr2;
+   } else if (arr2.length == 0) {   // When arr2 is empty
+      return arr1;
+   } else {
+      arr2.forEach(function(valueToFind) {
+         let exist = -1;
+         arr1.forEach(function(value) {
+            if (value[1] == valueToFind[1]) {
+               exist = 1 ;
+               value[0] = value[0] + valueToFind[0];
+            } 
+         });
+         if (exist == -1) {
+            arr1.push(valueToFind);
+         }
+      });
+   }
+   sortArray(arr1);
+   return arr1;
+}
+function sortArray(arrToSort) {
+   // Sort the array
+   arrToSort = arrToSort.sort(function(a, b) {
+      if (a[1] > b[1]) {
+         return 1;
+      } else {
+         return -1;
+      }
    });
-   //console.log("Arr2 after sort", arr2);
-
-
-
-   
-   //return arr1;
+   return arrToSort;
 }
 
-
-var showIt = [
-   ["nuCycleDate",19561100],
-   ["ndCycleDate",19460700],
-   ["neCycleDate",0],
-   ["nlCycleDate",0]
- ];
- showIt.sort(function(a,b){
-   return a[1] - b[1];
-});
-//console.log("ShowIt: ", showIt);
 
 // No Repeats Please
 // Pairwise
