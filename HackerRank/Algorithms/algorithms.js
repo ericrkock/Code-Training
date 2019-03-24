@@ -426,15 +426,82 @@ function catAndMouse(x, y, z) {
 }
 
 // Forming a Magic Square - Medium
-//formingMagicSquare(s);
+//formingMagicSquare([[5,3,4], [1,5,8], [6,4,2]]);
 function formingMagicSquare(s) {
+   let n = [];
+   s.map(x => {x.map(y => n.push(y))});
 
+   console.log(n);
 
+   // Taking all cobination in an Array for 3*3
+   let allCombinations = [[8, 1, 6, 3, 5, 7, 4, 9, 2],
+                     [6, 1, 8, 7, 5, 3, 2, 9, 4],
+                     [4, 3, 8, 9, 5, 1, 2, 7, 6],
+                     [2, 7, 6, 9, 5, 1, 4, 3, 8],
+                     [2, 9, 4, 7, 5, 3, 6, 1, 8],
+                     [4, 9, 2, 3, 5, 7, 8, 1, 6],
+                     [6, 7, 2, 1, 5, 9, 8, 3, 4],
+                     [8, 3, 4, 1, 5, 9, 6, 7, 2]]
+
+   let arrMaxDiff = [];
+
+   // Get each array  value difference with passed array value diff 
+   // for each item
+
+   // Looping first array of array
+   allCombinations.map(eacharr => {
+
+       // Looping each nested array
+       allCombinations.map(eacharr => {
+
+           // Taking the total difference to turn into Magic Array 
+           // and pushing into array
+           let maxdiffer = 0;
+
+           // For each max diff keeping stored
+           arrMaxDiff.push(eacharr.reduce((c, cv, ci, node) => {
+               {
+                   c += Math.abs(cv - n[ci]);
+               }
+               return c;
+           }, 0));
+
+       });
+   });
+
+   // Taking minimum value
+   console.log(Math.min(...arrMaxDiff));
+   return Math.min(...arrMaxDiff);
 }
+
 // Picking Numbers - Easy
+//pickingNumbers([4,6,5,3,3,1]);
+//pickingNumbers([1,2,2,3,1,2]);
+function pickingNumbers(a) {
+   // Write your code here
+  let max = 0;
+  [...new Set(a)].forEach(x => {
+      max = Math.max(max, a.reduce((c, v) => c += (v === x || v === x + 1), 0));
+  })
+  console.log(max);
+  return max;
+}
+
 // Climbing the LEaderboard - Medium
 // The Hurdle Race - Easy
+
 // Designer PDF Viewer - Easy
+//designerPdfViewer([1,3,3,1,4,1,3,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5], "abc");
+//designerPdfViewer([1,3,1,3,1,4,1,3,2,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,7], "zaba");
+function designerPdfViewer(h, word) {
+   let iArr = [];
+   for (let i = 0; i < word.length; i++) {
+      iArr.push(h[word.charCodeAt(i) - 97]);
+   }
+   console.log(Math.max(...iArr) * word.length);
+   return Math.max(...iArr) * word.length;
+}
+
 // Utopian Tree - Easy
 // Angry Professor - Easy
 // Beautiful Days at the Movies - Easy

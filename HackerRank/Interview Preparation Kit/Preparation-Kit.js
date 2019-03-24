@@ -133,9 +133,120 @@ function minimumBribes(q) {
 }
 
 // Minimum Swaps 2 - Medium
-//minimumSwaps();
-function minimumSwaps(arr) {
+//minimumSwaps([7,1,3,2,4,5,6]);
+/*
+"use strict";
+process.stdin.resume()
+process.stdin.setEncoding('ascii')
 
+let input_stdin = ''
+
+process.stdin.on('data', data => input_stdin += data)
+process.stdin.on('end', () => {
+    let input =  input_stdin.split('\n')
+    let n = Number(input[0])
+    let arr = input[1].split(' ').map(x => Number(x))
+    process.stdout.write(minimumSwaps(n, arr) + '\n')
+})
+function minimumSwaps(n, arr) {  */
+function minimumSwaps(arr) { 
+   let swaps = 0;
+   for (let i = 0, x = Math.max(...arr); i < x; i++) {
+       while (arr[i] !== i + 1) {
+           arr[i] = [arr[arr[i]-1], arr[arr[i]-1] = arr[i]][0];
+           if (!arr[i]) break;
+           swaps++;
+       }
+   }
+   console.log(swaps);
+   return swaps;
 }
 
 // Array Manupilation - Hard
+arrayManipulation([1,2,100], [2,5,100], [3,4,100]);
+function arrayManipulation(queries) {
+    
+   let max = 0;
+   const params = [];
+   
+   for(let q=0; q<queries.length; q++){
+       
+       const query = queries[q];
+       const qstart = query[0];
+       const qend = query[1];
+       const qval = query[2];
+       
+       params.push({
+          key: qstart,
+          val: qval
+       });
+       
+       params.push({
+          key: qend,
+          val: -qval
+       });
+   }
+   
+   //sort the parameters by key
+   params.sort((item1, item2) => {
+      if(item1.key === item2. key){
+         return item2.val - item1.val;
+      }
+      
+      return item1.key - item2.key;
+   });
+   
+   let sum = 0;
+   
+   for(let i=0; i<params.length; i++){
+      const param = params[i];
+      sum += param.val;
+      
+      if(sum > max){
+         max = sum;
+      }
+   }
+   console.log("max: ", max);
+   return max;
+}
+
+function processData(input) {
+   //Enter your code here
+   // parse input into a friendly format to work wtih
+   arr = input.split('\n'); 
+   arr = arr.map(function(element){
+       return element.split(' ').map(Number);
+   });
+   
+   // initialize n and m from input array
+   n = arr[0][0];
+   m = arr[0][1];
+   
+   // create an array of length n + 1, all zeros
+   container = Array(n + 1).fill(0)
+
+   // run-time was too long when I created the container array via looping
+   /*
+   container = [0];
+   for(var i =0; i < n; i++) container.push(0);
+   */
+   
+   // loop through m operations and create prefix sum array
+   for(var i = 1; i <= m; i++){
+       //arr[i] = arr[i].split(' ').map(Number);
+       container[arr[i][0]-1] += arr[i][2];
+       container[arr[i][1]] -= arr[i][2];
+   }
+   
+   max = 0;
+   temp_max = 0; 
+   
+   // scan the prefix sum array, and then return the max sum
+   for(var i = 0; i < container.length; i++){
+       temp_max += container[i];
+       max = Math.max(max, temp_max);
+   }
+   
+   console.log(max);
+   
+}
