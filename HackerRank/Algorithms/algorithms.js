@@ -425,7 +425,12 @@ function catAndMouse(x, y, z) {
    if (distanceA == distanceB ) return "Mouse C"; //console.log("Mouse C");
 }
 
-// Forming a MAgic Square - Medium
+// Forming a Magic Square - Medium
+//formingMagicSquare(s);
+function formingMagicSquare(s) {
+
+
+}
 // Picking Numbers - Easy
 // Climbing the LEaderboard - Medium
 // The Hurdle Race - Easy
@@ -510,4 +515,54 @@ function bricksGame(arr) {
       for (let x = 1; x <= 3; x++) {
       }
    }
+}
+
+// Day 19
+//divisorSum(8);
+function divisorSum(n) {
+   divisor = 1;
+   if (n === 1 || n === 0) return n;
+   for (let i = 2; i <= n/2; i++) {
+      if (n % i === 0) {
+         divisor += i;
+      }
+   }
+   console.log(divisor + n);
+   return divisor + n;
+}
+
+// Day 20
+//main([1,2,3]);
+main([4,3,2,1]);
+function main(a) {
+   //a = readLine().split(' ');
+   //a = n.split(' ');
+   a = a.map(Number);
+
+   // Write Your Code Here
+   temp = 0;
+   swap = 0;
+   for (let i = 0; i < a.length; i++) {
+      // Track number of elements swapped during a single array traversal
+      let numberOfSwaps = 0;
+      
+      for (let j = 0; j < a.length - 1; j++) {
+         // Swap adjacent elements if they are in decreasing order
+         if (a[j] > a[j + 1]) {
+            temp = a[j];
+            a[j] = a[j+1];
+            a[j+1] = temp;
+            numberOfSwaps++;
+            swap++;
+         }
+      }
+      
+      // If no elements were swapped during a traversal, array is sorted
+      if (numberOfSwaps == 0) {
+         break;
+      }
+   }
+   console.log("Array is sorted in", swap, "swaps.");
+   console.log("First Element: ", a[0]);
+   console.log("Last Element: ", a[a.length-1]);
 }
