@@ -83,7 +83,67 @@ function sortArray(arrToSort) {
 }
 
 
-// No Repeats Please
+//No Repeats Please
+//permAlone('aab');        // Should return 2 > OK
+//permAlone("aaa");        // Should return 0 > OK
+permAlone("aabb");       // Should return 8 > Still to solve
+//permAlone("abcdefa");    // Should return 3600 > OK
+//permAlone("abfdefa");    // Should return 2640 > OK
+//permAlone("zzzzzzzz");   // Should return 0 > OK
+//permAlone("a");          // Should return 1 > OK
+//permAlone("aaab");       // Should return 0 > Still to solve
+//permAlone("aaabb");      // Should return 12 > Still to solve
+function permAlone(str) {
+   if (str.length > 1) {
+      const doubles = countDoubles(str);    // Check how many double chars in str
+      
+      let checkChar= str.charAt(0);             
+      let uniqueChars = "";
+      for (let i = 1; i < str.length; i++) {     // Check String has more than one unique character         
+         uniqueChars = checkChar.search(str.charAt(i));
+         uniqueChars >= 0 ? 0 : (checkChar +=  str.charAt(i)); 
+      }
+      if (checkChar.length > 1) {
+         let falseCombinations = 0;
+         let reverseFrac = 2;
+         for (let i = (str.length-doubles); i < str.length; i++) {
+            falseCombinations = falseCombinations + reverseFrac*factorial(i);
+            reverseFrac++;
+            console.log("i: ", i,"False Combis: ",falseCombinations);
+         }
+         console.log("Return: ", factorial(str.length)-falseCombinations);
+         return factorial(str.length)-falseCombinations;
+      } else {
+         console.log("Return: ", 0);
+         return 0;
+      }
+   } else {
+      console.log("Return: ", 1);
+      return 1;
+   }
+ }
+
+function countDoubles(str) {
+   try {return str.toLowerCase().split("").sort().join("").match(/(.)\1+/g).length;}
+   catch(e) {return 0;} 
+}
+
+function factorial(n) {
+   if (n === 0 || n === 1) return 1;
+   for (let i = n - 1; i >= 1; i--) n *= i;
+   return n;
+}
+
+
+
+
+
+
+
+
+
+
+
 // Pairwise
 // Implement Bubble Sort
 // Implement Selection Sort

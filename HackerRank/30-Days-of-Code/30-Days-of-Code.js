@@ -354,6 +354,19 @@ class Calculator {
  }
 
 // Day 18 : Queues and Stacks
+function Solution() {
+   //Write your code here
+   let stack = [];
+   let queue = [];
+
+   this.pushCharacter = function(a) {     // standard function syntax
+      return stack.push(a);
+   };
+   this.enqueueCharacter = ((b) => {return queue.push(b)}); // short function syntax
+   this.popCharacter = (() => {return stack.pop()});
+   this.dequeueCharacter = (() => {return queue.shift()});
+ }
+
 // Day 19 : Interfaces
 // Day 20 : Sorting
 // Day 21 : Generics
