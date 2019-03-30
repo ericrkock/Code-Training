@@ -428,8 +428,116 @@ class Printer <T> {
 } */
 
 // Day 22 : Binary Search Trees
+//BinarySearchTree([3,5,2,1,4,6,7]);
+function Node(data) {
+   this.data = data;
+   this.left = null;
+   this.right = null;
+}; // End of function Node
+function BinarySearchTree() {
+   this.insert = function(root, data) {
+       if (root === null) {
+           this.root = new Node(data);
+           return this.root;
+       }
+       if (data <= root.data) {
+           if (root.left) {
+               this.insert(root.left, data);
+           } else {
+               root.left = new Node(data);
+           }
+       } else {
+           if (root.right) {
+               this.insert(root.right, data);
+           } else {
+               root.right = new Node(data);
+           }
+       }
+       return this.root;
+   };
+   
+   // Start of function getHeight
+   this.getHeight = function(root) {
+
+       // Add your code here
+       let height = -1, nodeCount;
+       const visiting = [root];
+   
+       while (nodeCount = visiting.length) {
+           height++;
+           while (nodeCount-- > 0) {
+               const node = visiting.shift();
+               if (node.left) visiting.push(node.left);
+               if (node.right) visiting.push(node.right);
+           }
+       }
+      console.log(height);
+      return height;
+   }; // End of function getHeight
+}; // End of function BinarySearchTree
+
 // Day 23 : BST Level*Order Traversal
+function BinarySearchTree() {
+   this.insert = function(root, data) {
+       if (root === null) {
+           this.root = new Node(data);
+           
+           return this.root;
+       }
+       
+       if (data <= root.data) {
+           if (root.left) {
+               this.insert(root.left, data);
+           } else {
+               root.left = new Node(data);
+           }
+       } else {
+           if (root.right) {
+               this.insert(root.right, data);
+           } else {
+               root.right = new Node(data);
+           }
+       }
+       
+       return this.root;
+   };
+   
+   // Start of function levelOrder
+   this.levelOrder = function(root) {
+
+       // Add your code here
+       // To print values separated by spaces use process.stdout.write(someValue + ' ')
+       var queue = [root];
+       while (queue.length) {
+         var treeNode = queue.shift();
+         process.stdout.write(treeNode.data + ' ');
+         if (treeNode.left) queue.push(treeNode.left);
+         if (treeNode.right) queue.push(treeNode.right);
+       }
+  }; // End of function levelOrder
+}; 
+
 // Day 24 : More Linked List
+this.removeDuplicates=function(head){
+   //Write your code here
+     if (typeof theactualHead === 'undefined') {
+         theactualHead = head;
+     }
+     if (head && head.next) {
+         if (head.data === head.next.data) {
+             if (head.next.next) {
+                 head.next = head.next.next;
+             } else {
+                 head.next = null;
+             }
+             this.removeDuplicates(head);
+         } else {
+             this.removeDuplicates(head.next);
+         }
+     }
+     return theactualHead;
+ }
+
 // Day 25 : Running Time and Complexity
 // Day 26 : Nested Logic
 // Day 27 : Testing

@@ -82,69 +82,102 @@ function sortArray(arrToSort) {
    return arrToSort;
 }
 
-
 //No Repeats Please
 //permAlone('aab');        // Should return 2 > OK
 //permAlone("aaa");        // Should return 0 > OK
-permAlone("aabb");       // Should return 8 > Still to solve
+//permAlone("aabb");       // Should return 8 > OK
 //permAlone("abcdefa");    // Should return 3600 > OK
 //permAlone("abfdefa");    // Should return 2640 > OK
 //permAlone("zzzzzzzz");   // Should return 0 > OK
 //permAlone("a");          // Should return 1 > OK
-//permAlone("aaab");       // Should return 0 > Still to solve
-//permAlone("aaabb");      // Should return 12 > Still to solve
+//permAlone("aaab");       // Should return 0 > OK
+//permAlone("aaabb");      // Should return 12 > OK
 function permAlone(str) {
-   if (str.length > 1) {
-      const doubles = countDoubles(str);    // Check how many double chars in str
-      
-      let checkChar= str.charAt(0);             
-      let uniqueChars = "";
-      for (let i = 1; i < str.length; i++) {     // Check String has more than one unique character         
-         uniqueChars = checkChar.search(str.charAt(i));
-         uniqueChars >= 0 ? 0 : (checkChar +=  str.charAt(i)); 
+   var permutations = permutateWithoutRepetitions(str);
+   var validPermutations = 0;
+   for (let i = 0; i < permutations.length; i++) {
+      if (countDoubles(permutations[i]) == false) {
+         validPermutations++;
       }
-      if (checkChar.length > 1) {
-         let falseCombinations = 0;
-         let reverseFrac = 2;
-         for (let i = (str.length-doubles); i < str.length; i++) {
-            falseCombinations = falseCombinations + reverseFrac*factorial(i);
-            reverseFrac++;
-            console.log("i: ", i,"False Combis: ",falseCombinations);
-         }
-         console.log("Return: ", factorial(str.length)-falseCombinations);
-         return factorial(str.length)-falseCombinations;
-      } else {
-         console.log("Return: ", 0);
-         return 0;
-      }
-   } else {
-      console.log("Return: ", 1);
-      return 1;
    }
- }
+   console.log(permutations.length);
+   console.log(validPermutations);
+   return validPermutations;
+}
+function permutateWithoutRepetitions(permutationOptions) {
+   if (permutationOptions.length === 1) {
+      return [permutationOptions];
+   }
 
+   // Init permutations array.
+   const permutations = [];
+
+   // Get all permutations for permutationOptions excluding the first element.
+   const smallerPermutations = permutateWithoutRepetitions(permutationOptions.slice(1));
+
+   // Insert first option into every possible position of every smaller permutation.
+   const firstOption = permutationOptions[0];
+
+   for (let permIndex = 0; permIndex < smallerPermutations.length; permIndex += 1) {
+      const smallerPermutation = smallerPermutations[permIndex];
+
+      // Insert first option into every possible position of smallerPermutation.
+      for (let positionIndex = 0; positionIndex <= smallerPermutation.length; positionIndex += 1) {
+         const permutationPrefix = smallerPermutation.slice(0, positionIndex);
+         const permutationSuffix = smallerPermutation.slice(positionIndex);
+         permutations.push(permutationPrefix.concat([firstOption], permutationSuffix));
+      }
+   }
+   return permutations;
+}
 function countDoubles(str) {
-   try {return str.toLowerCase().split("").sort().join("").match(/(.)\1+/g).length;}
-   catch(e) {return 0;} 
+   for(var i = 1; i < str.length; i++) {
+         if(str[i] == str[i-1]) {
+            console.log(str, "doubles", i,str[i], str[i-1]);
+            return true;
+         }
+   }
+   console.log(str, "NO doubles");
+   return false;
 }
-
-function factorial(n) {
-   if (n === 0 || n === 1) return 1;
-   for (let i = n - 1; i >= 1; i--) n *= i;
-   return n;
-}
-
-
-
-
-
-
-
-
-
-
 
 // Pairwise
+pairwise([1,4,2,3,0,5], 7);
+pairwise([1, 3, 2, 4], 4);
+pairwise([1, 1, 1], 2);
+pairwise([0, 0, 0, 0, 1, 1], 1);
+pairwise([], 100);
+function pairwise(arr, arg) {
+   this.objects = [];
+   var total = 0;
+
+   function Element(value, index) {
+      this.value = value;
+      this.index = index;
+      this.used = 0;
+   }
+
+   for (var i = 0; i < arr.length; i++) {
+      this.objects.push(new Element(arr[i], i));
+   }
+
+   for (var j = 0; j < objects.length; j++) {
+      if (objects[j].used === 0) {
+         for (var k = 0; k < objects.length; k++) {
+            if (objects[k].used === 0 && objects[k].index != objects[j].index) {
+               if (arg - objects[j].value == objects[k].value) {
+                  total = total + objects[j].index + objects[k].index;
+                  objects[j].used = 1;
+                  objects[k].used = 1;
+                  break;
+               }
+            }
+         }
+      }
+   }
+   console.log(total);
+   return total;
+}
 // Implement Bubble Sort
 // Implement Selection Sort
 // Implement Insertion Sort
