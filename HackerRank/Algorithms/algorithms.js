@@ -487,7 +487,7 @@ function pickingNumbers(a) {
   return max;
 }
 
-// Climbing the LEaderboard - Medium
+// Climbing the Leaderboard - Medium
 // The Hurdle Race - Easy
 
 // Designer PDF Viewer - Easy

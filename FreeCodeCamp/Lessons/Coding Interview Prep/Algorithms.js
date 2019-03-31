@@ -142,45 +142,86 @@ function countDoubles(str) {
 }
 
 // Pairwise
-pairwise([1,4,2,3,0,5], 7);
-pairwise([1, 3, 2, 4], 4);
-pairwise([1, 1, 1], 2);
-pairwise([0, 0, 0, 0, 1, 1], 1);
-pairwise([], 100);
+//pairwise([1,4,2,3,0,5], 7);
+//pairwise([1, 3, 2, 4], 4);
+//pairwise([1, 1, 1], 2);
+//pairwise([0, 0, 0, 0, 1, 1], 1);
+//pairwise([], 100);
 function pairwise(arr, arg) {
-   this.objects = [];
-   var total = 0;
+   return arr.reduce(function(acc, next, index, array) {
+      for (let i = index + 1; i < array.length; i++) {
+         if (array[index] + array[i] === arg) {
+            acc += index + i;
+            array[index] = array[i] = NaN;
+         }
+      }
+      //console.log(acc);
+      return acc;
+   }, 0);
+}
 
-   function Element(value, index) {
-      this.value = value;
-      this.index = index;
-      this.used = 0;
-   }
-
-   for (var i = 0; i < arr.length; i++) {
-      this.objects.push(new Element(arr[i], i));
-   }
-
-   for (var j = 0; j < objects.length; j++) {
-      if (objects[j].used === 0) {
-         for (var k = 0; k < objects.length; k++) {
-            if (objects[k].used === 0 && objects[k].index != objects[j].index) {
-               if (arg - objects[j].value == objects[k].value) {
-                  total = total + objects[j].index + objects[k].index;
-                  objects[j].used = 1;
-                  objects[k].used = 1;
-                  break;
-               }
-            }
+// Implement Bubble Sort
+//bubbleSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+function bubbleSort(array) {
+   // change code below this line
+   var temp = 0;
+   for (let i = 0; i < array.length; i++) {
+      for (let j = 0; j < array.length - 1; j++) {
+         if (array[j] > array[j + 1]) {
+            temp = array[j];
+            array[j] = array[j+1];
+            array[j+1] = temp;
          }
       }
    }
-   console.log(total);
-   return total;
-}
-// Implement Bubble Sort
+   //console.log("Sorted Array ", array);
+   // change code above this line
+   return array;
+ }
+
 // Implement Selection Sort
+//selectionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+function selectionSort(array) {
+   // change code below this line
+   for ( let i = 0; i < array.length - 1; i++) {
+      let smallest = i;
+      for ( let j = i + 1; j < array.length; j++) {
+         if (array[smallest] > array[j]) {
+            smallest = j;
+         }
+      }
+      var temp = array[i];
+      array[i] = array[smallest];
+      array[smallest] = temp;
+   }
+   console.log(array);
+   // change code above this line
+   return array;
+ }
+
 // Implement Insertion Sort
+//insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+function insertionSort(array) {
+   // change code below this line
+   // Iterate through our array
+   for (var i = 1, value; i < array.length; i++) {
+      // Our array is split into two parts: values preceeding i are sorted, while others are unsorted
+      // Store the unsorted value at i
+      value = array[i];
+      // Interate backwards through the unsorted values until we find the correct location for our `next` value
+      for (var j = i; array[j-1] > value; j--) {
+            // Shift the value to the right
+         array[j] = array[j-1];
+      }
+      // Once we've created an open "slot" in the correct location for our value, insert it
+      array[j] = value;
+   }
+   // Return the sorted array
+   console.log(array);
+   // change code above this line
+   return array;
+ }
+
 // Implement Quick Sort
 // Implement Merge Sort
 
