@@ -329,7 +329,7 @@ function Solution() {
    };
 }
 
-// Day 16 : Exceptions - String to integer
+// Day 16 : Exceptions - String to integer - Easy
 function main(S) {
    //const S = readLine();
    try {
@@ -427,7 +427,7 @@ class Printer <T> {
    }
 } */
 
-// Day 22 : Binary Search Trees
+// Day 22 : Binary Search Trees - Easy
 //BinarySearchTree([3,5,2,1,4,6,7]);
 function Node(data) {
    this.data = data;
@@ -476,7 +476,7 @@ function BinarySearchTree() {
    }; // End of function getHeight
 }; // End of function BinarySearchTree
 
-// Day 23 : BST Level*Order Traversal
+// Day 23 : BST Level*Order Traversal - Easy
 function BinarySearchTree() {
    this.insert = function(root, data) {
        if (root === null) {
@@ -517,7 +517,7 @@ function BinarySearchTree() {
   }; // End of function levelOrder
 }; 
 
-// Day 24 : More Linked List
+// Day 24 : More Linked List - Easy
 this.removeDuplicates=function(head){
    //Write your code here
      if (typeof theactualHead === 'undefined') {
@@ -538,8 +538,102 @@ this.removeDuplicates=function(head){
      return theactualHead;
  }
 
-// Day 25 : Running Time and Complexity
-// Day 26 : Nested Logic
-// Day 27 : Testing
-// Day 28 : RegEx, Patterns, and Intro to Databases
+// Day 25 : Running Time and Complexity - Medium
+//processData01([12,5,7]);
+//processData01([31,33]);
+function processData01(input) {
+   //Enter your code here
+   //const inputs = input.split('\n').splice(1).map(Number);
+    
+   input.forEach((num) => {
+   if (num === 2) {
+      console.log("Prime");
+      //process.stdout.write('Prime\n');
+      return;
+   }
+
+   if (num === 1 || num % 2 === 0) {
+      console.log("Not Prime");
+      //process.stdout.write('Not prime\n');
+      return;
+   }
+
+   for (let i = 3; i <= Math.sqrt(num); i += 2) {
+      if (num % i === 0) {
+         console.log("Not Prime");
+         //process.stdout.write('Not prime\n');
+         return;
+      }
+   }
+   console.log("Prime");
+   //process.stdout.write('Prime\n');
+   });
+} 
+
+// Day 26 : Nested Logic - Easy
+function processData(input) {
+   //Enter your code here
+   const [actual, expected] = input.split('\n');
+   const [aday, amonth, ayear] = actual.split(' ').map(Number);
+   const [eday, emonth, eyear] = expected.split(' ').map(Number);
+   let hackos = 0;
+   
+   if (ayear > eyear) {
+      hackos = 10000;
+   } else if (ayear === eyear) {
+      if (amonth > emonth) {
+         hackos = 500 * (amonth - emonth);
+      } else if (amonth === emonth && aday > eday) {
+         hackos = 15 * (aday - eday);
+      }
+   }
+   process.stdout.write(String(hackos));
+} 
+
+// Day 27 : Testing - Easy (JS not availble) => JAVA8
+/* static class TestDataEmptyArray {
+   public static int[] get_array() {
+      // complete this function
+      return new int[]{};
+   }
+} 
+
+static class TestDataUniqueValues {
+   public static int[] get_array() {
+      // complete this function
+      return new int[]{1,2,3,4,5};
+   }
+   public static int get_expected_result() {
+      // complete this function
+      return minimum_index(get_array());
+   }
+} 
+
+static class TestDataExactlyTwoDifferentMinimums {
+   public static int[] get_array() {
+      // complete this function
+      return new int[]{1,2,3,4,3,2,1};
+   }
+   public static int get_expected_result() {
+      // complete this function
+      return minimum_index(get_array());
+   }
+} */
+
+// Day 28 : RegEx, Patterns, and Intro to Databases - Medium
+function main() {
+   const N = parseInt(readLine(), 10);
+   var firstNames = [];
+   for (let NItr = 0; NItr < N; NItr++) {
+      const firstNameEmailID = readLine().split(' ');
+      const firstName = firstNameEmailID[0];
+      const emailID = firstNameEmailID[1];
+      if(emailID.match(/@gmail\.com$/)) {
+         firstNames.push(firstName);
+      }
+   }
+   firstNames.sort().forEach(firstName => console.log(firstName));
+}
+
+
 // Day 29 : Bitwise AND
