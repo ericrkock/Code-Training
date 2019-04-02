@@ -635,5 +635,24 @@ function main() {
    firstNames.sort().forEach(firstName => console.log(firstName));
 }
 
-
 // Day 29 : Bitwise AND
+//main();
+function main() {
+   const t = parseInt(readLine(), 10);
+
+   for (let tItr = 0; tItr < t; tItr++) {
+       const nk = readLine().split(' ');
+       const n = parseInt(nk[0], 10);
+       const k = parseInt(nk[1], 10);
+       let p = 0
+       for (let i = 1; i <= n; i++) {
+           for (let j = i + 1; j <= n; j++) {
+               let s = i & j
+               if (s < k) {
+                   if (s > p) p = s
+               }
+           }
+       }
+       console.log(p)
+   }
+}

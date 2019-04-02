@@ -223,5 +223,84 @@ function insertionSort(array) {
  }
 
 // Implement Quick Sort
-// Implement Merge Sort
+//quickSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+function quickSort(array, left = 0, right = array.length - 1) {
+   let len = array.length;
+   let index;
+ 
+   if (len > 1) {
+      index = partition(array, left, right)
+      if (left < index - 1) {
+         quickSort(array, left, index - 1)
+      } 
+      if (index < right) {
+         quickSort(array, index, right)
+      }
+   }
+   //console.log(array);
+   return array
+ 
+ }
+ function partition(array, left, right) {
+   let middle = Math.floor((right + left) / 2),
+      pivot = array[middle],
+      i = left,                 // Start pointer at the first item in the array
+      j = right                 // Start pointer at the last item in the array
+ 
+   while(i <= j) {
+ 
+      // Move left pointer to the right until the value at the
+      // left is greater than the pivot value
+      while(array[i] < pivot) {
+         i++
+      }
+ 
+      // Move right pointer to the left until the value at the
+      // right is less than the pivot value
+      while(array[j] > pivot) {
+         j--
+      }
+ 
+      // If the left pointer is less than or equal to the 
+      // right pointer, then swap values
+      if(i <= j) {
+         [array[i], array[j]] = [array[j], array[i]]  // ES6 destructuring swap
+         i++
+         j--
+      }
+   }
+   return i
+ }
 
+// Implement Merge Sort
+//mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+function mergeSort(array) {
+   // change code below this line
+   var len = array.length;
+   if (len <2) return array;
+   var mid = Math.floor(len/2);
+   var left = array.slice(0,mid);
+   var right =array.slice(mid);
+   //send left and right to the mergeSort to broke it down into pieces
+   //then merge those
+   console.log(merge(mergeSort(left),mergeSort(right)));
+   // change code above this line
+   return merge(mergeSort(left),mergeSort(right));
+ }
+function merge(left, right){
+   var result = [],
+      lLen = left.length,
+      rLen = right.length,
+      l = 0,
+      r = 0;
+   while(l < lLen && r < rLen){
+      if(left[l] < right[r]){
+         result.push(left[l++]);
+      }
+      else{
+         result.push(right[r++]);
+      }
+   }  
+   //remaining part needs to be addred to the result
+   return result.concat(left.slice(l)).concat(right.slice(r));
+}
