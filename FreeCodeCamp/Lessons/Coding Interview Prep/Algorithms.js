@@ -273,34 +273,75 @@ function quickSort(array, left = 0, right = array.length - 1) {
  }
 
 // Implement Merge Sort
-//mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
+//mergeSort([1, 4, 2, 3]);
 function mergeSort(array) {
-   // change code below this line
-   var len = array.length;
-   if (len <2) return array;
-   var mid = Math.floor(len/2);
-   var left = array.slice(0,mid);
-   var right =array.slice(mid);
-   //send left and right to the mergeSort to broke it down into pieces
-   //then merge those
-   console.log(merge(mergeSort(left),mergeSort(right)));
-   // change code above this line
-   return merge(mergeSort(left),mergeSort(right));
- }
-function merge(left, right){
-   var result = [],
-      lLen = left.length,
-      rLen = right.length,
-      l = 0,
-      r = 0;
-   while(l < lLen && r < rLen){
-      if(left[l] < right[r]){
-         result.push(left[l++]);
-      }
-      else{
-         result.push(right[r++]);
-      }
-   }  
-   //remaining part needs to be addred to the result
-   return result.concat(left.slice(l)).concat(right.slice(r));
+   let sorted = split(array);
+   console.log("sorted:", sorted);
+   return sorted;
 }
+function split(array) {
+   if (array.length > 1) {
+      let left = array.slice(0, array.length/2);
+      let right = array.slice(array.length/2);
+      let a = split(left);
+      let b = split(right);
+      return merge(a,b);
+   } else {
+      return array;
+   }      
+}
+
+function merge(a,b) {
+   let i = 0;
+   let j = 0;
+   let newArr = [];
+   while (i < a.length || j < b.length) {
+      if(i == a.length && j < b.length) {
+         newArr.push(b[j]);
+         j++;
+      } else if (i < a.length && j == b.length) {
+         newArr.push(a[i]);
+         i++;
+      } else {
+         if ( a[i] < b[j]){
+            newArr.push(a[i]);
+            i++;
+         } else {
+            newArr.push(b[j]);
+            j++;
+         }
+      }
+   }
+   return newArr;
+}
+/*function mergeSort(array) {
+   // change code below this line
+   if (array.length == 1) return array;
+   let m = Math.floor(array.length/2); // m: middle
+   let left = mergeSort(array.slice(0, m));
+      //console.log("left:", left);
+   let right = mergeSort(array.slice(m));
+      //console.log("rigth: ", right);
+   // change code above this line
+   console.log("merge: ", merge(left, right));
+   return merge(left, right);
+   }
+function merge(left, right){
+   let l = 0;  // l: left
+   let r = 0;  // r: right
+   let mergedArr = [];
+   while (l < left.length && r < right.length) {
+      if ( left[l] > right [r]) mergedArr.push(right[r++]);
+      else mergedArr.push(left[l++]);
+   }
+   while (l < left.length) {
+      mergedArr.push(left[l++]);
+      //console.log("l++", left[l++]);
+   }
+   while (r < right.length) {
+      mergedArr.push(right[r++]);
+      //console.log("r++", right[r++]);
+   }
+   return mergedArr;
+} */
