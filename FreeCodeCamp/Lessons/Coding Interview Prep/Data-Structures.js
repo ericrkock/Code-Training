@@ -603,14 +603,357 @@ var Map = function() {
 
 
 // Create an ES6 JavaScript Map
+let myMap = function() {
+    this.collection = {};
+    this.count = 0;
+    this. size = function() {
+        return this.count;
+    };
+    this.set = function(key, value) {
+        this.collection[key] = value;
+        this.count++;
+    };
+    this.has = function(key) {
+        return (key in this.collection);
+    };
+    this.get = function(key) {
+        return (key in this.collection) ? this.collection[key] : null;
+    };
+    this.delete = function(key) {
+        if (key in this.collection) {
+            delete this.collection[key];
+            this.count--;
+        }
+    };
+    this.values = function() {
+        let result = new Array();
+        for (let key of Object.keys(this.collection)) {
+            result.push(this.collection[key]);
+        };
+        return (result.length > 0) ? result : null;
+    };
+    this.clear = function() {
+        this.collection = {};
+        this.count = 0;
+    };
+};
+
+let map = new myMap();
+map.set("arms", 2);
+map.set("fingers", 10);
+map.set("eyes", 2);
+map.set("belley button", 1);
+
+console.log("1: ", map.get("fingers"));
+console.log("2: ", map.size());
+console.log("3: ", map.values());
+
 // Create a Hash Table
 // Work with Nodes in a Linked List
 // Create a Linked List Class
+function LinkedList() { 
+    var length = 0; 
+    var head = null; 
+  
+    var Node = function(element){
+      this.element = element; 
+      this.next = null; 
+    }; 
+  
+    this.head = function(){
+      return head;
+    };
+  
+    this.size = function(){
+      return length;
+    };
+  
+    this.add = function(element){
+      // Only change code below this line
+        var node = new Node(element);
+        if (head === null) {
+            head = node;
+        } else {
+            var currentNode = head;
+            while(currentNode.next){
+            currentNode = currentNode.next;
+            }
+            currentNode.next = node;
+        }
+        length++;
+      // Only change code above this line
+    };
+  }
+
 // Remove Elements from a Linked List
+function LinkedList() { 
+    var length = 0; 
+    var head = null; 
+  
+    var Node = function(element){ 
+      this.element = element; 
+      this.next = null; 
+    }; 
+  
+    this.size = function(){
+      return length;
+    };
+  
+    this.head = function(){
+      return head;
+    };
+  
+    this.add = function(element){
+      var node = new Node(element);
+      if(head === null){
+          head = node;
+      } else {
+          var currentNode = head;
+          while(currentNode.next){
+              currentNode  = currentNode.next;
+          }
+          currentNode.next = node;
+      }
+      length++;
+    }; 
+  
+    this.remove = function(element){
+      // Only change code below this line
+        var currentNode = head;
+        var previousNode;
+        if (currentNode.element === element){
+          head = currentNode.next;
+        } else {
+          while (currentNode.element !== element) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+          }
+          previousNode.next = currentNode.next;
+        }
+        length--;
+      // Only change code above this line
+    };
+  }
+
 // Search within a Linked List
+function LinkedList() { 
+    var length = 0; 
+    var head = null; 
+  
+    var Node = function(element){ // {1} 
+      this.element = element; 
+      this.next = null; 
+    }; 
+  
+    this.size = function() {
+      return length;
+    };
+  
+    this.head = function(){
+      return head;
+    };
+  
+    this.add = function(element){
+      var node = new Node(element);
+      if(head === null){
+          head = node;
+      } else {
+          currentNode = head;
+  
+          while(currentNode.next){
+              currentNode  = currentNode.next;
+          }
+  
+          currentNode.next = node;
+      }
+  
+      length++;
+    }; 
+  
+    this.remove = function(element){
+      var currentNode = head;
+      var previousNode;
+      if(currentNode.element === element){
+          head = currentNode.next;
+      } else {
+          while(currentNode.element !== element) {
+              previousNode = currentNode;
+              currentNode = currentNode.next;
+          }
+          previousNode.next = currentNode.next;
+      }
+      length --;
+    };
+  
+    // Only change code below this line
+    this.isEmpty = function() {
+      return length === 0;
+    };
+  
+    this.indexOf = function(element) {
+      var currentNode = head;
+      var index = -1;
+      while (currentNode) {
+        index++;
+        if (currentNode.element === element) {
+          return index;
+        }
+        currentNode = currentNode.next
+      }
+      return -1;
+    };
+
+    this.elementAt = function(index) {
+        var currentNode = head;
+        var count = 0;
+        while (count < index) {
+          count++;
+          currentNode = currentNode.next;
+        }
+        return currentNode.element;
+      };  
+    // Only change code above this line
+  }
+
 // Remove Elements from a Linked List by Index
+function LinkedList() { 
+    var length = 0; 
+    var head = null; 
+  
+    var Node = function(element){ // {1} 
+      this.element = element; 
+      this.next = null; 
+    }; 
+  
+    this.size = function(){
+      return length;
+    };
+  
+    this.head = function(){
+      return head;
+    };
+  
+    this.add = function(element){
+      var node = new Node(element);
+      if(head === null){
+          head = node;
+      } else {
+          var currentNode = head;
+  
+          while(currentNode.next){
+              currentNode  = currentNode.next;
+          }
+  
+          currentNode.next = node;
+      }
+  
+      length++;
+    }; 
+  
+    this.remove = function(element){
+      var currentNode = head;
+      var previousNode;
+      if(currentNode.element === element){
+          head = currentNode.next;
+      } else {
+          while(currentNode.element !== element) {
+              previousNode = currentNode;
+              currentNode = currentNode.next;
+          }
+  
+          previousNode.next = currentNode.next;
+      }
+  
+      length --;
+    };
+  
+    // Only change code below this line
+    this.removeAt = function(index) {
+      var currentNode = head;
+      var previousNode;
+      var currentIndex = 0;
+      if (index < 0 || index >= length){
+          return null
+      }
+      if(index === 0){
+          head = currentNode.next;
+      } else {
+          while(currentIndex < index) {
+              currentIndex ++;
+              previousNode = currentNode;
+              currentNode = currentNode.next;
+          }
+          previousNode.next = currentNode.next
+      }
+      length--;
+      return currentNode.element;
+    }
+    // Only change code above this line
+  }
+
 // Add Elements at a Specific Index in a Linked List
+function LinkedList() { 
+    var length = 0; 
+    var head = null; 
+  
+    var Node = function(element){
+        this.element = element; 
+        this.next = null; 
+    }; 
+  
+    this.size = function(){
+        return length;
+    };
+  
+    this.head = function(){
+        return head;
+    };
+  
+    this.add = function(element){
+        var node = new Node(element);
+        if(head === null){
+            head = node;
+        } else {
+            var currentNode = head;
+
+            while(currentNode.next){
+                currentNode  = currentNode.next;
+            }
+
+            currentNode.next = node;
+        }
+
+        length++;
+    }; 
+  
+    // Only change code below this line
+    this.addAt = function (index, element) {
+        if (index > length || index < 0) {
+          return false;
+        }
+        var newNode = new Node(element);
+        var currentNode = head;
+        if (index === 0) {
+          head = newNode;
+        } else {
+          var previousNode = null;
+          var i = 0;
+          while (currentNode && i < index) {
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+            i++;
+          }
+          previousNode.next = newNode;
+        }
+        newNode.next = currentNode;
+        length++;
+      }
+    // Only change code above this line
+}
+
 // Create a Doubly Linked List
+
+
 // Reverse a Doubly Linked List
 // Find the Minimum and Maximum Value in a Binary Search Tree
 // Add a New Element to a Binary Search Tree
